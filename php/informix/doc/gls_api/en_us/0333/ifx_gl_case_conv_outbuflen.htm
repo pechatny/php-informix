@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_case_conv_outbuflen</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_case_conv_outbuflen
+- calculates an approximation of the number of bytes for multi-byte case conversion
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+int ifx_gl_case_conv_outbuflen(int src_mbs_bytes);
+</b></pre>
+<h2>DESCRIPTION</h2>
+This function calculates either exactly the number of bytes that will
+be required by a buffer of case-equivalent multi-byte characters or a
+close over-approximation of the number. The argument <i>src_mbs_bytes</i> is
+the number of bytes in the buffer of multi-byte characters to be
+case converted. This buffer can contain one or more multi-byte characters. This function
+applies to both upper-case and lower-case conversions.<tt> </tt>
+<p>
+If the value returned by this function is not equal to <i>src_mb_bytes</i>,
+then case conversion of multi-byte characters cannot be done in-place. A
+separate multi-byte destination buffer must be allocated.  However, if
+the value returned by this function is exactly equal to <i>src_mb_bytes</i>,
+then multi-byte case conversion can be done in-place.<tt> </tt>
+<p>
+This function does not apply to wide-character case conversions.<tt> </tt>
+<h2>RETURN VALUES</h2>
+If a buffer of one or more multi-byte characters contains
+<i>src_mb_bytes</i> bytes, then this function returns the number of bytes
+required to store the those multi-byte characters after they have
+either been converted to lower-case or upper-case characters.<tt> </tt>
+<h2>ERRORS</h2>
+None
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_tomupper.htm">ifx_gl_tomupper</a>(),
+<a href="ifx_gl_tomlower.htm">ifx_gl_tomlower</a>(),
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.<tt> </tt>
+</body>
+</html>

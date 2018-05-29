@@ -1,0 +1,279 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>GLS Library Memory Management</title>
+</head>
+
+<body>
+
+<h1>1.  GLS Library String and Character Termination</h1>
+
+The GLS library functions are intended to be used in many different
+contexts. In particular, some APIs that programmers will use along with
+the GLS library assume that all character strings are terminated with a
+null character, others assume that each string consists of a pointer
+and length which indicates the number of bytes in the string. The GLS
+library is intended to be used with both.
+<p>
+Therefore, each of the GLS library functions that take a string
+argument allow you to pass them either a null-terminated string, or a
+string whose end is determined by the separate length that you pass
+them.
+
+<a name=".mbterm"></a>
+<h2>Multi-Byte Character String Termination</h2>
+
+Each multi-byte character string that is passed to a GLS library function
+is represented by two arguments,
+<pre>
+  ..., <i>mbs</i>, <i>mbs_byte_length</i>, ...
+</pre>
+If <i>mbs_byte_length</i> is the value
+<a href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a>
+then the function
+will assume that <i>mbs</i> is a <i><b>null-terminated</i></b> string; otherwise the function assumes that <i>mbs_byte_length</i> is the number of bytes in the multi-byte
+character string.
+The null-terminator of a multi-byte string consists of one byte whose value
+is zero.
+<p>
+Multi-byte character strings which are not null-terminated are called <i><b>length-terminated</b></i>
+multi-byte strings and can contain null characters, but these null characters do not
+indicate the end of the string.
+<p>
+If <i>mbs_byte_length</i> is neither <a href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a>
+nor greater than or equal to zero, then the function gives the IFX_GL_PARAMERR error.
+
+<a name=".charterm"></a>
+<h2>Multi-Byte Character Termination</h2>
+
+Many GLS library functions operate on just one multi-byte character.
+Each multi-byte character that is passed to a GLS library function
+is represented by two arguments,
+
+<pre>
+  ..., <i>mb</i>, <i>mb_byte_limit</i>, ...
+</pre>
+
+If <i>mb_byte_limit</i> is <a href="macros.htm#.IFX_GL_NO_LIMIT">IFX_GL_NO_LIMIT</a> then the function
+will read as many bytes as necessary from <i>mb</i> to form a complete
+character; otherwise, it will not read more than <i>mb_byte_limit</i> bytes
+from <i>mb</i> when trying to form a complete character.
+<p>
+1. If <i>mb</i> is a character in a null-terminated multi-byte string,
+then <i>mb_byte_limit</i> must be equal to
+<a href="macros.htm#.IFX_GL_NO_LIMIT">IFX_GL_NO_LIMIT</a>.<tt> </tt>
+For example, if mbs points to a string of multi-byte characters that
+are
+null terminated,
+<pre>
+  for ( mb = mbs; *mb != '\0'; mb += bytes )
+    {
+    if ( (bytes = ifx_gl_mblen(mb, IFX_GL_NO_LIMIT)) == -1 )
+      /* handle error */
+    }
+</pre>
+2. If <i>mb</i> is a character in a multi-byte
+string which is not null-terminated or a character in a buffer by itself, then <i>mb_byte_limit</i> must be equal
+the number of bytes between where <i>mb</i> points and the end
+of the buffer which holds the string or character. For example, if mbs
+points to a string of multi-byte characters that are not null
+terminated and mbs_bytes is the number of bytes in that string,
+<pre>
+  for ( mb = mbs; mbs_bytes > 0; mb += bytes, mbs_bytes -= bytes )
+    {
+    if ( (bytes = ifx_gl_mblen(mb, mbs_bytes)) == -1 )
+      /* handle error */
+    }
+</pre>
+or if mb points to one multi-byte character and mb_bytes is the number
+of bytes in the buffer that holds the character,
+<pre>
+  if ( (bytes = ifx_gl_mblen(mb, mb_bytes)) == -1 )
+    /* handle error */
+</pre>
+<p>
+If the function cannot determine whether <i>mb</i> is a valid multi-byte character, because
+it would need to read more than 
+<i>mb_byte_limit</i> bytes from <i>mb</i> or if <i>mb_byte_limit</i> is less than or equal to zero, then the function gives
+the IFX_GL_EINVAL error.
+
+<a name=".wcterm"></a>
+<h2>Wide-Character String Termination</h2>
+
+Each wide-character string that is passed to a GLS library function
+is represented by two arguments,
+<pre>
+  ..., <i>wcs</i>, <i>wcs_char_length</i>, ...
+</pre>
+If <i>wcs_char_length</i> is the value
+<a href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a>
+then the function
+will assume that <i>wcs</i> is a <i><b>null-terminated</i></b> string; otherwise the function assumes that <i>wcs_char_length</i> is the number of characters in the wide-character
+string.
+The null-terminator of a wide-character string consists of one
+gl_wchar_t whose value is zero.
+<p>
+Wide-character strings which are not null-terminated are called <i><b>length-terminated</b></i>
+wide-character strings and can contain null characters, but these null characters do not
+indicate the end of the string.
+<p>
+If <i>wcs_char_length</i> is neither <a href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a>
+nor greater than or equal to zero, then the function gives the IFX_GL_PARAMERR error.
+
+<a name=".memalloc"></a>
+<h1>2.  GLS Library Memory Allocation</h1>
+
+<h2>Memory Allocation by GLS Library Functions</h2>
+
+No GLS library function allocates memory that remains after the
+function returns. If a function allocates memory, this memory is only
+for temporary purposes and is freed before the function returns.
+Therefore, the caller of each function must allocate any memory needed
+by the function.
+
+<h2>Memory Allocation by GLS Library Callers</h2>
+
+<H3>Multi-byte character string allocation</H3>
+Since the number of array elements in a multi-byte character string does NOT equal the number of characters in the string, the allocation of a multi-byte character string is NOT the same as the "old" single-byte method. For example, to statically allocate 20 multi-byte characters use,<P>
+<DL>
+<DT><DD><CODE>gl_mchar_t mbs[20*IFX_GL_MB_MAX];</CODE><P>
+</DL>
+To dynamically allocate 20 multi-byte characters use,<P>
+<DL>
+<DT><DD><CODE>gl_mchar_t *mbs = (gl_mchar_t *) malloc(20*IFX_GL_MB_MAX);</CODE><P>
+</DL>
+or to dynamically allocate a more precise estimate use,<P>
+<DL>
+<DT><DD><CODE>gl_mchar_t *mbs = (gl_mchar_t *) malloc(20*ifx_gl_mb_loc_max());</CODE><P>
+</DL>
+To statically allocate 20 multi-byte characters plus a null-terminator use (note that the null-terminator only requires one byte),<P>
+<DL>
+<DT><DD><CODE>gl_mchar_t mbs[20*IFX_GL_MB_MAX+1];</CODE><P>
+</DL>
+To dynamically allocate 20 multi-byte characters plus a null-terminator use,<P>
+<DL>
+<DT><DD><CODE>gl_mchar_t *mbs = (gl_mchar_t *) malloc(20*IFX_GL_MB_MAX+1);</CODE><P>
+</DL>
+or to dynamically allocate a more precise estimate use,<P>
+<DL>
+<DT><DD><CODE>gl_mchar_t *p = (gl_mchar_t *) malloc(20*gl_mb_loc_max()+1);</CODE><P>
+</DL>
+
+<H3>Wide-Character String Allocation</H3>
+Since the number of array elements in a wide-character string equals the number of characters in the string, the static allocation of a wide-character string looks the same as the "old" single-byte method. For example, to statically allocate 20 wide-characters use,<P>
+<DL>
+<DT><DD><CODE>gl_wchar_t wcs[20];</CODE><P>
+</DL>
+To dynamically allocate 20 wide-characters use,<P>
+<DL>
+<DT><DD><CODE>gl_wchar_t *wcs = (gl_wchar_t *) malloc(20*sizeof(gl_wchar_t));</CODE><P>
+</DL>
+To statically allocate 20 wide-characters plus a null-terminator use (note that the null-terminator requires the space allocated for an entire wide-character),
+<DL>
+<DT><DD><CODE>gl_wchar_t wcs[21];</CODE><P>
+</DL>
+To dynamically allocate 20 wide-characters plus a null-terminator use,<P>
+<DL>
+<DT><DD><CODE>gl_wchar_t *wcs = (gl_wchar_t *) malloc(21*sizeof(gl_wchar_t));</CODE><P>
+</DL>
+
+<a name=".consistent"></a>
+<h1>3.  Keeping Multi-Byte Strings Consistent</h1>
+<h2>Truncating Long Multi-Byte Strings</h2>
+
+Sometimes the caller of GLS library functions will need to truncate a
+long character string so that it fits into a smaller buffer. Truncating a
+string that consists of just single-byte characters is easy. This is because truncating
+at an arbitrary
+byte location in the string will still
+result in a complete character string, albeit shorter.
+<p>
+However, truncating a string that can contain even one multi-byte
+character is difficult. This is because truncating at an arbitrary byte location
+in the string can result in truncating a multi-byte character in its
+middle such that the truncated string ends with the first 1, 2 or 3
+bytes of a character without the character's remaining bytes.
+<p>
+If such a situation occurs, then subsequent traversal of the truncated
+string could result in reading beyond the end of the buffer.
+<p>
+Therefore, all GLS library functions which traverse one multi-byte character or traverse length-terminated
+multi-byte characters strings give a special error if they
+detect that an otherwise valid character has been truncated:
+IFX_GL_EINVAL.
+<p>
+If it is known that no truncation occurred to the string, then IFX_GL_EINVAL
+can be considered the same as IFX_GL_EILSEQ. However, if it is possible that
+truncation has occurred, then IFX_GL_EINVAL indicates to the caller that they need to
+further truncate
+the string so that the last byte of the string is the last byte of the last character in
+the string.
+<p>
+Depending upon your application, you may either end up making the
+truncated string even shorter than originally indented or you may have
+to replace the first 1, 2, or 3 bytes of the truncated character with a
+padding character that is appropriate for your application.
+<p>
+Even though the GLS library functions can be used to detect this
+situation after it has occurred, it is much better to use them to avoid
+the situation.
+
+<a name=".fragmenting"></a>
+<h2>Fragmenting Long Multi-Byte Strings</h2>
+
+Sometimes the caller of GLS library functions will need to fragment a
+long character string into two or more non-adjacent buffers to meet the memory
+management requirements of their component. Fragmenting a string that
+consists of just single-byte characters is easy. This is because fragmenting
+at arbitary byte locations in the string will still result in the fragments
+being consistent
+character strings.
+<p>
+However, fragmenting a string that can contain even one multi-byte
+character is difficult. This is because fragmenting at arbitrary byte
+locations in the string can result in fragmenting a multi-byte
+character in its middle such that one fragment ends with the first 1, 2
+or 3 bytes of a character and the next fragment starts with the remaining
+bytes.
+<p>
+If the only thing you ever will do with these fragments is to concatenate
+them back together to form one string, then no special processing needs
+to be done.  However, if you traverse the fragments as multi-byte
+strings, this can result in reading beyond the end of one fragment or
+finding an illegal character at the beginning of another.
+<p>
+Therefore, all GLS library functions which traverse one multi-byte character or traverse length-terminated
+multi-byte characters strings give a special error if they
+detect that an otherwise valid character has been truncated at the end of
+a fragment:
+IFX_GL_EINVAL. It is impossible to detect that the beginning of a fragment contains
+the remaining bytes of the last character in the previous fragment without
+looking at the previous fragment first. This is because the last 1, 2 or 3 bytes
+of a multi-byte character may look exactly like a valid character.
+<p>
+If it is known that no fragmentation occurred to the string, then IFX_GL_EINVAL
+can be considered the same as IFX_GL_EILSEQ. However, if it is possible that
+fragmentation has occurred, then IFX_GL_EINVAL indicates to the caller that
+they need to fragment
+the string so that the last byte of each fragment is the last byte of the last character in
+the fragment and so that the first byte of each fragment is the first byte of the first character in the fragment.
+<p>
+Depending upon your application, you may either end up making
+a fragment even shorter than originally indented or you may have to replace
+the first 1, 2, or 3 bytes of the fragmented character with a padding character
+that is appropriate for your application and shift these bytes to the beginning
+of the next fragment.
+<p>
+Even though the GLS library functions can be used to detect this
+situation after it has occurred, it is much better to use them to avoid
+the situation.
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.<tt> </tt>
+
+</body>
+
+</html>

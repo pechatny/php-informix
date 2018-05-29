@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_wcsncpy</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_wcsncpy - copy part of a wide-character string
+<hr></h2>
+
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+int ifx_gl_wcsncpy(gl_wchar_t *wcs1, gl_wchar_t *wcs2, int wcs2_char_length, int char_limit)
+</b></pre>
+
+<h2>DESCRIPTION</h2>
+This function copies <i>wcs2</i> to the
+location pointed to by <i>wcs1</i>.  No more than <i>char_limit</i>
+characters will be read from <i>wcs2</i> and written to <i>wcs1</i>.
+If <i>wcs1</i> and <i>wcs2</i>
+overlap, the results of this function are undefined.
+<p>
+If <i>wcs2_char_length</i> is the value <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> then the function will
+assume that <i>wcs2</i> is a null-terminated string;
+otherwise the function assumes that <i>wcs2_char_length</i> is the
+number of characters in <i>wcs2</i>.
+See <a href="memmgmt.htm#.wcterm">Wide-Character String Termination</a>
+for more general information about <i>wcs2_char_length</i>.  
+
+<h2>RETURN VALUE</h2>
+This function returns the number of characters in the resulting copied string,
+not including the null terminator, if any.
+
+<h2>ERRORS</h2>
+If an error has occurred, this function returns -1 and sets
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>()
+to one of the following,
+<DL>
+<DT>[IFX_GL_PARAMERR]<DD><i>wcs2_char_length</i> is not equal to <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> and is not greater than or equal to zero.
+</DL>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_wcscpy.htm">ifx_gl_wcscpy</a>()
+<a href="ifx_gl_mbscpy.htm">ifx_gl_mbscpy</a>()
+<a href="ifx_gl_mbsncpy.htm">ifx_gl_mbsncpy</a>()
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+
+
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+{
+    "name": "My Private Repo",
+    "homepage": "https://satis.domain.tld",
+    "repositories": [
+        {
+          "type": "composer",
+          "url": "https://packagist.org"
+        }
+
+    ],
+
+  "archive": {
+    "directory": "dist",
+    "format": "tar",
+    "prefix-url": "http://0.0.0.0",
+    "skip-dev": true
+  },
+
+    "require": {
+        "vlucas/phpdotenv": "*"
+    },
+    "require-all":false,
+    "require-dependencies":true,
+    "require-dev-dependencies":false,
+    "minimum-stability":"dev"
+}

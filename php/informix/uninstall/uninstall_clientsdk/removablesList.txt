@@ -1,0 +1,1 @@
+/opt/informix/etc/.lvers_csdk

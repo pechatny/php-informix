@@ -1,0 +1,67 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_wcscat</title>
+</head>
+
+<body>
+<h2>
+ifx_gl_wcscat - concatenate two wide-character strings
+<hr></h2>
+
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+int ifx_gl_wcscat(gl_wchar_t *wcs1, int wcs1_char_length, gl_wchar_t *wcs2, int wcs2_char_length)
+
+</b></pre>
+<h2>DESCRIPTION</h2>
+
+This function appends a copy of <i>wcs2</i> to the
+end of <i>wcs1</i>. If <i>wcs1</i> and <i>wcs2</i>
+overlap, the results of this function are undefined.
+<p>
+If <i>wcs1_char_length</i> is the value <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> then the function will
+assume that <i>wcs1</i> is a null-terminated string;
+otherwise the function assumes that <i>wcs1_char_length</i> is the
+number of characters in <i>wcs1</i>.
+If <i>wcs2_char_length</i> is the value <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> then the function will
+assume that <i>wcs2</i> is a null-terminated string;
+otherwise the function assumes that <i>wcs2_char_length</i> is the
+number of characters in <i>wcs2</i>.
+See <a href="memmgmt.htm#.wcterm">Wide-Character String Termination</a>
+for more general information about these lengths.  
+
+<h2>RETURN VALUE</h2>
+This function returns the number of characters in the resulting concatenated string,
+not including the null terminator, if any.
+
+<h2>ERRORS</h2>
+If an error has occurred, this function returns NULL and sets
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>()
+to one of the following,
+<DL>
+<DT>[IFX_GL_PARAMERR]<DD>Either <i>wcs1_char_length</i> is not equal to <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> and is not greater than or equal to zero, or <i>wcs2_char_length</i> is not equal to <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> and is not greater than or equal to zero.
+<DT>[IFX_GL_TERMMISMAT]<DD>Either <i>wcs1_char_length</i> is equal to <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> and <i>wcs2_char_length</i> is greater than or equal to zero or <i>wcs1_char_length</i> is greater than or equal to zero and <i>wcs2_char_length</i> is equal to  <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a>
+</DL>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_wcsncat.htm">ifx_gl_wcsncat</a>()
+<a href="ifx_gl_mbscat.htm">ifx_gl_mbscat</a>()
+<a href="ifx_gl_mbsncat.htm">ifx_gl_mbsncat</a>()
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.
+
+</body>
+</html>

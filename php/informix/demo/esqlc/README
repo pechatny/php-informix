@@ -1,0 +1,90 @@
+/****************************************************************************
+ * Licensed Material - Property Of IBM
+ *
+ * "Restricted Materials of IBM"
+ *
+ * IBM Informix Client SDK
+ *
+ * (c)  Copyright IBM Corporation 1997, 2013. All rights reserved.
+ *
+ ****************************************************************************
+ */
+
+
+                ===================================
+                           DEMO PROGRAM NOTES
+                                 FOR
+                        INFORMIX-ESQL/C on UNIX
+                ===================================
+
+I]. Compile / Execution :
+
+        a. In order to compile any one or all the demos INFORMIXDIR must be set.
+        b. To compile all programs run 'make'
+        c. To compile a specific program run 'make' followed by filename
+                eg. make blobload
+        d. To run the demo program, just pass the program name at the command.
+                eg. blobload
+
+II]. Some ESQL/C programs require 'stores_demo' database to exist on server
+     end. You will need to create the 'stores_demo' by using the
+     'dbaccessdemo stores_demo'  or 'dbaccessdemo7 stores_demo' on server end.
+
+III]. CLOB related demo programs require 'superstores_demo' database to exit
+      on the server. You can create the 'superstores_demo' by using 
+      'dbaccessdemo9' on server.
+
+Following ESQL/C programs require 'superstores_demo' database to exist on server end.
+  create_clob.ec
+  get_lo_info.ec
+  upd_lo_descr.ec
+
+Following ESQL/C programs require 'stores_demo' database to exist on server end.
+  blobload.ec
+  collect.ec
+  demo1.ec
+  demo2.ec
+  demo3.ec
+  demo4.ec
+  dispcat_pic.ec
+  dyn_sql.ec
+  getcd_me.ec
+  getcd_nf.ec
+  getcd_of.ec
+  getdiag.ec
+  lvarptr.ec
+  pamdemo.ec
+  rgetlmsg.ec
+  rgetmsg.ec
+  risnull.ec
+  rsetnull.ec
+  rtypalign.ec
+  rtypmsize.ec
+  rtypname.ec
+  rtypwidth.ec
+  sqldetachdemo.ec
+  timeout.ec
+  unload.ec
+  updcd_me.ec
+  updcd_nf.ec
+  updcd_of.ec
+  varchar.ec
+
+III]. Example usage for some programs :
+
+blobload :
+        blobload -u -f blobload.ec -d stores7 -t catalog -b cat_picture -k catalog_num 10027
+
+IV]. New Demos Added :
+  Starting with CSDK2.81.UC2, an extra demo has been added for the PAM 
+feature. The demo basically does the same thing as demo1, but has the callback
+function in it. When connected to the PAM enabled server, it would prompt the 
+user with some challenges, and the user may need to provide appropriate 
+responses. 
+  The main idea of the demo is to demostrate to the users the use of the
+callback function for the PAM feature. 
+
+V]. Cleanup
+  The 'make cleanup' option removes all the demo executable and the 
+respective 'C' and OBJECT files.
+

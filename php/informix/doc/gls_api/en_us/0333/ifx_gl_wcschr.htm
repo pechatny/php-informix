@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_wcschr</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_wcschr - search for the first occurrence of a character in a string
+<hr></h2>
+
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+gl_wchar_t *ifx_gl_wcschr(gl_wchar_t *wcs, int wcs_char_length, gl_wchar_t wc)
+</b></pre>
+
+<h2>DESCRIPTION</h2>
+This function locates the first occurrence of <i>wc</i> in the
+wide-character string <i>wcs</i>.
+<p>
+If <i>wcs_char_length</i> is the value
+<a href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a>
+then the function
+will assume that <i>wcs</i> is a null-terminated string; otherwise the function assumes that <i>wcs_char_length</i> is the number of characters in the wide-character
+string.
+See <a href="memmgmt.htm#.wcterm">Wide-Character String Termination</a>
+for more general information about <i>wcs_char_length</i>.
+
+<h2>RETURN VALUE</h2>
+This function returns the pointer to the first occurrence of <i>wc</i> in
+<i>wcs</i>. If <i>wc</i> is not found in <i>wcs</i>, then this function
+returns NULL and sets <a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>() to zero.
+
+<h2>ERRORS</h2>
+If an error has occurred, this function returns NULL and sets
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>() to one of the following,
+<DL>
+<dt>[IFX_GL_PARAMERR]<dd><i>wcs_char_length</i> is not equal to <a href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> and is not greater than or equal to zero.
+</DL>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_wcsrchr.htm">ifx_gl_wcsrchr</a>()
+<a href="ifx_gl_mbschr.htm">ifx_gl_mbschr</a>()
+<a href="ifx_gl_mbsrchr.htm">ifx_gl_mbsrchr</a>()
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.
+
+</body>
+</html>

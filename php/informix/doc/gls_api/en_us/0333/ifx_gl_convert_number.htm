@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_convert_number</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_convert_number - Convert a number string to an internal representation.
+<hr></h2>
+
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+int ifx_gl_convert_number(mi_decimal *money, char *decstr, char *format)
+</b></pre>
+<h2>DESCRIPTION</h2>
+
+This function converts the number string stored in <i>decstr</i> into
+an internal representation. The internal representation is stored in 
+the mi_decimal structure pointed to by <i>money</i> in the format
+specified by <i>format</i>.  
+
+<p>If <i>format</i> is NULL, then the format is
+determined from the LC_NUMERIC section of the current GLS locale.
+
+<p>If <i>format</i> is not NULL, then it must point to a string which
+follows the rules described in the FORMAT section below.
+
+<h2>FORMAT</h2>
+
+The format is composed of white spaces, ordinary characters and one
+conversion specification. One or more whitespaces in <i>format</i>
+causes skipping over one or more whitespaces in <i>decstr</i>.  Each
+ordinary character in <i>format</i> is compared with that in
+<i>decstr</i>. Any mismatch is reported as an error.
+
+<p>The conversion specification consists of a % character and a
+terminating conversion character that determines the type of conversion,
+with optional modifiers in between. 
+
+<p>Only one conversion specification is allowed in <i>format</i>.
+
+<p>The following conversion specifications are supported.
+
+<dl>
+<dt>%b<dd>Matches a binary integer.
+<dt>%d, %i<dd>Matches a decimal integer.
+<dt>%e<dd>Matches a floating point number
+<dt>%E<dd>Same as in %e.
+<dt>%f<dd>Same as in %e.
+<dt>%g<dd>Same as in %e.
+<dt>%G<dd>Same as in %e.
+<dt>%o<dd>Matches an octal integer.
+<dt>%q<dd>Matches a base-4 integer.
+<dt>%u<dd>Matches an unsigned decimal integer.
+<dt>%x<dd>Matches a hexadecimal integer.
+<dt>%X<dd>Same as in %x.
+</dl>
+<p>
+If a conversion specification does not correspond to any of the above,
+the behavior is undefined.
+
+<h4>Modified Conversion Specifiers</h4>
+
+Some conversion specifiers can be modified by putting modifier characters 
+between the % and the type specifier to indicate that an alternative format 
+is expected from <i>decstr</i>. The form of these modifiers is as follows.
+
+
+<pre>[-][w][.p]</pre>
+
+<p>The square brackets indicate that the modifier is optional.
+
+<p>A minus sign directly after the % indicates that the first character
+of <i>decstr</i> is expected to be the first character of the value to
+be converted.  Whitespace in <i>decstr</i> won't be skipped, but
+reported as error.
+
+<p>w is a decimal value which specifies the maximum number of characters to 
+be read from <i>decstr</i>. 
+
+<p>p is a decimal value that represents the minimum number of
+characters that should be read. If less than p characters have been
+read, it is considered to be an error unless there is left
+justification, in which case trailing blanks are scanned over to read
+the required number of characters.
+
+
+<h2>RETURN VALUES</h2>
+On success, this function returns 0.<br>
+On failure, this function returns -1.
+
+<h2>ERRORS</h2>
+
+If an error has occurred, this function returns -1 and
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno()</a> returns,
+
+<dl>
+<dt>[IFX_GL_INVALIDFMT]<dd>The format control string 'format' is invalid.
+<dt>[IFX_GL_PARAMERR]<dd>The type specifier is invalid.
+<dt>[IFX_GL_ENOMEM]<dd>memory allocation failure.
+</dl>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_format_number.htm">ifx_gl_format_number</a>(),
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.
+</body>
+</html>

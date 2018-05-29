@@ -1,0 +1,166 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_format_number</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_format_number - Format a number value.
+
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+int ifx_gl_format_number(char *numstr,
+                         int numstrbytes,
+                         mi_number *number,
+                         char *format)
+</b></pre>
+<h2>DESCRIPTION</h2>
+
+This function creates a string from the the value represented by the
+mi_number structure pointed to by <i>number</i> using the format
+specified by <i>format</i>.  The resulting string is stored in the
+buffer pointed to by <i>numstr</i> and <i>numstrbytes</i> is the size
+of the output buffer.
+
+<p>If <i>format</i> is NULL, then the format is determined from the
+current GLS locale. 
+
+<p>
+If <i>format</i> is not NULL, then it must point to a string which
+follows the rules described in the FORMAT section below.
+
+<h2>FORMAT</h2>
+
+The format string consists of one conversion specification and
+ordinary characters. The conversion specification consists of a %
+character and a terminating conversion character that determines the
+conversion specification's behavior, with optional modifiers in
+between. All ordinary characters (including the terminating null
+character) are copied unchanged into the array.  The conversion
+specification is replaced with a string that represents the value in
+the <i>number</i> argument.
+
+<p>Only one conversion specification is
+allowed in the format string.
+
+<dl>
+<dt>%b<dd>is replaced by the binary representation of <i>number</i>.
+<dt>%d, %i<dd>
+is replaced by the decimal representation of <i>number</i>. 
+<dt>%e<dd>
+is replaced by the style [-]d.ddde[+|-]dd of <i>number</i>. 
+<dt>%E<dd>
+is replaced by the style [-]d.dddE[+|-]dd of <i>number</i>. 
+<dt>%f<dd>
+is replaced by the style [-]ddd.ddd of <i>number</i>. 
+The default precision is 6.
+<dt>%g<dd>
+is replaced by the style of %f or %e. %e will be used only if the converted 
+exponent is less than -4 or greater than or equal to the precision. 
+The precision specifies the number of significant digits. Trailing zeros are 
+removed from the fractional portion of the result.
+<dt>%G<dd>
+same as in %g except the replacement of %E for %e.
+<dt>%o<dd>
+is replaced by the octal representation of <i>number</i>. 
+<dt>%q<dd>
+is replaced by the base-4 representation of <i>number</i>. 
+<dt>%u<dd>
+is replaced by the unsigned decimal representation of <i>number</i>. 
+<dt>%x<dd>
+is replaced by the hexadecimal representation of <i>number</i>,
+using the letters abcdef.
+<dt>%X<dd>
+same as in %x, but use ABCDEF instead of abcdef.
+</dl>
+
+<p>If a conversion specification does not correspond to any of the above,
+the behavior is undefined.
+
+<h4>Modified Conversion Specifiers</h4>
+
+Some conversion specifiers can be modified by putting modifier
+characters between the % and the type specifier to indicate that an
+alternative format or specification should be used.  If the
+alternative format or specification does not exist for the current
+locale, the behavior will be as if unmodified conversion
+specifications were used.
+
+<dl>
+<dt>'<dd>
+Separate the significant digits of the converted number with the grouping 
+character defined in the locale, according to the grouping format also defined
+in the locale.
+<dt>+<dd>
+The result of a signed conversion will always begin with a positive or negative
+sign defined in the locale.
+<dt>-<dd>
+The result of the conversion will be left-justified within the field.
+<dt>space<dd>
+If the beginning of a signed conversion is not a sign, space will be prefixed.
+Ignore if the + modifier exists.
+<dt>#<dd>
+Convert the value to an alternate form. For o conversion, the first digit of 
+the result is forced to be zero. For x (or X) conversion, a non-zero result 
+will have a leading "0x" (or "0X"). For e,E,f,g,G conversions, the result will 
+always have a radix character.
+<dt>0<dd>
+Leading zeros are used to pad to the field width. Ignore if - modifier exists.
+</dl>
+
+<h4>Field Width and Precision</h4>
+
+An optional field width and precision specification can 
+follow the initial % of the conversion specification
+according to the following.
+
+<pre>[-|0][w[.p]]</pre>
+
+<p>If the value begins with a minus (-) then the field
+will be left justified and padded with spaces on the right. If the
+value begins with a zero (0) then the field will be right justified
+and padded with zeros on the left. Otherwise, the value will be right
+justified and padded with spaces on the left.
+
+<p>w is a decimal value which specifies a minimum field width for the
+conversion. 
+
+<p>The field width specifier w may be followed by a precision directive
+defined to be a period followed by a decimal value.  
+For d,o,u,x and X conversions, p gives the minimum number of digits to appear.
+For e,E and f conversions, p gives the number of digits to appear after the 
+radix character. For g and G conversions, p specifies the maximum number of 
+significant digits. For s and ls conversions, p specifies the maximum number of
+characters to be printed.
+
+<h2>RETURN VALUES</h2>
+On success, this function returns 0.<br>
+On failure, this function returns -1.
+
+<h2>ERRORS</h2>
+
+If an error has occurred, this function returns -1 and
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno()</a> returns,
+
+
+<dl>
+<dt>[IFX_GL_INVALIDFMT]<dd>The format control string 'format' is invalid.
+<dt>[IFX_GL_PARAMERR]<dd>The type specifier is invalid.
+<dt>[IFX_GL_E2BIG]<dd>Operation would overflow buffer.
+</dl>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_convert_number.htm">ifx_gl_convert_number</a>(),
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.
+</body>
+</html>

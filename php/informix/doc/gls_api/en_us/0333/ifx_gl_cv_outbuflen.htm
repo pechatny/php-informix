@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_cv_outbuflen</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_cv_outbuflen
+- calculates an approximation of the number of bytes for codeset conversion
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>
+#include &lt;ifxgls.h&gt;
+int ifx_gl_cv_outbuflen(char *dstcodeset, char *srccodeset, int srcbytes);
+</b></pre>
+
+<h2>DESCRIPTION</h2>
+This function calculates either exactly the number of bytes that will
+be required by a destination buffer of codeset converted multi-byte
+characters or a close over-approximation of the number. The argument
+<i>srcbytes</i> is the number of bytes in the buffer of multi-byte
+characters to be codeset converted.
+<p>
+The codesets, <i>srccodeset</i>
+and <i>dstcodeset</i>, may be locale specifiers
+(for example, "de_de.8859-1" or "ja_jp.ujis") or code set names found in the file $INFORMIXDIR/gls/cm<i>X</i>/registry (for example, "8859-1" or "ujis").  The
+macro, <a href="macros.htm#.IFX_GL_PROC_CS">IFX_GL_PROC_CS</a>, may be passed
+as <i>srccodeset</i>
+or <i>dstcodeset</i> to specify the code set of the current processing locale.
+Depending on the context, the value of <a href="macros.htm#.IFX_GL_PROC_CS">IFX_GL_PROC_CS</a> is based on either the
+client's environment, or the database which the server is currently accessing.
+<p>
+If the value returned by this function is not equal to <i>srcbytes</i>,
+then codeset conversion of multi-byte characters cannot be done in-place. A
+separate multi-byte destination buffer must be allocated.  However, if
+the value returned by this function is exactly equal to <i>srcbytes</i>,
+then multi-byte codeset conversion can be done in-place.
+<h2>RETURN VALUES</h2>
+If a buffer of one or more multi-byte characters contains
+<i>srcbytes</i> bytes, then this function returns the number of bytes
+required to store the those multi-byte characters after they have
+been codeset converted.  -1 is returned if an error occurs.
+
+<h2>ERRORS</h2>
+If an error has occurred, this function returns -1 and sets
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>() to one of the
+following,
+<dl>
+<DT>[IFX_GL_FILEERR]
+<DD>Retrieving the conversion information for the specified
+    codesets failed.  This may be due to invalid codeset names,
+    a missing registry file, a missing codeset conversion object file or
+    one with an incorrect format, or a lack of memory for the codeset
+    conversion object.
+</dl>
+
+<h2>APPLICATION USAGE</h2>
+To determine the length of a codeset conversion output buffer from an
+input buffer, you can use the following:
+<pre>
+  int dstbytes;
+  gl_mchar_t *dstmbs;
+  conv_state_t state;
+
+  dstbytes = ifx_gl_cv_outbuflen("ujis", "sjis", srcbytes);
+  dstmbs = (gl_mchar_t *) malloc(dstbytes);
+
+  state.first_frag = 1;
+  state.last_frag = 1;
+  if (ifx_gl_cv_mconv(state, &amp;dstmbs, &amp;dstbytes, "ujis"
+                             &amp;srcmbs, &amp;srcbytes, "sjis") == -1 )
+</pre>
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_conv_needed.htm">ifx_gl_conv_needed</a>()
+<a href="ifx_gl_cv_mconv.htm">ifx_gl_cv_mconv</a>()
+<a href="ifx_gl_cv_sb2sb_table.htm">ifx_gl_cv_sb2sb_table</a>()
+<a href="macros.htm#.IFX_GL_PROC_CS">IFX_GL_PROC_CS</a>
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.<tt> </tt>
+</body>
+</html>

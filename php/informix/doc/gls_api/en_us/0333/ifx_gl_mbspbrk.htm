@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_mbspbrk</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_mbspbrk - find multi-byte character in multi-byte string
+<hr></h2>
+
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+gl_mchar_t *ifx_gl_mbspbrk(gl_mchar_t *mbs1, int mbs1_byte_length,
+		           gl_mchar_t *mbs2, int mbs2_byte_length)
+</b></pre>
+
+<h2>DESCRIPTION</h2>
+
+This function searches for the first occurrence in the multi-byte
+string <i>mbs1</i> of any multi-byte character from the string <i>mbs2</i>.
+<p>
+If <i>mbs1_byte_length</i> is the value <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> then the function will
+assume that <i>mbs1</i> is a null-terminated string;
+otherwise the function assumes that <i>mbs1_byte_length</i> is the
+number of bytes in <i>mbs1</i>.
+If <i>mbs2_byte_length</i> is the value <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> then the function will
+assume that <i>mbs2</i> is a null-terminated string;
+otherwise the function assumes that <i>mbs2_byte_length</i> is the
+number of bytes in <i>mbs2</i>.
+See <a href="memmgmt.htm#.mbterm">Multi-Byte Character String Termination</a>
+for more general information about these lengths.  
+
+<h2>RETURN VALUES</h2>
+
+This function returns the pointer to the first occurrence
+in <i>mbs1</i> of any character from <i>mbs2</i>. If no character in <i>mbs2</i> is not found in <i>mbs1</i>,
+then this function returns NULL and sets <a
+href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>() to zero.
+
+<h2>ERRORS</h2>
+If an error has occurred, this function returns NULL and sets
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>()
+to one of the following,
+<DL>
+<DT>[IFX_GL_PARAMERR]<DD>Either <i>mbs1_byte_length</i> is not equal to <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> and is not greater than or equal to zero, or <i>mbs2_byte_length</i> is not equal to <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> and is not greater than or equal to zero.
+<DT>[IFX_GL_TERMMISMAT]<DD>Either <i>mbs1_byte_length</i> is equal to <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> and <i>mbs2_byte_length</i> is greater than or equal to zero or <i>mbs1_byte_length</i> is greater than or equal to zero and <i>mbs2_byte_length</i> is equal to  <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a>
+<DT>[IFX_GL_EILSEQ]<DD>Either <i>mbs1</i> or <i>mbs2</i> contains an invalid multi-byte character
+<dt>[IFX_GL_EINVAL]<dd>
+Either the function cannot determine whether the last character of <i>mbs1</i> is a valid multi-byte
+character, because it would need to read more than <i>mbs1_byte_length</i> bytes from
+<i>mbs1</i>, or the function cannot determine whether the last character of <i>mbs2</i> is a valid multi-byte
+character, because it would need to read more than <i>mbs2_byte_length</i> bytes from <i>mbs2</i>.
+See <a href="memmgmt.htm#.consistent">Keeping Multi-Byte Strings Consistent</a> for more information about this error.
+</DL>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_mbschr.htm">ifx_gl_mbschr</a>()
+<a href="ifx_gl_mbsrchr.htm">ifx_gl_mbsrchr</a>()
+<a href="ifx_gl_wcschr.htm">ifx_gl_wcschr</a>()
+<a href="ifx_gl_wcsrchr.htm">ifx_gl_wcsrchr</a>()
+<a href="ifx_gl_wcspbrk.htm">ifx_gl_wcspbrk</a>()
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.
+
+</body>
+</html>

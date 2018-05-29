@@ -1,0 +1,1962 @@
+__________________________________________________________________________
+
+Mon Oct 16 15:13:48 MSK 2017
+
+Free Memory: 10771 kB
+Total Memory: 61056 kB
+
+2 Command Line Args:
+0:  -m
+1:  CONSOLE
+
+java.class.path:
+    /tmp/install.dir.31811/InstallerData
+    /tmp/install.dir.31811/InstallerData/installer.zip
+
+ZGUtil.CLASS_PATH:
+    /tmp/install.dir.31811/InstallerData
+    /tmp/install.dir.31811/InstallerData/installer.zip
+
+sun.boot.class.path:
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/amd64/compressedrefs/jclSC170/vm.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/se-service.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/math.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/jlm.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/ibmorb.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/ibmorbapi.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/ibmcfw.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/ibmpkcs.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/ibmcertpathfw.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/ibmjgssfw.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/ibmjssefw.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/ibmsaslfw.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/ibmjcefw.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/ibmjgssprovider.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/ibmjsseprovider2.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/ibmcertpathprovider.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/xmldsigfw.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/xml.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/charsets.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/resources.jar
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/rt.jar
+
+java.ext.dirs:
+    /tmp/install.dir.31811/Linux/resource/jre/jre/lib/ext
+
+java.version                  == 1.7.0 (Java 1)
+java.vm.name                  == IBM J9 VM
+java.vm.vendor                == IBM Corporation
+java.vm.version               == 2.6
+java.vm.specification.name    == Java Virtual Machine Specification
+java.vm.specification.vendor  == Sun Microsystems Inc.
+java.vm.specification.version == 1.0
+java.specification.name       == Java Platform API Specification
+java.specification.vendor     == Sun Microsystems Inc.
+java.specification.version    == 1.7
+java.vendor                   == IBM Corporation
+java.vendor.url               == http://www.ibm.com/
+java.class.version            == 51.0
+java.library.path             == /tmp/install.dir.31811/Linux/resource/jre/jre/lib/amd64/compressedrefs:/tmp/install.dir.31811/Linux/resource/jre/jre/lib/amd64:/usr/lib
+java.compiler                 == j9jit26
+java.home                     == /tmp/install.dir.31811/Linux/resource/jre/jre
+java.io.tmpdir                == /tmp
+os.name                       == Linux
+os.arch                       == amd64
+os.version                    == 4.10.0-37-generic
+path.separator                == :
+file.separator                == /
+file.encoding                 == UTF-8
+user.name                     == root
+user.home                     == /root
+user.dir                      == /tmp/install.dir.31811
+user.language                 == en
+user.region                   == null
+__________________________________________________________________________
+
+Installed Feature(s) SDK, SDK-CPP, SDK-CPP-DEMO, SDK-ESQL, SDK-ESQL-DEMO, SDK-ESQL-ACM, SDK-LMI, SDK-ODBC, SDK-ODBC-DEMO, DBA-DBA, GLS, GLS-WEURAM, GLS-EEUR, GLS-JPN, GLS-KOR, GLS-CHN, GLS-OTH of Informix Client-SDK
+
+Install Begin: OCTOBER 16, 2017 3:10:58 PM MSK
+Install End: OCTOBER 16, 2017 3:13:41 PM MSK
+
+Installed by InstallAnywhere 16.5 Premier Build 4860
+
+
+User Interactions
+-----------------
+
+
+#Indicate whether the license agreement been accepted
+#----------------------------------------------------
+LICENSE_ACCEPTED=TRUE
+
+#Installation Location
+#---------------------
+USER_INSTALL_DIR=/opt/informix
+
+#Choose ClientSDK Features to Install
+#------------------------------------
+CHOSEN_FEATURE_LIST=SDK,SDK-CPP,SDK-CPP-DEMO,SDK-ESQL,SDK-ESQL-DEMO,SDK-ESQL-ACM,SDK-LMI,SDK-ODBC,SDK-ODBC-DEMO,DBA-DBA,GLS,GLS-WEURAM,GLS-EEUR,GLS-JPN,GLS-KOR,GLS-CHN,GLS-OTH
+CHOSEN_INSTALL_FEATURE_LIST=SDK,SDK-CPP,SDK-CPP-DEMO,SDK-ESQL,SDK-ESQL-DEMO,SDK-ESQL-ACM,SDK-LMI,SDK-ODBC,SDK-ODBC-DEMO,DBA-DBA,GLS,GLS-WEURAM,GLS-EEUR,GLS-JPN,GLS-KOR,GLS-CHN,GLS-OTH
+CHOSEN_INSTALL_SET=Custom
+
+#Install
+#-------
+-fileOverwrite_/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk.lax=Yes
+-fileOverwrite_/opt/informix/uninstall/uninstall_clientsdk/ids_unlink.xsl=Yes
+-fileOverwrite_/opt/informix/tmp/csdk_chgownergroup.xsl=Yes
+
+Summary
+-------
+
+Installation: Successful.
+
+622 Successes
+0 Warnings
+0 NonFatalErrors
+0 FatalErrors
+
+Action Notes:
+
+None
+
+Install Log Detail:
+
+Check Disk Space:         /opt/IBM/informix
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - Required Disk Space: 290,179,535; Free Disk Space: 193,856,081,920
+
+
+
+
+
+Custom Action:            com.ibm.informix.install.ia.FixVariables
+                          Status: SUCCESSFUL
+
+
+
+
+
+
+Custom Action:            com.ibm.informix.install.IASetDefaults.NonRoot
+                          Status: SUCCESSFUL
+
+
+Custom Action:            com.zerog.ia.customcode.util.fileutils.ExtractToFile
+                          Status: SUCCESSFUL
+
+Custom Action:            com.ibm.informix.install.ia.SetUserInstallDir
+                          Status: SUCCESSFUL
+
+
+Custom Action:            com.ibm.informix.install.ia.UnzipLicenseFiles
+                          Status: SUCCESSFUL
+
+Check Disk Space:         /opt/informix
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - Required Disk Space: 290,179,535; Free Disk Space: 194,446,094,336
+
+Custom Action:            com.ibm.informix.install.ProcessFeatureTree
+                          Status: SUCCESSFUL
+
+Custom Action:            com.zerog.ia.customcode.util.fileutils.ExtractToFile
+                          Status: SUCCESSFUL
+
+Custom Action:            com.zerog.ia.customcode.util.fileutils.ExtractToFile
+                          Status: SUCCESSFUL
+
+Custom Action:            com.ibm.informix.install.ia.ProcessDirectories
+                          Status: SUCCESSFUL
+
+
+
+
+Check Disk Space:         /opt/informix
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - Required Disk Space: 290,179,535; Free Disk Space: 194,444,505,088
+
+Install Directory:        /opt/informix/
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/ids_master_doc.xml
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/messagefiles
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/brand
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/rofferr
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/chkenv
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/check_version
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/infxmsg
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/msgfile
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/glfiles
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/finderr
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/its_ecleants
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/its_ecreatets
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/its_eload
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/its_stager
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/libnetstub.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/iasfs09b.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/iasft09b.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/icsss09a.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/isqls09b.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/ifgisqls09b.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/icobsqls09b.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/isqlt09b.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/igens09a.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/igent09a.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/iosls09a.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/ioslt09a.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/igl4a304.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/iglxa304.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/isxas09a.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/isxat09a.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/cli/iclis09b.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/cli/idmrs09a.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/igo4a304.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/cli/iclit09b.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/installc
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/sqlhosts.std
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/sqlhosts.demo
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/odbc.ini
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/odbcinst.ini
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/sqlhosts.cmsm.sample
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/sqlhosts.cmsm.sample.all
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/sqlhosts.cmsm.sample.client
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/sqlhosts.cmsm.sample.er
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/cmalarmprogram.sh
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/glsfiles
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/client/csm/iencs11a.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/client/csm/igsss11a.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/client/csm/ispws11a.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/ccals.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/password.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cerrmsg.txt
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cmls.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./release/en_us/0333/csdk_lux_relnotes.html
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./release/en_us/0333/INFODBC_4.1
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./release/en_us/0333/clinst.pdf
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./release/en_us/0333/CPP_4.1
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./release/en_us/0333/GLSAPIREL.HTML
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./release/en_us/0333/GLSAPI_6.0
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/c++/ic++s02a.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/c++/ic++t02a.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/citoxmsg.pam
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/ccsm.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/ccss.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/ceami.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/c++.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cisam.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cli.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cmiapi.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cmls2.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnals.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnerm.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnet.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnetsrv.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/crds.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/csecure.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cshell.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/csql.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/csqli.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cutil.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cxopen.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cxps.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/necc.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/nesql.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/nls.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/os.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/rdsterm.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/oncmsm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/onpassword
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/cmsm.cfg.sample
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/cmsm.cfg.sample.all
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/cmsm.cfg.sample.er
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/citoxmsg.pam
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/ccsm.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/ccss.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/ceami.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cisam.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cli.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cmiapi.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cmls2.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnals.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnerm.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnet.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnetsrv.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/crds.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/csecure.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cshell.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/csql.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/csqli.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cutil.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cxopen.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cxps.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/necc.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/nesql.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/nls.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/os.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/rdsterm.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/oncmsm.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./release/en_us/0333/ESQLC_4.1
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix//
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - No files to install
+
+Install File:             /opt/informix/./msg/citoxmsg.pam
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/dmi/idmis09a.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/dmi/idmit09a.so
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/ccsm.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/ccss.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/ceami.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cisam.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cli.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cmiapi.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cmls2.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnals.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnerm.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnet.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnetsrv.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/crds.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/csecure.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cshell.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/csql.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/csqli.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cutil.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cxopen.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cxps.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/necc.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/nesql.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/nls.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/os.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/rdsterm.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/citoxmsg.pam
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/cli3xmsg.pam
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/clixmsg.pam
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/ccsm.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/ccss.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/ceami.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cisam.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cli.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cmiapi.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cmls2.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnals.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnerm.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnet.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cnetsrv.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/coptical.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/crds.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/csecure.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cshell.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/csql.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/csqli.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cutil.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cxopen.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/cxps.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/necc.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/nesql.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/nls.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/os.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/rdsterm.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./release/en_us/0333/INFODBC_4.1
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./gskit/README
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./gskit/gskcrypt64-8.0.50.75.linux.x86_64.tar
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./gskit/gskssl64-8.0.50.75.linux.x86_64.tar
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./gskit/installgskit
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./properties/version/IBM_Informix_Client_SDK-4.10.0.swtag
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/esqldemo
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/crtcmap
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/ifx_getversion
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/sqliprint
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/its_ecleants
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/its_ecreatets
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/its_eload
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/its_stager
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/netstub.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/libifasf.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/libthasf.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/libifcss.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/libdrda.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/esqlc
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/esqlmf
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/eprotect
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/libifsql.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/libiffgisql.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/libifcobsql.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/libthsql.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/libifgen.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/libthgen.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/libifos.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/libthos.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/checkapi.o
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/libifgls.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/libifglx.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/libifxa.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/ixacursor.o
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/esql/libthxa.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/cli/libifcli.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/cli/libifdmr.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/cli/libthcli.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/ClientSDK-cr
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/clientsdkfiles
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/ASF-cr
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/GENLIB-cr
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/OSLIB-cr
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/SQLI-cr
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/GLS-cr
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/CLI-cr
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/DMI-cr
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/ESQL-cr
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/setup.odbc
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/cli/infxsql.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/cli/sqlext.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_case_conv_outbuflen.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_conv_needed.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_convert_date.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_convert_datetime.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_convert_money.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_convert_number.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_cv_mconv.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_cv_outbuflen.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_cv_sb2sb_table.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_format_date.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_format_datetime.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_format_money.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_format_number.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_getmb.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_init.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismalnum.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismalpha.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismblank.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismcntrl.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismdigit.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismgraph.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismlower.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismprint.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismpunct.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismspace.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismupper.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismxdigit.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswalnum.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswalpha.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswblank.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswcntrl.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswdigit.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswgraph.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswlower.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswprint.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswpunct.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswspace.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswupper.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswxdigit.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_lc_errno.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mb_loc_max.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mblen.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbscat.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbschr.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbscoll.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbscpy.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbscspn.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbslen.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsmbs.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsncat.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsncpy.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsnext.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsntsbytes.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsntslen.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbspbrk.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsprev.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsrchr.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsspn.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbstowcs.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbtowc.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_putmb.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_tomlower.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_tomupper.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_towlower.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_towupper.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcscat.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcschr.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcscoll.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcscpy.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcscspn.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcslen.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcsncat.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcsncpy.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcsntslen.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcspbrk.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcsrchr.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcsspn.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcstombs.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcswcs.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wctomb.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/index.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/is.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/macros.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/memmgmt.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./doc/gls_api/en_us/0333/to.htm
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./etc/CPLUS-cr
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/c++/libifc++.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/c++/libthc++.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/esql
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/c++/itcppop.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/c++/itcppval.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/c++/it.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/c++/Makefile
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/c++/queryex.cpp
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/c++/README
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/esql
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/blob.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/collct.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/datetime.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/decimal.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/gls.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/ifxgls.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/ifxtypes.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/int8.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/locator.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/sqlca.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/sqlda.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/sqlhdr.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/sqliapi.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/sqlstype.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/sqltypes.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/sqlxtype.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/srvinfo.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/value.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/varchar.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/esql/xa.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/blobload.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/bycmpr.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/bycopy.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/byfill.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/byleng.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/collect.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/create_clob.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/decadd.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/deccmp.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/deccopy.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/deccvasc.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/deccvdbl.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/deccvint.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/deccvlong.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/decdiv.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dececvt.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/decfcvt.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/decmul.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/decround.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/decsub.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dectoasc.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dectodbl.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dectoint.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dectolong.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dectrunc.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/demo1.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/demo2.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/demo3.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/demo4.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dispcat_pic.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dtaddinv.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dtcurrent.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dtcvasc.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dtcvfmtasc.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dtextend.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dtsub.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dtsubinv.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dttoasc.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dttofmtasc.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dyn_sql.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/exp_chk.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/getcd_me.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/getcd_nf.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/getcd_of.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/getdiag.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/get_lo_info.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/incvasc.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/incvfmtasc.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/inpfuncs.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/int8add.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/int8cvasc.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/int8cvdec.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/int8div.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/int8sub.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/int8toasc.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/int8todec.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/intoasc.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/intofmtasc.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/invdivdbl.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/invdivinv.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/invextend.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/invmuldbl.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/ldchar.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/lvarptr.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/makefile
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/pamdemo.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/prdesc.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rdayofweek.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rdefmtdate.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rdownshift.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rfmtdate.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rfmtdec.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rfmtdouble.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rfmtlong.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rgetlmsg.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rgetmsg.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/risnull.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rjulmdy.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rleapyear.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rmdyjul.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rsetnull.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rstod.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rstoi.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rstol.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rstrdate.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rtoday.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rtypalign.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rtypmsize.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rtypname.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rtypwidth.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/rupshift.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/sqgetdbs.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/stcat.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/stchar.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/stcmpr.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/stcopy.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/stleng.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/timeout.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/unload.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/updcd_me.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/updcd_nf.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/updcd_of.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/upd_lo_descr.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/varchar.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/mkstores
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dbload1.cmd
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/dbload2.cmd
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/sqldetachdemo.ec
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/call_type.unl
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/catalog.unl
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/cust_calls.unl
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/customer.unl
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/items.unl
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/manufact.unl
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/orders.unl
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/state.unl
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/stock.unl
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/cn_10001.gif
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/cn_10027.gif
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/cn_10031.gif
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/cn_10046.gif
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/cn_10049.gif
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/cn_10001.rs
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/cn_10027.rs
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/cn_10031.rs
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/cn_10046.rs
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/cn_10049.rs
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/esqlc/README
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix//
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - No files to install
+
+Install File:             /opt/informix/./bin/esql
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/blob.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/collct.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/datetime.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/decimal.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/gls.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/ifxgls.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/int8.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/locator.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/memdur.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/miback.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/miconv.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/mi.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/milib.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/miloback.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/milo.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/mitrace.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/mitypes.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/sqlca.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/sqlda.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/sqlhdr.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/sqlstype.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/sqltypes.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/value.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/varchar.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/dmi/libthdmi.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./lib/dmi/libifdmi.a
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/ifxtypes.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/sqlxtype.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/dmi/xa.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/esql
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./incl/cli/infxcli.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/advert.txt
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/insert.txt
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/blkinsrt.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/blkinsrtW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/catalog.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/catalogW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/dbcreate.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/dbcreate.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/dbcreateW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/dbcreateW.h
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/dbdrop.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/dbdropW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/desc.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/descW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/distsel.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/distselW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/item_1.txt
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/item_2.txt
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/item_3.txt
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/item_4.txt
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/locreate.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/locreateW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/loinfo.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/loinfoW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/loselect.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/loselectW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/makefile
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/OnePhaseCommitRollback.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/posupdt.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/posupdtW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/proc.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/procW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/rccreate.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/rccreateW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/rcselect.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/rcselectW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/rcupdate.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/rcupdateW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/readme.txt
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/rsetinfo.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/rsetinfoW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/transact.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/transactW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/OutInOutParamBlob.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./demo/cli/OutInOutParamBlobW.c
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./bin/dbaccess
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/itoxmsg.pam
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/errmsg.txt
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/menukey.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/dbacc.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/dbacc.lmk
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/sql.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/isam.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/dbised.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/dbised.lmk
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/os.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/rds.iem
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/./msg/en_us/0333/netsrv.iem
+                          Status: SUCCESSFUL
+
+
+Custom Action:            com.ibm.lex.lap.ia.LAFiles_IA
+                          Status: SUCCESSFUL
+
+Install Directory:        /opt/informix/uninstall/
+                          Status: SUCCESSFUL
+
+Install Directory:        /opt/informix/uninstall/uninstall_clientsdk/
+                          Status: SUCCESSFUL
+
+Install Uninstaller:      Informix Client-SDK(Install All Uninstaller Components)
+                          Status: SUCCESSFUL
+
+Install Directory:        /opt/informix/jvm
+                          Status: SUCCESSFUL
+
+Install JRE:              /opt/informix/jvm
+                          Status: SUCCESSFUL
+
+
+Install File:             /opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk.lax
+                          Status: SUCCESSFUL
+
+Install Uninstaller:      Informix Client-SDK(Install All Uninstaller Components)
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/uninstall/uninstall_clientsdk/ids_unlink.xsl
+                          Status: SUCCESSFUL
+
+Install Directory:        /opt/informix/tmp/
+                          Status: SUCCESSFUL
+
+Install File:             /opt/informix/tmp/csdk_chgownergroup.xsl
+                          Status: SUCCESSFUL
+
+Install Merge Module:     $BUILD_SOURCE$/ibm_gls_Build_Output/Merge_Modules/Global_Language_Support.iam.zip
+                          Status: SUCCESSFUL
+
+Install Merge Module:     $BUILD_SOURCE$/ibm_gls_Build_Output/Merge_Modules/Global_Language_Support.iam.zip
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - Installing: SubInstaller1.zip
+
+Modify Text File - Single File:   /opt/informix/tmp/csdk_chgownergroup.xsl
+                          Status: SUCCESSFUL
+
+Perform XSL Transform:   No Target Chosen
+                          Status: SUCCESSFUL
+
+Modify Text File - Single File:   /opt/informix/tmp/csdk_unixpost.sh
+                          Status: SUCCESSFUL
+
+Execute Script/Batch file:   Post installation steps
+                          Status: SUCCESSFUL
+
+Execute Script/Batch file:   Post installation steps
+                          Status: SUCCESSFUL
+
+Modify Text File - Single File:   /opt/informix/tmp/csdk_chgownergroup.xsl.backup
+                          Status: SUCCESSFUL
+
+Perform XSL Transform:   No Target Chosen
+                          Status: SUCCESSFUL
+
+Modify Text File - Single File:   /opt/informix/RUNasroot.installclientsdk
+                          Status: SUCCESSFUL
+
+Execute Script/Batch file:   Add Execution permissions to RUNasroot.installclientsdk
+                          Status: SUCCESSFUL
+
+Execute Script/Batch file:   Run RUNasroot.installclientsdk (NOLEGACY)
+                          Status: SUCCESSFUL
+
+Execute Script/Batch file:   Change directory ownership
+                          Status: SUCCESSFUL
+
+Execute Script/Batch file:   Cleanup Scripts
+                          Status: SUCCESSFUL
+
+Install Directory:        /root/
+                          Status: SUCCESSFUL
+                          Additional Notes: NOTE - Directory already existed
+
+
+Custom Action:            com.ibm.informix.install.ia.FixVariables
+                          Status: SUCCESSFUL
+
+Modify Text File - Single File:   New File /opt/informix/etc/.lvers_csdk
+                          Status: SUCCESSFUL
+
+Execute Script/Batch file:   Perm/owner
+                          Status: SUCCESSFUL
+
+Custom Action:            com.ibm.informix.install.NonRootScriptGeneration
+                          Status: SUCCESSFUL
+
+Execute Command:          "/opt/informix/gskit/installgskit"
+                          Status: SUCCESSFUL
+

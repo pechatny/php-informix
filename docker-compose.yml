@@ -1,0 +1,103 @@
+version: "2.1"
+
+services:
+    web:
+        image: nginx:latest
+        networks:
+            rest_net:
+                aliases:
+                    - test.dev
+                    - register.local
+        ports:
+            - "81:80"
+            - "22:22"
+        environment:
+            - INFORMIXDIR=/var/lib/IBM/informix
+            - DB_LOCALE=ru_RU.1251
+            - CLIENT_LOCALE=ru_RU.1251
+        volumes:
+            #- ../../svnrapida/it/Production/services/:/var/www
+            #- ../../svnrapida/it/Production/services/paycom-gateway/:/var/www/paycom/
+            #- ../../svnrapida/it/Production/services/register/:/var/www/register/
+            - ../../paycom-og/:/var/www/paycom/htdocs/
+            - ../../paycomlib/:/var/www/paycomlib/
+            - ../../agents-offline/:/var/www/agents-payoffline/htdocs
+            - ../../catalogs-cron/:/var/www/catalogs/htdocs/
+            - ../../register/:/var/www/register/htdocs
+            - ../../paycom-cron/:/var/www/paycom-cron/htdocs/
+            - ../../configs/:/etc/configs/
+            - ../../etc/env:/etc/env
+            - ./nginx/site.conf:/etc/nginx/conf.d/site.conf
+            - ./nginx/register.conf:/etc/nginx/conf.d/register.conf
+            - ./nginx/paycom-gateway.conf:/etc/nginx/conf.d/paycom-gateway.conf
+            - ./nginx/paycom-og.conf:/etc/nginx/conf.d/paycom-og.conf
+            - ./nginx/paycom-updatedatabase.conf:/etc/nginx/conf.d/paycom-updatedatabase.conf
+            - ./nginx/testSymfony.conf:/etc/nginx/conf.d/testSymfony.conf
+            - ../../testPlatformSymfony/:/var/www/testSymfony/
+        links:
+            - php
+    php:
+        build: ./php
+        hostname: we-testphp.dev
+        networks:
+            - rest_net
+        environment:
+            - INFORMIXDIR=/var/lib/IBM/informix
+            - DB_LOCALE=ru_RU.1251
+            - CLIENT_LOCALE=ru_RU.1251
+        dns:
+            - 10.7.101.21
+            - 10.7.101.35
+            - 10.11.25.21
+        volumes:
+            #- ../../svnrapida/it/Production/services/:/var/www
+            #- ../../svnrapida/it/Production/codeception/:/var/codeception/
+            #- ../../svnrapida/it/Production/services/paycom-gateway/:/var/www/paycom/
+            - ../../paycomlib/:/var/www/paycomlib/
+            - ../../paycom-og/:/var/www/paycom/htdocs/
+            - ../../logs/paycom/:/var/www/paycom/logs/
+            - ../../logs/paycom-cron/:/var/www/paycom-cron/logs/
+            - ../../register/:/var/www/register/htdocs
+            - ../../agents-offline/:/var/www/agents-payoffline/htdocs
+            - ../../catalogs-cron/:/var/www/catalogs/htdocs/
+            - ../../paycom-cron/:/var/www/paycom-cron/htdocs/
+              #- ../../configs/database/:/etc/paycom/
+              #- ../../configs/credentials/:/var/www/paycom/credentials/
+            - ../../configs/:/etc/configs/
+            - ../../etc/env:/etc/env
+            #- ./php/php.ini:/usr/local/etc/php/php.ini
+              #- /home/dpechatnikov/.ssh:/root/.ssh/authorized_keys
+            - ../../testPlatformSymfony/:/var/www/testSymfony/
+            - ../../laravel5.4/:/var/www/laravel5.4/
+            - ./php/.ssh/:/root/.ssh/
+        links:
+            - mail
+            - pureftpd
+    mail:
+        image: tophfr/mailcatcher
+        networks:
+            - rest_net
+        ports:
+            - "1080:80"
+    pureftpd:
+       image: vimagick/pure-ftpd
+       ports:
+            - "21:21"
+       volumes:
+            - ./ftp/ftpuser:/home/ftpuser
+            - ./ftp/pure-ftpd:/etc/pure-ftpd
+       privileged: true           
+       networks:
+            - rest_net
+    #satis:
+        #image: ypereirareis/docker-satis:4.3
+        #volumes:
+            #- ./satis/config.json:/app/config.json
+        #ports:
+            #- "80:80"
+            #- "3333:3333"
+networks:
+      default:
+      rest_net:
+              # Use a custom driver
+              #     driver: custom-driver-1

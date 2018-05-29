@@ -1,0 +1,312 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_format_datetime</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_format_datetime - Format a datetime value.
+
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+int ifx_gl_format_datetime(char *datetimestr,
+                           int datetimebytes,
+                           mi_datetime *datetime,
+                           char *format)
+</b></pre>
+<h2>DESCRIPTION</h2>
+
+This function creates a string from the the mi_datetime structure
+pointed to by <i>datetime</i> using the format specified by
+<i>format</i>.  The resulting string is stored in the buffer pointed
+to by <i>datetimestr</i> and <i>datetimebytes</i> is the size of the output
+buffer.
+
+<p>If <i>format</i> is NULL, then the format is
+determined from the environment as follows:
+
+<ol>
+<li>If the DBTIME environment variable is set, then the datetime is formatted
+according to DBTIME.
+
+<li>If the GL_DATETIME environment variable is set, then the format is formatted 
+according to the specification of GL_DATETIME.
+
+<li>Otherwise the d_t_fmt setting of the current GLS locale is used.
+</ol>
+<p>
+If <i>format</i> is not NULL, then it must point to a string which
+follows the rules described in the FORMAT section below.
+
+<h2>FORMAT</h2>
+
+Each conversion specification is replaced by appropriate characters as
+desribed in the following list. The appropriate characters are
+determined by the current locale passed to this function and <i>datetime</i>.
+
+<dl>
+<dt>%a<dd>
+is replaced by the locale's abbreviated weekday name (see the 'abday'
+sub-category of the locale's LC_TIME category).
+<dt>%A<dd>
+is replaced by the locale's full weekday name (see the 'day' sub-category
+of the locale's LC_TIME category).
+<dt>%b<dd>
+is replaced by the locale's abbreviated month name (see the 'abmon' 
+sub-category of the locale's LC_TIME category).
+<dt>%B<dd>
+is replaced by the locale's full month name (see the 'mon' sub-category
+of the locale's LC_TIME category).
+<dt>%c<dd>
+the value of the 'd_t_fmt' sub-category of the locale's LC_TIME
+category is temporarily used as the format string.
+<dt>%C<dd>
+is replaced by the century number (the year divided by 100 
+and truncated to an integer as a decimal number
+[00-00].
+<dt>%d<dd>
+is replaced by the day of the month as a decimal number [01,31].
+<dt>%D<dd>
+is the same as %m/%d/%y.
+<dt>%e<dd>
+is replaced by the day of the month as a decimal number [1,31]; a single
+digit is preceeded by a space.
+<dt>%F[n]<dd>
+is replaced by the micro-second as a decimal number.
+An optional precision specification may follow the F.
+This value must be between 1 and 5.
+<dt>%iF[n]<dd>
+Is an Informix backward compatibility modifier which formats like the
+Informix DBTIME format %F. An optional precision specification may follow
+the F. This value must be between 1 and 5.
+<dt>%h<dd>
+same as %b.
+<dt>%H<dd>
+is replaced by the hour (24-hour clock) as a decimal number [00,23].
+<dt>%I<dd>
+is replaced by the hour (12-hour clock) as a decimal number [00,12].
+<dt>%j<dd>
+is replaced by the day of the year as a decimal number [001,366].
+<dt>%m<dd>
+is replaced by the month as a decimal number [01,12].
+<dt>%M<dd>
+is replaced by the minute as a decimal number [00,59].
+<dt>%n<dd>
+is replaced by a newline character.
+<dt>%p<dd>
+is replaced by the locale's equivalent of either a.m. or p.m. (see the 'am_pm'
+sub-category of the locale's LC_TIME category).
+<dt>%r<dd>
+the value of the 't_fmt_ampm' sub-category of the locale's LC_TIME
+category is temporarily used as the format string.
+<dt>%R<dd>
+is replaced by the time in 24 hour notation (%H:%M).
+<dt>%S<dd>
+is replaced by the second as a decimal number.
+<dt>%t<dd>
+is replaced by a tab character.
+<dt>%T<dd>
+is replaced by is replaced by the time (%H:%M:%S).
+<dt>%u<dd>
+Is replaced by the weekday as a decimal number [1,7], with 1
+representing Monday.
+<dt>%w<dd>
+is replaced by the weekday as a decimal number [0,6], with 0
+representing Sunday.
+<dt>%x<dd>
+the value of the 'd_fmt' sub-category of the locale's LC_TIME category is temporarily
+used as the format string.
+<dt>%X<dd>
+the value of the 't_fmt' sub-category of the locale's LC_TIME category is temporarily
+used as the format string.
+<dt>%y<dd>
+is replaced by year without century as a decimal number [00,99].
+<dt>%iy<dd>
+Is an Informix backward compatibility modifier which formats like the
+Informix DBDATE format Y2. This will print the two digit year offset.
+<dt>%Y<dd>
+is replaced by year with century as a decimal number [00,99].
+<dt>%iY<dd>
+Is an Informix backward compatibility modifier which formats like the
+Informix DBDATE format Y4. This will print the full four digit year.
+<dt>%%<dd>
+is replaced by %.
+
+</dl>
+<p>
+If a conversion specification does not correspond to any of the above,
+the behaviour is undefined.
+
+<h4>Modified Conversion Specifiers</h4>
+
+Some conversion specifiers can be modified by the E or O modifier
+characters to indicate that an alternative format or specification
+should be used rather than the one normally used by the unmodified
+conversion specifier. If the alternative format or specification does
+not exist for the current locale, the behavior will be as if unmodified
+conversion specifications were used.
+<dl>
+<dt>%Ec<dd>
+the value of the 'era_d_t_fmt' sub-category of the locale's LC_TIME
+category is temporarily used as the format string.
+<dt>%EC<dd>
+is replaced by the name of the base year (period) in the locale's
+alternative representation (see the 'era' sub-category of the locale's
+LC_TIME category).
+<dt>%Eg<dd>
+is replaced by the abbreviated name of the base year (period) in the locale's
+alternative representation (see the 'era' sub-category of the locale's
+LC_TIME category).
+<dt>%Ex<dd>
+the value of the 'era_d_fmt' sub-category of the locale's LC_TIME
+category is temporarily used as the format string.
+<dt>%EX<dd>
+the value of the 'era_t_fmt' sub-category of the locale's LC_TIME
+category is temporarily used as the format string.
+<dt>%Ey<dd>
+is replaced by the offset from %EC (year only) in the locale's
+alternative representation (see the 'era' sub-category of the locale's
+LC_TIME category).
+<dt>%EY<dd>
+is replaced by the full alternative year representation (see the 'era'
+sub-category of the locale's LC_TIME category).
+<dt>%Oe<dd>
+is replaced by the day of the month, using the locale's alternative
+numeric digits, filled as needed with leading spaces.
+<dt>%OH<dd>
+is replaced by the hour (24-hour clock) using the locale's alternative
+numeric digits
+<dt>%OI<dd>
+is replaced by the hour (12-hour clock) using the locale's alternative
+numeric digits
+<dt>%Om<dd>
+is replaced by the month using the locale's alternative numeric
+digits
+<dt>%OM<dd>
+is replaced by minutes using the locale's alternative numeric digits
+<dt>%OS<dd>
+is replaced by seconds using the locale's alternative numeric digits
+<dt>%Ou<dd>
+is replaced by the weekday as a number using the locale's alternative
+numeric digits (Monday=1).
+<dt>%Oy<dd>
+is replaced by the value of %Ey using the locale's alternative
+numeric digits.
+
+</dl>
+<p>
+
+<h4>Field Width and Precision</h4>
+
+<p>An optional justification, field width and precision specification can
+immediately follow the initial % of a directive according to the
+following:
+
+[-|0][&lt;width&gt;][.&lt;precision&gt;]
+
+<dl>
+<dt>[-|0]<dd>
+If the specification begins with a minus (-) then the field will be
+left justified and padded with spaces on the right. If the value
+begins with a zero (0) then the field will be right justified and
+padded with zeros on the left. Otherwise, the value will be right
+justified and padded with spaces on the left.
+
+<dt>[&lt;width&gt;]<dd>
+&lt;width&gt; is a decimal value which specifies a minimum field width for
+the conversion and the &lt;width&gt; is in terms of display width. &lt;width&gt; is ignored when scanning strings.
+
+<dt>[.&lt;precision&gt;]<dd>
+The field width specifier may be followed by a precision directive
+defined to be a period followed by a decimal value.  
+
+<p>For the C, d, e, Ey, F, H, iF, iy, iY, I, j, m, M, S, u, w, y and
+Y directives, the value of &lt;precision&gt; specifies the minimum number of
+digits to appear.  If a directive supplies fewer digits than specified
+by the precision, it will be padded with leading zeros.
+
+<p>For the a, A, b, B, EC, Eg, h, and p directives, the value of
+&lt;precision&gt; specifies the maximum number of characters to be used. If
+a value to be formatted has more characters than specified by the
+precision, the result will be truncated on the right.
+
+<p>The values of &lt;width&gt; and &lt;precision&gt; do not affect the c, Ec, Ex, 
+EX, EY, r, n, t, x, X or %.
+
+<p>The values of &lt;width&gt; and &lt;precision&gt; affect each element of the D, R,
+and T directives. For example %6.4D would be printed as
+"%6.4m/%6.4d/%6.4y".
+
+<p>The F and iF directives may be followed by an optional precision
+specification. For example, "%F3" means precision of 3.  The value of
+this precision must be between 1 and 5. If it is not between 1 and 5,
+then an error is returned.  This specification overrides the precision
+value between the % and the directive if it is given.
+
+<p>For the directives modified with O (Alternate Digits) the field width
+and relates to display width rather than actual number of digits. The
+precision is still the minimum number of digits printed.
+
+<p>The d, Ey, H, iF, iy, I, m, M, S, u, w, and y directives have a
+default precision of .2.
+
+<p>The j directive has a default precision of 3. 
+
+<p>The Y and iY directives have a default precision of 4.
+
+<p>The F directive has a default precision of 6.
+
+</dl>
+
+
+
+<h2>RETURN VALUES</h2>
+On success, this function returns 0.<br>
+On failure, this function returns -1.
+
+<h2>ERRORS</h2>
+
+If an error has occurred, this function returns -1 and
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno()</a> returns,
+
+<dl>
+<dt>[IFX_GL_EBADF]<dd>The format specifier is invalid.
+<dt>[IFX_GL_E2BIG]<dd>Operation would overflow buffer.
+<dt>[IFX_GL_EFRACRANGE]<dd>Fraction of  Second out of bounds.
+<dt>[IFX_GL_ESECONDRANGE]<dd>Second out of bounds.
+<dt>[IFX_GL_EMINUTERANGE]<dd>Minute out of bounds.
+<dt>[IFX_GL_EHOURRANGE]<dd>Hour out of bounds.
+<dt>[IFX_GL_EDAYRANGE]<dd>Day number out of bounds.
+<dt>[IFX_GL_EWKDAYRANGE]<dd>Week Day number out of bounds.
+<dt>[IFX_GL_EYDAYRANGE]<dd>Year Day number out of bounds.
+<dt>[IFX_GL_EMONTHRANGE]<dd>Month number out of bounds.
+<dt>[IFX_GL_EYEARRANGE]<dd>Year number out of bounds.
+<dt>[IFX_GL_EERAOFFRANGE]<dd>Era offset out of bounds.
+<dt>[IFX_GL_BADFRAC]<dd>Fraction could not be scanned.
+<dt>[IFX_GL_BADSECOND]<dd>Second could not be scanned.
+<dt>[IFX_GL_BADMINUTE]<dd>Minute could not be scanned.
+<dt>[IFX_GL_BADHOUR]<dd>Hour could not be scanned.
+<dt>[IFX_GL_BADDAY]<dd>Month Day could not be scanned.
+<dt>[IFX_GL_BADWKDAY]<dd>Week Day could not be scanned.
+<dt>[IFX_GL_BADYDAY]<dd>Year Day could not be scanned.
+<dt>[IFX_GL_BADMONTH]<dd>Month could not be scanned.
+<dt>[IFX_GL_BADYEAR]<dd>Year could not be scanned.
+<dt>[IFX_GL_BADERANAME]<dd>Era name not found.
+<dt>[IFX_GL_BADERAOFFSET]<dd>Era offset could not be scanned.
+</dl>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_convert_datetime.htm">ifx_gl_convert_datetime</a>(),
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.
+</body>
+</html>

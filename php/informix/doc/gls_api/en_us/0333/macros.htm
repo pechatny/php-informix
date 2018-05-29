@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>GLS Library Macros</title>
+</head>
+<body>
+
+<h2>
+GLS Library Macros
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+</b></pre>
+<h2>DESCRIPTION</h2>
+<dl>
+<a name=".IFX_GL_MB_MAX"></a><dt>IFX_GL_MB_MAX<dd>
+The maximum number of bytes that any multi-byte
+character in any locale can occupy. This macro is usually used to allocate space in static buffers which are intended to contain one or more multi-byte characters; for example,
+<pre>
+  gl_mchar_t one_mb_character[IFX_GL_MB_MAX];
+
+  gl_mchar_t null_terminated_mb_character_string[20*IFX_GL_MB_MAX+1];
+</pre><tt> </tt>
+<a name=".IFX_GL_IS_SINGLE_BYTE"></a><dt>IFX_GL_IS_SINGLE_BYTE<dd>
+If the current locale
+uses a single-byte codeset, this macro returns
+1; else it returns 0. Therefore, if this macro returns 1, then you can
+assume that one character occupies one byte; for example,
+<pre>
+  if ( IFX_GL_IS_SINGLE_BYTE )
+    /* Do processing optimized for single-byte */
+  else
+    /* Do multi-byte processing */
+</pre>
+While this allows you to create
+an optimized version of your code for single-byte character processing;
+it does create two code paths that you must maintain. All the GLS library
+functions that process multi-byte characters use this function internally
+to optimize themselves; therefore, you will only find the need to use this
+macro in highly performance-sensitive code, if ever.
+<a name=".IFX_GL_IS_CODESET_ORDER"></a><dt>IFX_GL_IS_CODESET_ORDER<dd>
+If the current locale
+uses character codepoint values to compare characters, this macro returns 1; else it returns 0. Therefore, if this macro returns 1, then you can
+assume that two strings can be compared by using functions like strcmp();
+for example,
+<pre>
+  if ( IFX_GL_IS_CODESET_ORDER )
+    /* Do comparison optimized for codeset order */
+  else
+    /* Do non-codeset order comparison */
+</pre>
+While this allows you to create
+an optimized version of your code for codeset-order comparisons;
+it does create two code paths that you must maintain. All the GLS library
+functions that compare strings use this function internally
+to optimize themselves; therefore, you will only find the need to use this
+macro in highly performance-sensitive code, if ever.
+
+<a name=".IFX_GL_NULL"></a><dt>IFX_GL_NULL<dd>
+This is the value that you must pass as <i>mbs_byte_length</i> if the corresponding
+multi-byte character string argument is null-terminated. This is also the value
+that you must pass as <i>wcs_char_length</i> if the corresponding wide-character
+string argument is null-terminated.
+
+<a name=".IFX_GL_NO_LIMIT"></a><dt>IFX_GL_NO_LIMIT<dd>
+This is the value that you must pass as <i>mb_byte_limit</i> if the corresponding
+multi-byte character argument is (1) a character in a null-terminated string, or (2) a character that is not in a null-terminated string and is not otherwise followed by another character, but is known to be in a buffer that contains at least <a href="ifx_gl_mb_loc_max.htm">ifx_gl_mb_loc_max</a>() bytes.
+
+<a name=".IFX_GL_PROC_CS"></a><dt>IFX_GL_PROC_CS
+<dd>This macro evaluates to a string that names the current locale's
+    codeset.  This macro can be used in conjunction with
+    <a href="ifx_gl_conv_needed.htm">ifx_gl_conv_needed</a>(),
+    <a href="ifx_gl_cv_mconv.htm">ifx_gl_cv_mconv</a>(),
+    <a href="ifx_gl_cv_outbuflen.htm">ifx_gl_cv_outbuflen</a>(),
+    <a href="ifx_gl_cv_sb2sb_table.htm">ifx_gl_cv_sb2sb_table</a>().
+</dl>
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.<tt> </tt>
+</body>
+</html>

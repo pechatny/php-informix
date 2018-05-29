@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_cv_sb2sb_table</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_cv_sb2sb_table - returns the single-byte conversion table from the
+                        scrcs code set to the dstcodeset code set
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>
+#include &lt;ifxgls.h&gt;
+int ifx_gl_cv_sb2sb_table(char *dstcodeset, char *srccodeset, unsigned char **array)
+</b>
+</pre>
+
+<h2>DESCRIPTION</h2>
+If the codeset conversion, from <i>srccodeset</i> to <i>dstcodeset</i>, converts from a single-byte
+codeset to another single-byte codeset where there are no substitution
+conversions, then this function sets <i>array</i> to an array of 256
+unsigned chars which represent the conversion. If the codeset conversion is
+not of this form, then this function sets <i>array</i> to NULL.
+<p>
+The codesets, <i>srccodeset</i>
+and <i>dstcodeset</i>, may be locale specifiers
+(for example, "de_de.8859-1" or "ja_jp.ujis") or code set names found in the file $INFORMIXDIR/gls/cm<i>X</i>/registry (for example, "8859-1" or "ujis").  The
+macro, <a href="macros.htm#.IFX_GL_PROC_CS">IFX_GL_PROC_CS</a>, may be passed
+as <i>srccodeset</i>
+or <i>dstcodeset</i> to specify the code set of the current processing locale.
+Depending on the context, the value of <a href="macros.htm#.IFX_GL_PROC_CS">IFX_GL_PROC_CS</a> is based on either the
+client's environment, or the database which the server is currently accessing.
+
+<h2>RETURN VALUES</h2>
+Returns 0 upon success and sets the array argument to an array of 256
+unsigned chars, or NULL if the code sets are not of the above form.
+-1 is returned if an error occurs.
+
+<h2>ERRORS</h2>
+If an error has occurred, this function returns -1 and sets
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>() to one of the
+following,
+<DL>
+<DT>[IFX_GL_FILEERR]
+<DD>Retrieving the conversion information for the specified
+    codesets failed.  This may be due to invalid codeset names,
+    a missing registry file, a missing codeset conversion object file or
+    one with an incorrect format, or a lack of memory for the codeset
+    conversion object.
+</dl>
+
+
+
+<h2>EXAMPLES</h2>
+This function can be used to optimize codeset conversion in the following way: 
+
+<pre>
+       void
+       do_codeset_conversion(src, srccodeset, dst, dstcodeset)
+           unsigned char *src;
+           char *srccodeset;
+           unsigned char *dst;
+           char *dstcodeset;
+       {
+           unsigned char *table;
+
+           if ( ifx_gl_cv_sb2sb_table(dstcodeset, srccodeset, &amp;table) == -1 )
+	       /* Handle Error */
+
+           if ( table != NULL )
+               {
+               /* Convert in place */
+               for ( ; *src != '\0'; src++ ) *src = table[*src];
+               dst = src;
+               }
+           else 
+               {
+               /* Full GLS codeset conversion, which will handle
+                  multi-byte conversions and complex conversions
+                  between single-byte codesets
+                */
+               }
+       }
+</pre>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_cv_mconv.htm">ifx_gl_cv_mconv</a>()
+<a href="ifx_gl_conv_needed.htm">ifx_gl_conv_needed</a>()
+<a href="ifx_gl_cv_outbuflen.htm">ifx_gl_cv_outbuflen</a>()
+<a href="macros.htm#.IFX_GL_PROC_CS">IFX_GL_PROC_CS</a>
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.<tt> </tt>
+</body>
+</html>

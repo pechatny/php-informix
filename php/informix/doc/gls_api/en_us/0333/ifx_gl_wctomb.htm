@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_wctomb</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_wctomb - convert one wide-character to its multi-byte representation
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+int ifx_gl_wctomb(gl_mchar_t *mb, gl_wchar_t wc);
+</b></pre>
+<h2>DESCRIPTION</h2>
+This function converts the wide-character in <i>wc</i> to its
+multi-byte representation and stores it in consecutive bytes starting
+at <i>mb</i>.<tt> </tt>
+<h2>RETURN VALUES</h2>
+This function returns the number of bytes that were
+written to <i>mb</i>.<tt> </tt>
+<h2>ERRORS</h2>
+If an error has occurred, this function returns -1 and sets
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>
+to,
+<dl>
+<dt>IFX_GL_EILSEQ<dd>
+<i>wc</i> is not a valid wide-character.  In this case, some bytes may
+be written to <i>mb</i>, but the contents of <i>mb</i> are undefined.<tt> </tt>
+</dl>
+<h2>MEMORY MANAGEMENT</h2>
+This function assumes that <i>mb</i> contains enough space to hold the
+multi-byte representation of <i>wc</i>. There are two ways to determine
+the number of bytes that will be written to <i>mb</i>.<tt> </tt>
+<p>
+The function 
+<a href="ifx_gl_mb_loc_max.htm">ifx_gl_mb_loc_max</a>()
+calculates the maximum number of bytes in the multi-byte representation for
+any wide-character for the current locale.<tt> </tt>
+<p>
+The macro 
+<a href="macros.htm#.IFX_GL_MB_MAX">IFX_GL_MB_MAX</a>
+is the maximum number of bytes in the multi-byte representation for
+any wide-character in any locale.<tt> </tt>
+This value will always be equal
+to or greater
+than the value returned by
+<a href="ifx_gl_mb_loc_max.htm">ifx_gl_mb_loc_max</a>().<tt> </tt>
+<p>
+Of the two options, the macro
+<a href="macros.htm#.IFX_GL_MB_MAX">IFX_GL_MB_MAX</a>
+is the fastest and the only one
+that can be used to initialize static buffers. The function
+<a href="ifx_gl_mb_loc_max.htm">ifx_gl_mb_loc_max</a>()<tt> </tt>
+is slower, but more precise.<tt> </tt>
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_mbtowc.htm">ifx_gl_mbtowc</a>()
+<a href="ifx_gl_wcstombs.htm">ifx_gl_wcstombs</a>()
+<a href="ifx_gl_mbstowcs.htm">ifx_gl_mbstowcs</a>()
+<a href="ifx_gl_mb_loc_max.htm">ifx_gl_mb_loc_max</a>()
+<a href="macros.htm#.IFX_GL_MB_MAX">IFX_GL_MB_MAX</a>
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.<tt> </tt>
+</body>
+</html>

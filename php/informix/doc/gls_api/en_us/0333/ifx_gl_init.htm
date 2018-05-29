@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_init</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_init - initialize the processing locale for the current process
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>
+#include &lt;ifxgls.h&gt;
+int ifx_gl_init(void)
+</b></pre>
+<h2>DESCRIPTION</h2>
+This function initializes the processing locale for the current
+process.  ESQL/C programs need to call this function at the beginning of
+main() to ensure that the locale, based on environment variables, has been
+established before calling any other ifx_gl_ functions.  This also applies
+to other client-side programs that use the ifx_gl_ functions.  However, it
+is not necessary to call ifx_gl_init from functions running on the server.
+
+<h2>RETURN VALUES</h2>
+This function returns 0 if it's successful, and -1 if it fails.
+
+<h2>ERRORS</h2>
+If an error has occurred, this function returns -1 and
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno()</a> returns
+one of the following,
+<dl>
+<dt>[IFX_GL_PARAMERR]
+<dd>Either locale or code set conversion specifiers, i.e., GLS or NLS
+    environment variables, is incorrect, or the codeset name registy
+    file could not be found.
+<dt>[IFX_GL_ENOMEM]
+<dd>Not enough memory to allocate a new locale object or a new
+    codeset conversion object.
+<dt>[IFX_GL_FILEERR]
+<dd>The locale or codeset conversion file could not be found, is not
+    readable, or has the wrong format.
+<dt>[IFX_GL_INVALIDLOC]
+<dd>An attempt to create a locale with incompatible code sets has occured.
+<dt>[IFX_GL_ELOCTOOWIDE]
+<dd>The locale contains characters that are wider than the library allows.
+<dt>[IFX_GL_BADOBJVER]
+<dd>The locale object version is not compatible with the current library.
+<dt>[IFX_GL_BADFILEFORM]
+<dd>Bad format found in the codeset registry file.
+</dl>
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.<tt> </tt>
+</body>
+</html>

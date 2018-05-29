@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_mbsprev</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_mbsprev -- returns the previous multi-byte character
+<hr></h2>
+
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+gl_mchar_t *ifx_gl_mbsprev(gl_mchar_t *mb0, gl_mchar_t *mb)
+</b></pre>
+
+<h2>DESCRIPTION</h2>
+
+This function returns a pointer to the multi-byte character before
+<i>mb</i>, where <i>mb0</i> is a pointer to the beginning of the
+multi-byte string.
+
+<h2>RETURN VALUES</h2>
+
+This function returns a pointer to the first byte of the multi-byte
+character before <i>mb</i>.
+
+<h2>ERRORS</h2>
+If an error has occurred, this function returns NULL and sets
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>()
+to one of the following,
+<dl>
+<dt>[IFX_GL_EILSEQ]<dd><i>mb</i> or a character between <i>mb0</i> 
+and <i>mb</i> is not a valid multi-byte character
+<dt>[IFX_GL_EINVPTR]<dd><i>mb</i> is less than or equal to <i>mb0</i>
+<dt>[IFX_GL_EINVAL]<dd>
+The function cannot determine whether the character before <i>mb</i> is a valid multi-byte
+character, because it would need to read beyond <i>mb</i>.
+See <a href="memmgmt.htm#.consistent">Keeping Multi-Byte Strings Consistent</a> for more information about this error.
+
+</dl>
+
+<h2>APPLICATION USAGE</h2>
+This function is typically used to transform the single-byte loop,
+<pre>
+  sb = sb0 + strlen(sb0);
+  for ( sb--; sb &gt;= sb0; sb-- )
+    /* Process single-byte character */
+</pre>
+to the multi-byte loop,
+<pre>
+  mb = mb0 + strlen(mb0);
+  for ( mb = ifx_gl_mbsprev(mb0, mb) ; 
+        mb &gt;= mb0 ; 
+        mb = ifx_gl_mbsprev(mb0, mb) )
+    /* Process multi-byte character */
+</pre>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_mbsnext.htm">ifx_gl_mbsnext</a>()
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.
+
+</body>
+</html>

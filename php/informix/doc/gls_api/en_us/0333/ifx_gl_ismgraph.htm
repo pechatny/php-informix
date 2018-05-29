@@ -1,0 +1,391 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_ismalnum ifx_gl_ismalpha ifx_gl_ismblank ifx_gl_ismcntrl ifx_gl_ismdigit ifx_gl_ismgraph ifx_gl_ismlower ifx_gl_ismprint ifx_gl_ismpunct ifx_gl_ismspace ifx_gl_ismupper ifx_gl_ismxdigit ifx_gl_iswalnum ifx_gl_iswalpha ifx_gl_iswblank ifx_gl_iswcntrl ifx_gl_iswdigit ifx_gl_iswgraph ifx_gl_iswlower ifx_gl_iswprint ifx_gl_iswpunct ifx_gl_iswspace ifx_gl_iswupper ifx_gl_iswxdigit</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_ismalnum,
+ifx_gl_ismalpha,
+ifx_gl_ismblank,
+ifx_gl_ismcntrl,
+ifx_gl_ismdigit,
+ifx_gl_ismgraph,
+ifx_gl_ismlower,
+ifx_gl_ismprint,
+ifx_gl_ismpunct,
+ifx_gl_ismspace,
+ifx_gl_ismupper,
+ifx_gl_ismxdigit,
+ifx_gl_iswalnum,
+ifx_gl_iswalpha,
+ifx_gl_iswblank,
+ifx_gl_iswcntrl,
+ifx_gl_iswdigit,
+ifx_gl_iswgraph,
+ifx_gl_iswlower,
+ifx_gl_iswprint,
+ifx_gl_iswpunct,
+ifx_gl_iswspace,
+ifx_gl_iswupper,
+ifx_gl_iswxdigit
+- determine the class of one character
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+<br>
+int ifx_gl_ismalnum(gl_mchar_t *mb, int mb_byte_limit);
+int ifx_gl_ismalpha(gl_mchar_t *mb, int mb_byte_limit);
+int ifx_gl_ismblank(gl_mchar_t *mb, int mb_byte_limit);
+int ifx_gl_ismcntrl(gl_mchar_t *mb, int mb_byte_limit);
+int ifx_gl_ismdigit(gl_mchar_t *mb, int mb_byte_limit);
+int ifx_gl_ismgraph(gl_mchar_t *mb, int mb_byte_limit);
+int ifx_gl_ismlower(gl_mchar_t *mb, int mb_byte_limit);
+int ifx_gl_ismprint(gl_mchar_t *mb, int mb_byte_limit);
+int ifx_gl_ismpunct(gl_mchar_t *mb, int mb_byte_limit);
+int ifx_gl_ismspace(gl_mchar_t *mb, int mb_byte_limit);
+int ifx_gl_ismupper(gl_mchar_t *mb, int mb_byte_limit);
+int ifx_gl_ismxdigit(gl_mchar_t *mb, int mb_byte_limit);
+
+int ifx_gl_iswalnum(gl_wchar_t wc);
+int ifx_gl_iswalpha(gl_wchar_t wc);
+int ifx_gl_iswblank(gl_wchar_t wc);
+int ifx_gl_iswcntrl(gl_wchar_t wc);
+int ifx_gl_iswdigit(gl_wchar_t wc);
+int ifx_gl_iswgraph(gl_wchar_t wc);
+int ifx_gl_iswlower(gl_wchar_t wc);
+int ifx_gl_iswprint(gl_wchar_t wc);
+int ifx_gl_iswpunct(gl_wchar_t wc);
+int ifx_gl_iswspace(gl_wchar_t wc);
+int ifx_gl_iswupper(gl_wchar_t wc);
+int ifx_gl_iswxdigit(gl_wchar_t wc);
+</b></pre>
+<h2>DESCRIPTION</h2>
+These functions test whether <i>mb</i> (or <i>wc</i>) are in the
+respective character class according to the rules of the current
+locale. 
+<p>
+If <i>mb_byte_limit</i> is <a href="macros.htm#.IFX_GL_NO_LIMIT">IFX_GL_NO_LIMIT</a> then the multi-byte functions
+will read as many bytes as necessary from <i>mb</i> to form a complete
+character; otherwise, they will not read more than <i>mb_byte_limit</i> bytes
+from <i>mb</i> when trying to form a complete character.
+See <a href="memmgmt.htm#.charterm">Multi-Byte Character Termination</a> for more general information about <i>mb_byte_limit</i>.
+
+<h2>CLASSES</h2>
+<a name=".upper"></a><h3>upper</h3>
+True if the character is an upper-case alphabetic character. The ASCII
+characters `A' through `Z' and all other single and multi-byte
+upper-case characters for Latin-based languages are in this class.
+<p>
+Characters in this class are also in the
+<a href="#.alpha">alpha</a>,
+<a href="#.graph">graph</a>
+and
+<a href="#.print">print</a>
+classes.  No characters in the
+<a href="#.lower">lower</a>,
+<a href="#.digit">digit</a>,
+<a href="#.blank">blank</a>,
+<a href="#.space">space</a>,
+<a href="#.punct">punct</a>
+or
+<a href="#.cntrl">cntrl</a>
+classes are in this class.
+<p>
+The lower-case equivalent of each character in this class can be determined
+by calling
+<a href="ifx_gl_tomlower.htm">ifx_gl_tomlower</a>()
+or
+<a href="ifx_gl_towlower.htm">ifx_gl_towlower</a>().
+<a name=".lower"></a><h3>lower</h3>
+True if the character is a lower-case alphabetic character.
+The ASCII characters `a' through `z' and all other single and
+multi-byte lower-case characters for Latin-based languages are in this
+class.
+<p>
+Characters in this class are also in the
+<a href="#.alpha">alpha</a>,
+<a href="#.graph">graph</a>
+and
+<a href="#.print">print</a>
+classes.
+No characters in the
+<a href="#.upper">upper</a>,
+<a href="#.digit">digit</a>,
+<a href="#.blank">blank</a>,
+<a href="#.space">space</a>,
+<a href="#.punct">punct</a>
+or
+<a href="#.cntrl">cntrl</a>
+classes are in this class.
+<p>
+The upper-case equivalent of each character in this class can be determined
+by calling
+<a href="ifx_gl_tomupper.htm">ifx_gl_tomupper</a>()
+or
+<a href="ifx_gl_towupper.htm">ifx_gl_towupper</a>().
+<a name=".alpha"></a><h3>alpha</h3>
+True if the character is an alphabetic character.  All characters from
+the
+<a href="#.upper">upper</a>
+and
+<a href="#.lower">lower</a>
+classes are also in this class.  In
+addition to the upper-case and lower-case Latin-based characters, this
+class includes any: (1) Asian ideographic characters; for example,
+Kanji characters, (2) Asian phonetic characters; for example,
+single-byte and multi-byte Katakana and Hiragana characters, (3)
+Non-ASCII digit characters; see the
+<a href="#.digit">digit</a>
+class, (4) Latin-based
+alphabetic characters which do not have a case-equivalent character,
+(5) User-defined characters, (6) Vendor-defined characters.
+<p>
+Characters in this class are also in the
+<a href="#.graph">graph</a>
+and
+<a href="#.print">print</a>
+classes. No characters in the
+<a href="#.digit">digit</a>,
+<a href="#.blank">blank</a>,
+<a href="#.space">space</a>,
+<a href="#.punct">punct</a>
+or
+<a href="#.cntrl">cntrl</a>
+classes are in this class.
+<a name=".digit"></a><h3>digit</h3>
+True if the character is a digit character.
+Only the 10 ASCII digit characters are in this class.  Multi-byte
+versions of these digits or alternative representations of these digits
+(for example, Hindi or Kanji digits) are not in this class, instead they
+are in the
+<a href="#.alpha">alpha</a>
+class.
+<p>
+Characters in this class are also in the
+<a href="#.xdigit">xdigit</a>,
+<a href="#.graph">graph</a>
+and
+<a href="#.print">print</a>
+classes.  No characters in the
+<a href="#.upper">upper</a>,
+<a href="#.lower">lower</a>,
+<a href="#.alpha">alpha</a>,
+<a href="#.blank">blank</a>,
+<a href="#.space">space</a>,
+<a href="#.punct">punct</a>
+or
+<a href="#.cntrl">cntrl</a>
+classes are in this class.
+<a name=".xdigit"></a><h3>xdigit</h3>
+True if the character is a hexadecimal digit character.  Only the 10
+ASCII digit characters, 'A' through 'F', and 'a' through 'f' are in
+this class.  Multi-byte versions of these hex digits or alternative
+representations of these hex digits (for example, Hindi or Kanji
+digits) are not in this class, instead they are in the
+<a href="#.alpha">alpha</a>
+class.
+<p>
+Characters in this class are also in the
+<a href="#.graph">graph</a>
+and
+<a href="#.print">print</a>
+classes.  No characters in the
+<a href="#.blank">blank</a>,
+<a href="#.space">space</a>,
+<a href="#.punct">punct</a>
+or
+<a href="#.cntrl">cntrl</a>
+classes are in this class.
+<a name=".alnum"></a><h3>alnum</h3>
+True if the character is either in the
+<a href="#.alpha">alpha</a>
+or
+<a href="#.digit">digit</a>
+class.
+<a name=".blank"></a><h3>blank</h3>
+True if the character is a horizontal space character.  The single-byte
+space and tab characters plus any multi-byte version of these
+characters are in this class.
+<p>
+Characters in this class are also in the
+<a href="#.space">space</a>
+class.  No
+characters in the
+<a href="#.upper">upper</a>,
+<a href="#.lower">lower</a>,
+<a href="#.alpha">alpha</a>,
+<a href="#.digit">digit</a>,
+<a href="#.xdigit">xdigit</a>,
+<a href="#.punct">punct</a>
+or
+<a href="#.graph">graph</a>
+classes are in this class.
+<a name=".space"></a><h3>space</h3>
+True if the character is a horizontal or vertical space character.  All
+characters from the
+<a href="#.blank">blank</a>
+class are also in this class.  In
+addition to the
+<a href="#.blank">blank</a>
+characters, this class contains the
+single-byte and multi-byte versions of newline,
+vertical-tab, form-feed and carriage-return.
+<p>
+No characters in the
+<a href="#.upper">upper</a>,
+<a href="#.lower">lower</a>,
+<a href="#.alpha">alpha</a>,
+<a href="#.digit">digit</a>,
+<a href="#.xdigit">xdigit</a>,
+<a href="#.punct">punct</a>
+or
+<a href="#.graph">graph</a>
+classes are in
+this class.
+<a name=".cntrl"></a><h3>cntrl</h3>
+True if the character is a control character.  The single-byte
+characters alert, backspace, tab, newline, vertical-tab, form-feed,
+carriage-return, NUL, SOH, STX, ETX, EOT, ENQ, ACK, SO, SI, DLE, DC1,
+DC2, DC3, DC4, NAK, SYN, ETB, CAN, EM, SUB, ESC, IS4, IS3, IS2, IS1,
+DEL plus any other control characters are in this class.
+<p>
+No characters in the
+<a href="#.upper">upper</a>,
+<a href="#.lower">lower</a>,
+<a href="#.alpha">alpha</a>,
+<a href="#.digit">digit</a>,
+<a href="#.xdigit">xdigit</a>,
+<a href="#.punct">punct</a>,
+<a href="#.graph">graph</a>
+or
+<a href="#.print">print</a>
+classes are in this class.
+<a name=".punct"></a><h3>punct</h3>
+True if the character is a punctuation character.  The single-byte
+ASCII punctuation characters plus any non-ASCII punctuation characters
+are in this class.
+<p>
+Graphic characters which are not really punctuation characters have
+traditionally been put in the
+<a href="#.punct">punct</a>
+class; instead they are in
+the
+<a href="#.graph">graph</a>
+class.
+<p>
+Characters in this class are also in the
+<a href="#.graph">graph</a>
+and
+<a href="#.print">print</a>
+classes.  No characters in the
+<a href="#.upper">upper</a>,
+<a href="#.lower">lower</a>,
+<a href="#.alpha">alpha</a>,
+<a href="#.digit">digit</a>,
+<a href="#.xdigit">xdigit</a>,
+<a href="#.blank">blank</a>,
+<a href="#.space">space</a>
+or
+<a href="#.cntrl">cntrl</a>
+classes are in this class.
+<a name=".graph"></a><h3>graph</h3>
+True if the character is a graphical character.
+All characters which have a visual representation are in this class.
+All characters from the
+<a href="#.upper">upper</a>,
+<a href="#.lower">lower</a>,
+<a href="#.alpha">alpha</a>,
+<a href="#.digit">digit</a>,
+<a href="#.punct">punct</a>
+and
+<a href="#.xdigit">xdigit</a>
+classes are also in this class.
+<p>
+All round-trip codeset conversion placeholder characters are in
+this class.
+<p>
+Characters in this class are also in the
+<a href="#.print">print</a>
+class.  No
+characters in the
+<a href="#.blank">blank</a>,
+<a href="#.space">space</a>
+or
+<a href="#.cntrl">cntrl</a>
+classes are in this class.
+<a name=".print"></a><h3>print</h3>
+True if the character is a printable character.  All characters which
+have a visual representation or are in the
+<a href="#.space">space</a>
+class but not in
+the
+<a href="#.cntrl">cntrl</a>
+are in this class.
+<p>
+All characters from the
+<a href="#.upper">upper</a>,
+<a href="#.lower">lower</a>,
+<a href="#.alpha">alpha</a>,
+<a href="#.digit">digit</a>,
+<a href="#.punct">punct</a>,
+<a href="#.xdigit">xdigit</a>
+and
+<a href="#.graph">graph</a>
+classes are also
+in this class.  No characters in the
+<a href="#.cntrl">cntrl</a>
+class are in this class.
+<h2>RETURN VALUES</h2>
+These functions return non-zero if <i>mb</i> (or <i>wc</i>) is in the
+respective character class;
+otherwise they return zero.
+<h2>ERRORS</h2>
+If an error has occurred, these functions returns zero and
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno()</a> returns,
+<dl>
+<dt>[IFX_GL_EILSEQ]<dd>
+<i>mb</i> is not a valid multi-byte character (or <i>wc</i> is not a
+valid wide-character)
+<dt>[IFX_GL_EINVAL]<dd>
+The function cannot determine whether <i>mb</i> is a valid multi-byte
+character, because it would need to read more than <i>mb_byte_limit</i> bytes
+from <i>mb</i>. If <i>mb_byte_limit</i> is less than or equal to zero, this function
+always gives this error.
+See <a href="memmgmt.htm#.consistent">Keeping Multi-Byte Strings Consistent</a> for more information about this error.
+</dl>
+Since these functions do not return a special value
+if an error has occurred, to detect an error condition, the caller of this function must set
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>()
+to zero before calling these functions and check <a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>() after calling the function. For example,
+<pre>
+  ifx_gl_lc_errno() = 0;
+
+  value = ifx_gl_iswalpha(wc);
+
+  if ( ifx_gl_lc_errno() != 0 )
+    /* Handle error */
+  else if ( value != 0 )
+    /* Is in class */
+  else if ( value == 0 )
+    /* Is not in class */
+  ...
+</pre>
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_tomupper.htm">ifx_gl_tomupper</a>()
+<a href="ifx_gl_tomlower.htm">ifx_gl_tomlower</a>()
+<a href="ifx_gl_towupper.htm">ifx_gl_towupper</a>()
+<a href="ifx_gl_towlower.htm">ifx_gl_towlower</a>()
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.<tt> </tt>
+</body>
+</html>

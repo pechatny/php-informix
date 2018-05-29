@@ -1,0 +1,3 @@
+Brown leather. 
+Specify first baseman's or infield/outfield style.  
+Specify right- or left-handed.

@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_tomlower ifx_gl_tomupper ifx_gl_towlower ifx_gl_towupper</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_tomupper,
+ifx_gl_tomlower,
+ifx_gl_towupper,
+ifx_gl_towlower
+- convert case of one character
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+<BR>
+unsigned short ifx_gl_tomupper(gl_mchar_t *dst_mb, gl_mchar_t *src_mb, int src_mb_byte_limit);
+unsigned short ifx_gl_tomlower(gl_mchar_t *dst_mb, gl_mchar_t *src_mb, int src_mb_byte_limit);
+<BR>
+gl_wchar_t ifx_gl_towupper(gl_wchar_t src_wc);
+gl_wchar_t ifx_gl_towlower(gl_wchar_t src_wc);
+</b></pre>
+<h2>DESCRIPTION</h2>
+These functions return the alphabetic case-equivalent of the source character, or
+return the source character if it does not have a case-equivalent.
+<p>
+For ifx_gl_tomupper(), if <i>src_mb</i> has an upper-case equivalent
+character, that upper-case character is copied to <i>dst_mb</i>; otherwise
+<i>src_mb</i> is copied to <i>dst_mb</i> unchanged.
+
+For ifx_gl_tomlower(), if <i>src_mb</i> has a lower-case equivalent
+character, that lower-case character is copied to <i>dst_mb</i>; otherwise
+<i>src_mb</i> is copied to <i>dst_mb</i> unchanged.
+
+If <i>src_mb_byte_limit</i> is <a href="macros.htm#.IFX_GL_NO_LIMIT">IFX_GL_NO_LIMIT</a> then these functions
+will read as many bytes as necessary from <i>src_mb</i> to form a complete
+character; otherwise, they will not read more than <i>src_mb_byte_limit</i> bytes
+from <i>src_mb</i> when trying to form a complete character.
+See <a href="memmgmt.htm#.charterm">Multi-Byte Character Termination</a> for more general information about <i>src_mb_byte_limit</i>.
+<p>
+For ifx_gl_towupper(), if <i>src_wc</i> has an upper-case equivalent
+character, that upper-case character is returned; otherwise
+<i>src_wc</i> is returned unchanged.
+
+For ifx_gl_towlower(), if <i>src_wc</i> has a lower-case equivalent
+character, that lower-case character is returned; otherwise
+<i>src_wc</i> is returned unchanged.
+<h2>RETURN VALUES</h2>
+The functions ifx_gl_towupper() and ifx_gl_towlower() return the case-equivalent
+character.
+<p>
+The functions ifx_gl_tomupper() and ifx_gl_tomlower() return an unsigned
+short integer which encodes the number of bytes read from <i>src_mb</i> and
+the number of bytes written to <i>dst_mb</i>.
+
+To determine the number of bytes read from <i>src_mb</i>, pass the value returned
+by these multi-byte functions to the macro IFX_GL_CASE_CONV_SRC_BYTES(x).
+To determine the number of bytes written to <i>dst_mb</i>, pass the return value
+to the macro IFX_GL_CASE_CONV_DST_BYTES(x). For example,
+<pre>
+  src_mb = src_mbs;
+  dst_mb = dst_mbs;
+
+  while ( *src_mb != '\0' )
+    {
+    unsigned short retval = ifx_gl_tomupper(dst_mb, src_mb, src_mbs_bytes);
+    src_mb += IFX_GL_CASE_CONV_SRC_BYTES(retval);
+    dst_mb += IFX_GL_CASE_CONV_DST_BYTES(retval);
+    src_mbs_bytes -= IFX_GL_CASE_CONV_SRC_BYTES(retval);
+    }
+</pre>
+
+<h2>ERRORS</h2>
+If an error has occurred, ifx_gl_tomupper() and ifx_gl_tomlower() return 0 and write nothing to <i>dst_mb</i>, and ifx_gl_towupper() and ifx_gl_towlower() return
+<i>src_wc</i>; then
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno()</a> returns
+one of the following,
+<dl>
+<dt>[IFX_GL_EILSEQ]<dd>
+<i>src_mb</i> is not a valid multi-byte character (or <i>src_wc</i> is not a
+valid wide-character)
+<dt>[IFX_GL_EINVAL]<dd>
+The function cannot determine whether <i>src_mb</i> is a valid multi-byte
+character, because it would need to read more than <i>src_mb_byte_limit</i> bytes
+from <i>src_mb</i>. If <i>src_mb_byte_limit</i> is less than or equal to zero, this function
+always gives this error.
+See <a href="memmgmt.htm#.consistent">Keeping Multi-Byte Strings Consistent</a> for more information about this error.
+</dl>
+Since these functions do not return a special value
+if an error has occurred, to detect an error condition, the caller of these functions must set
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>()
+to zero before calling them and check <a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>() after calling them. For example,
+<pre>
+  ifx_gl_lc_errno() = 0;
+
+  dst_wc = ifx_gl_towupper(src_wc);
+
+  if ( ifx_gl_lc_errno() != 0 )
+    /* Handle error */
+  else
+    ...
+</pre>
+<h2>MEMORY MANAGEMENT</h2>
+<h3>Determining the size of the multi-byte destination buffer</h3>
+The number of bytes written to <i>dst_mb</i> might be more or less than the
+number of bytes read from <i>src_mb</i>. There are three ways to determine
+the number of bytes that will be written to <i>dst_mb</i>.
+<p>
+The function
+<a href="ifx_gl_case_conv_outbuflen.htm">ifx_gl_case_conv_outbuflen</a>(src_mb_bytes)
+calculates either exactly the number of bytes that will be written to
+<i>dst_mb</i> or a close over-approximation of the number. This function
+applies to both upper-case and lower-case conversions. The second
+argument to
+<a href="ifx_gl_case_conv_outbuflen.htm">ifx_gl_case_conv_outbuflen</a>()
+is the number of bytes in the character <i>src_mb</i>.
+<p>
+The function 
+<a href="ifx_gl_mb_loc_max.htm">ifx_gl_mb_loc_max</a>()
+calculates the maximum number of bytes that will be written to <i>dst_mb</i> for any value
+of <i>src_mb</i> in the current locale.
+This value will always be equal
+to or greater than the value returned by
+<a href="ifx_gl_case_conv_outbuflen.htm">ifx_gl_case_conv_outbuflen</a>(src_mb_bytes)
+<p>
+The macro 
+<a href="macros.htm#.IFX_GL_MB_MAX">IFX_GL_MB_MAX</a>
+is the maximum number of bytes that will be written to <i>dst_mb</i> for any value
+of <i>src_mb</i> in any locale.
+This value will always be equal
+to or greater
+than the value returned by
+<a href="ifx_gl_mb_loc_max.htm">ifx_gl_mb_loc_max</a>().
+<p>
+Of the three options, the macro
+<a href="macros.htm#.IFX_GL_MB_MAX">IFX_GL_MB_MAX</a>
+is the fastest and the only one
+that can be used to initialize static buffers. The function
+<a href="ifx_gl_case_conv_outbuflen.htm">ifx_gl_case_conv_outbuflen</a>(src_mb_bytes)
+is the slowest, but the most precise.
+<h3>Case converting wide-characters in-place</h3>
+Case conversion of wide-characters can always be done in-place. For
+example, the case-equivalent of <i>src_wc</i> can be assigned back to <i>src_wc</i>,
+<pre>
+  src_wc = ifx_gl_towupper(src_wc);
+</pre>
+<h3>Case converting multi-byte characters in-place</h3>
+Case conversion of multi-byte characters cannot always be done in-place.
+If the value returned by
+<a href="ifx_gl_case_conv_outbuflen.htm">ifx_gl_case_conv_outbuflen</a>(src_mb_bytes)
+is not equal to src_mb_bytes, then case conversion cannot be done in-place;
+a separate destination buffer must be allocated.
+However, if the value returned by
+<a href="ifx_gl_case_conv_outbuflen.htm">ifx_gl_case_conv_outbuflen</a>(src_mb_bytes)
+is exactly equal to src_mb_bytes, then case conversion can be done in-place.
+For example,
+<pre>
+  src_mb_bytes = ifx_gl_mblen(src_mb, ...);
+  dst_mb_bytes = ifx_gl_case_conv_outbuflen(src_mb_bytes);
+
+  if ( dst_mb_bytes == src_mb_bytes )
+    {
+    retval = ifx_gl_tomupper(src_mb, src_mb);
+    }
+  else
+    {
+    dst_mb = (gl_mchar_t *) malloc(dst_mb_bytes);
+    retval = ifx_gl_tomupper(dst_mb, src_mb);
+    }
+</pre>
+<h3>Case converting multi-byte strings</h3>
+All of the above discussion of memory management when case converting a single
+multi-byte character also applies to converting a string of one or more multi-byte characters. For example,
+<pre>
+  /* Assume src_mbs0 is null-terminated */
+  src_mbs_bytes = strlen(src_mbs);
+  dst_mbs_bytes = ifx_gl_case_conv_outbuflen(src_mbs_bytes);
+
+  if ( dst_mbs_bytes == src_mbs_bytes )
+    {
+    src_mb = src_mbs;
+
+    while ( *src_mb != '\0' )
+      {
+      retval = ifx_gl_tomupper(src_mb, src_mb);
+      src_mb += IFX_GL_CASE_CONV_SRC_BYTES(retval);
+      }
+    }
+  else
+    {
+    dst_mbs = (gl_mchar_t *) malloc(dst_mbs_bytes + 1);
+
+    src_mb = src_mbs;
+    dst_mb = dst_mbs;
+
+    while ( *src_mb != '\0' )
+      {
+      retval = ifx_gl_tomupper(dst_mb, src_mb);
+      src_mb += IFX_GL_CASE_CONV_SRC_BYTES(retval);
+      dst_mb += IFX_GL_CASE_CONV_SRC_BYTES(retval);
+      }
+
+    *dst_mb = '\0';
+    }
+</pre>
+<h2>PERFORMANCE</h2>
+Since these functions assign the destination character regardless of
+whether the source character has a case-equivalent character,
+<pre>
+  dst_wc = ifx_gl_towlower(src_wc);
+</pre>
+is the same as the conventional,
+<pre>
+  if ( ifx_gl_iswupper(src_wc) )
+    dst_wc = ifx_gl_towlower(src_wc);
+  else
+    dst_wc = src_wc;
+</pre>
+but the first is usually faster.
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_ismupper.htm">ifx_gl_ismupper</a>()
+<a href="ifx_gl_ismlower.htm">ifx_gl_ismlower</a>()
+<a href="ifx_gl_iswupper.htm">ifx_gl_iswupper</a>()
+<a href="ifx_gl_iswlower.htm">ifx_gl_iswlower</a>()
+<a href="ifx_gl_mb_loc_max.htm">ifx_gl_mb_loc_max</a>()
+<a href="ifx_gl_case_conv_outbuflen.htm">ifx_gl_case_conv_outbuflen</a>()
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.<tt> </tt>
+</body>
+</html>

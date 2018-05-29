@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_mbscoll</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_mbscoll - multi-byte string comparison using collating information
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>
+#include &lt;ifxgls.h&gt;
+int ifx_gl_mbscoll(gl_mchar_t *mbs1, int mbs1_byte_length,
+gl_mchar_t *mbs2, int mbs2_byte_length)
+</b></pre>
+
+<h2>DESCRIPTION</h2>
+This function compares the multi-byte character strings
+<i>mbs1</i> and <i>mbs2</i> according
+to the rules of the current locale.
+<p>
+If <i>mbs1_byte_length</i> is the value <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> then the function will
+assume that <i>mbs1</i> is a null-terminated string;
+otherwise the function assumes that <i>mbs1_byte_length</i> is the
+number of bytes in <i>mbs1</i>.
+If <i>mbs2_byte_length</i> is the value <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> then the function will
+assume that <i>mbs2</i> is a null-terminated string;
+otherwise the function assumes that <i>mbs2_byte_length</i> is the
+number of bytes in <i>mbs2</i>.
+See <a href="memmgmt.htm#.mbterm">Multi-Byte Character String Termination</a>
+for more general information about these lengths.
+
+<h2>RETURN VALUES</h2>
+This function returns an integer greater
+than, equal to, or less than zero, according to whether <i>mbs1</i> is greater than, equal to, or less than <i>mbs2</i>, when they are compared according
+to the rules of the current locale. 
+
+<h2>ERRORS</h2>
+If an error has occurred, this function returns -1 and sets
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>()
+to one of the following,
+<DL>
+<DT>[IFX_GL_PARAMERR]<DD>Either <i>mbs1_byte_length</i> is not equal to <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> and is not greater than or equal to zero, or <i>mbs2_byte_length</i> is not equal to <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> and is not greater than or equal to zero.
+<DT>[IFX_GL_TERMMISMAT]<DD>Either <i>mbs1_byte_length</i> is equal to <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> and <i>mbs2_byte_length</i> is greater than or equal to zero or <i>mbs1_byte_length</i> is greater than or equal to zero and <i>mbs2_byte_length</i> is equal to  <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a>
+<DT>[IFX_GL_EILSEQ]<DD>Either <i>mbs1</i> or <i>mbs2</i> contains an invalid multi-byte character
+<dt>[IFX_GL_EINVAL]<dd>
+Either the function cannot determine whether the last character of <i>mbs1</i> is a valid multi-byte
+character, because it would need to read more than <i>mbs1_byte_length</i> bytes from
+<i>mbs1</i>, or the function cannot determine whether the last character of <i>mbs2</i> is a valid multi-byte
+character, because it would need to read more than <i>mbs2_byte_length</i> bytes from <i>mbs2</i>.
+See <a href="memmgmt.htm#.consistent">Keeping Multi-Byte Strings Consistent</a> for more information about this error.
+</DL>
+<DT>[IFX_GL_ENOMEM]<DD>not enough memory to complete the operation
+</DL>
+Since this function does not return a special value
+if an error has occurred, to detect an error condition, the caller of this function must set
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>()
+to zero before calling this function and check <a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>() after calling the function. For example,
+<pre>
+  ifx_gl_lc_errno() = 0;
+
+  value = ifx_gl_mbscoll(mbs1, mbs1_byte_length, mbs2, mbs2_byte_length);
+
+  if ( ifx_gl_lc_errno() != 0 )
+    /* Handle error */
+  else if ( value &lt; 0 )
+    /* mbs1 is less than mbs2 */
+  else if ( value == 0 )
+    /* mbs1 is equal to mbs2 */
+  else if ( value &gt; 0 )
+    /* mbs1 is greater than mbs2 */
+  ...
+</pre>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_wcscoll.htm">ifx_gl_wcscoll</a>()
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+                           IBM 
+    Readme for IBM Global Security Kit for Informix Products 
+
+7.0.4.x, October 2008
+
+Contents
+
+1.0 Overview of Global Security Kit
+2.0 Installing GSKit on UNIX and Linux
+3.0 Installing GSKit on Windows Operating Systems
+4.0 Uninstalling GSKit
+
+
+1.0 Overview of Global Security Kit 
+
+IBM Global Security Kit (GSKit) provides libraries for data encryption and
+Secure Sockets Layer (SSL) communication for the Informix DBMS.
+The GSKit package also installs the iKeyman key management 
+utility (gsk7ikm), which you can use to create key databases, 
+public-private key pairs, and certificate requests.
+
+The standard Dynamic Server installation applications install GSKit automatically. No further installation steps are required for GSKit if you use these installation applications.
+
+When you deploy Dynamic Server by other methods (such as tar and untar), you must install GSKit manually if you want to include it on multiple machines. This directory contains the redistributable version of GSKit for this purpose. If you have obtained the software license to install Informix products in multiple host computers, the GSKit installation procedure below must be repeated for each instance. 
+
+
+2.0 Installing GSKit on UNIX and Linux
+
+Prerequisites: You must be logged in as root user. See the IBM Informix Dynamic Server machine notes for your operating system for a full list of prerequisites and other relevant information.
+
+To install GSKit on UNIX or Linux:
+
+From a terminal window, run the following command in the directory containing the extracted package
+files:
+
+     installgskit
+
+
+3.0 Installing GSKit on Windows Operating Systems
+
+Prerequisites: You must be logged in as a member of the 
+Administrators group. See the IBM Informix Dynamic Server machine notes for your operating system for a full list of prerequisites and other relevant information.
+
+To install GSKit on Windows:
+
+From a command prompt, run the following command from the directory 
+containing this readme file, replacing APPNAME with an identifier 
+for your application. The identifier must not contain spaces.
+
+   installgskit APPNAME
+
+
+4.0 Uninstalling GSKit
+
+For instructions on uninstalling GSKit, see the Informix Dynamic Server machine notes for your platform. You can find the machine notes in the $INFORMIXDIR/release/locale directory (UNIX and Linux) or in INFORMIXDIR\release\locale\ (Windows). The machine notes are also available in the IBM Informix Dynamic Server information center under the Product Overview/Release and Documentation Notes node: http://publib.boulder.ibm.com/infocenter/idshelp/v115/topic/com.ibm.relnotes.doc/relnotes.htm.
+
+
+For technical support, see the following Web page:
+http://www.ibm.com/software/data/informix/support/
+
+
+Copyright IBM Corp. 2008
+

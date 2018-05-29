@@ -1,0 +1,97 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_lc_errno</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_lc_errno - error value
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;gls.h&gt;
+int ifx_gl_lc_errno(void)
+</b></pre>
+
+<h2>DESCRIPTION</h2>
+This value, of type <b>int</b>, is used by GLS library functions 
+to indicate more information about an error that has occurred.
+This value is only set if an error has
+occurred, unless documented otherwise.
+<p>
+Since any GLS library function can set ifx_gl_lc_errno(), it must be inspected
+immediately after calling the function in which the error has occurred.
+<p>
+The values stored in ifx_gl_lc_errno() by a particular function are documented
+in the ERRORS section of that function's description.  Certain code set
+conversion functions are not dependent on a locale, and do not set an errno
+that is retrievable with ifx_gl_lc_errno.  Instead, these functions return
+a negative error code.
+<h2>APPLICATION USAGE</h2>
+To check for errors, an application usually inspects the return value
+of the function. If the return value is a unique value documented by the
+function to indicate that an error has occurred, only then does the
+application check ifx_gl_lc_errno(),
+<pre>
+  if ( ifx_gl_mbslen(mbs, n) == -1 )
+    switch ( ifx_gl_lc_errno() )
+      ...
+</pre>
+However, an application can also ignore the function's
+return value and just check ifx_gl_lc_errno() as long as the application sets
+ifx_gl_lc_errno() to zero before calling the function,
+<pre>
+  ifx_gl_lc_errno() = 0;
+  (void) ifx_gl_mbslen(mbs, n);
+  if ( ifx_gl_lc_errno() != 0 )
+    switch ( ifx_gl_lc_errno() )
+      ...
+</pre>
+Sometimes this is the only way to determine whether an error has occurred,
+because some GLS library functions do not return a unique value if an error
+has occurred. For example, the only way to test whether
+<a href="ifx_gl_ismupper.htm">ifx_gl_ismupper</a>()
+has detected an illegal multi-byte character is by,
+<pre>
+  ifx_gl_lc_errno() = 0;
+  value = gl_ismupper(mb, IFX_GL_NO_LIMIT);
+  if ( ifx_gl_lc_errno() != 0 )
+    switch ( ifx_gl_lc_errno() )
+      ...
+</pre>
+
+<!-- GLS BLOCK -->
+Setting ifx_gl_lc_errno() to zero and checking it after a function
+call only works if the processing locale has been initialized correctly with
+<a href="ifx_gl_init.htm">ifx_gl_init</a>(). For example, the following will
+result in memory fault since the current locale is uninitialized,
+<pre>
+  gl_lc_t lc;
+  ifx_gl_lc_errno() = 0;    /* A memory fault will happen here */
+  (void) ifx_gl_init();
+  if ( ifx_gl_lc_errno() != 0 )
+    switch ( ifx_gl_lc_errno() )
+      ...
+</pre>
+In this example, ifx_gl_lc_errno() can only be read or written after
+<a href="ifx_gl_init.htm">ifx_gl_init</a>() has correctly initialized
+the internal processing locale.
+<!-- END GLS BLOCK -->
+
+<h2>THREAD SAFETY</h2>
+For multi-threaded applications, this value is stored as a field in the
+thread control block.  For all other applications, it is stored as a
+field in the locale object.
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.
+</body>
+</html>

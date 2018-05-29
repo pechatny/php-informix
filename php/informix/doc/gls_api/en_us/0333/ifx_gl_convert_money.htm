@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_convert_money</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_convert_money - Convert a money string to an internal representation.
+<hr></h2>
+
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+int ifx_gl_convert_money(mi_money *money, char *monstr, char *format)
+</b></pre>
+<h2>DESCRIPTION</h2>
+
+This function converts the money string stored in <i>monstr</i> into
+an internal representation. The internal representation is stored in 
+the mi_money structure pointed to by <i>money</i> in the format specified
+by <i>format</i>.  
+
+<p>If <i>format</i> is NULL, then the format is
+determined from the DBMONEY environment variable
+and the LC_MONEY settings in the current GLS locale.
+
+<p>If <i>format </i> is not NULL, then it must point to a character
+string which adheres to the description in the FORMAT section below.
+
+<h2>FORMAT</h2>
+
+The format may contain the following:
+<dl>
+<dt><dd><p>
+1. one or more white-space character as specified in <a href=ifx_gl_ismspace.htm>ifx_gl_ismspace</a>()
+<dt><dd><p>
+2. One or more ordinary characters (neither % nor white-space character)
+<dt><dd><p>
+3. one conversion specification
+</dl>
+
+<p>One or more white-spaces in format causes skipping over one or more
+white-spaces in <i>monstr</i>, up to the first non-white-space
+character (which remains unscanned), or until no more characters can
+be scanned.
+
+<p>Each ordinary character in <i>format</i> is compared with that in
+<i>monstr</i>. Any mismatch is reported as error. The differing and
+subsequent characters in <i>monstr</i> remain unscanned.
+
+<p>A conversion specification consists of a % character and a terminating 
+conversion character that determins the type of conversion required.
+
+<p>There may be optional modifiers between the % and conversion characters.
+
+<p>The following conversion specifications are supported.<p>
+<dl>
+<dt>%i<dd>
+Matches a monetary representation formatted according to the 
+locale's international currency format. The corresponding argument
+should be a (double *).<p>
+
+<dt>%n<dd>
+Matches a monetary representation formatted according to the 
+locale's national currency format. The corresponding argument
+should be a (double *).<p>
+
+<dt>%%<dd>
+Matches a % character. No corrsponding argument is needed.<p>
+
+</dl>
+<p>
+<h4>Modifiers</h4>
+
+Modifiers may immediately follow the initial % of a directive in the
+following format:
+
+<pre>['][-][&lt;max-width&gt;]</pre>
+
+If a (') exists, the field is assumed to follow the grouping rule
+specified in the locale.<p>
+
+If a minus (-) exists, the field is assumed to be left justified.<p>
+The first character of <i>monstr</i> is expected to be the first character of
+the value to be converted. Whitespace in <i>monstr</i> won't be skipped, but 
+reported as error. 
+
+<p>If no - exists, the field is assumed to be right justified. Whitespaces
+will be skipped.<p>
+
+&lt;max-width&gt; is a decimal number which specifies the maximum number of
+characters to be read from <i>monstr</i>.
+
+
+<h4>Locale Information</h4>
+
+The LC_MONETARY category of the program's locale affects the behavior 
+of this function including the monetary radix character (which may be
+different from the numeric radix character affected by the LC_NUMERIC 
+category), the grouping separator, the currency symbols, positive,
+negative signs and the order of currency symbol, sign and value. 
+The international currency symbol should be conformant with the ISO 
+4217:1987 standard.<p>
+
+
+<h2>RETURN VALUES</h2>
+On success, this function returns 0.<br>
+On failure, this function returns -1.
+
+<h2>ERRORS</h2>
+
+If an error has occurred, this function returns -1 and
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>() returns,
+
+<dl>
+<dt>[IFX_GL_INVALIDFMT]<dd>bad format string
+<dt>[IFX_GL_ENOMEM]<dd>memory allocation failure
+</dl>
+
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_format_money.htm">ifx_gl_format_money</a>(),
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.
+</body>
+</html>

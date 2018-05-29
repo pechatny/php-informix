@@ -1,0 +1,189 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_format_money</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_format_money - Format a money value.
+
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+int ifx_gl_format_money(char *monstr,
+                        int monstrbytes,
+                        mi_money *money,
+                        char *format)
+</b></pre>
+<h2>DESCRIPTION</h2>
+
+This function creates a string from the the mi_money structure
+pointed to by <i>money</i> using the format specified by
+<i>format</i>.  The resulting string is stored in the buffer pointed
+to by <i>monstr</i> and <i>monstrbytes</i> is the size of the output
+buffer.
+
+<p>If <i>format</i> is NULL, then the format is
+determined from the DBMONEY environment variable
+and the LC_MONEY settings in the current GLS locale.
+
+<p>If <i>format </i> is not NULL, then it must point to a character
+string which adheres to the description in the FORMAT section below.
+
+
+<h2>FORMAT</h2>
+
+The format is a character string that contains two types of
+objects: plain characters, which are simplly copied to the output
+stream, and one conversion specification which gets expanded to
+a string which represents the value in <i>money</i>.
+
+<p>The conversion specification consists of the following sequence:
+
+<ol>
+<li>a % character
+<li>optional flags
+<li>optional field width
+<li>optional left precision
+<li>optional right precision
+<li>a required conversion character that determines the 
+   conversion to be performed.
+</ol>
+
+<h4>Flags</h4>
+
+One or more of the following flags can be specified to control the
+conversion:
+<dl>
+<dt>=f<dd>
+An = followed by a single character <i>f</i> which is used as the
+numeric fill character. The fill character must be representable in a
+single byte in order to work with precision and width counts. The
+default numeric fill character is the space character. This flag does
+not affect field width filling which always uses the space
+character. This flag is ignored unless a left precision (see below) is
+specified.
+<dt>^<dd>
+Do not format the currency amount with grouping 
+characters. The default is to insert the grouping characters 
+if defined for the current locale.
+<dt>+ or (<dd>
+Specify the style of representing positive and 
+negative currency amounts. Only one of + or ( may be specified.
+If + is specified, the locale's equivalent of + and - are used
+(for example, in the U.S.A.: the empty string if positive and -
+if negative). If neither flag is specified, the locale's equivalent
+of - is used for negative values, but no sign is printed if the 
+value is positive.
+<dt>!<dd>
+Suppress the currency symbol from the output conversion.
+<dt>-<dd>
+Specify the alignment. If this flag is present all
+fields are left-justified (padded to the right) rather than
+right-justified.
+</dl>
+
+<h4>Field Width</h4>
+
+A decimal digit character string w specifying
+a minimum field width in characters in which the result of the 
+conversion is right-justified (or left-justified if the flag
+- is specified). The default is zero.
+
+
+<h4>Left Precision</h4>
+
+A # followed by a decimal digit character string <i>n</i>
+specifying a maximum number of digits expected to be formated
+to the left of the radix character. This option can be used to
+keep the formatted output from multiple calls to this
+function aligned in the same columns. It can also be used to fill unused
+positions with a special character as in $***123.45. This option
+causes an amount to be formatted as if it has the number of digits
+specified by 
+<i>n</i>. If more than  <i>n</i> digit positions are required, this 
+conversion specification is ignored. Digit positions in excess of 
+those actually required are filled with the numeric fill character 
+(see the =<i>f</i> flag above).
+
+<p>If grouping has not been suppressed with the ^ flag, and it is
+defined for the current locale, grouping separators are inserted
+before the fill characters (if any) are added. Grouping separators 
+are not applied to fill characters even if the fill character is a
+digit.
+
+<p>To ensure alignment, any characters appearing before or after the
+number in the formatted output such as currency or sign symbols
+are padded as necessary with space charaacters to make their
+positive and negative formats and equal length.
+</dl>
+
+<h4>Right Precision</h4>
+
+A period followed by a decimal digit string p 
+specifying the number of digits after the radix character. If
+the value of the right precision p
+is zero, no radix character appears. If a right precision is not
+included, a defalt specified by the current locale is used. The
+amount being formatted is rounded to the specified number of
+digits prior to formatting.
+
+<h4>Conversion Characters</h4>
+The conversion characters and their meanings are:
+
+<dl>
+<dt>i<dd>
+The <i>money</i> argument is formated according to the locale's
+international currency format. For example, in the U.S.A.: 
+<pre>USD 1,234.56</pre>
+
+<dt>n<dd>
+The <i>money</i>argument is formated according to the locale's
+national currency format. For example, in the U.S.A.: 
+<pre>$1,234.56</pre>
+
+<dt>%<dd>
+Convert to a %; no argument is converted. The entire
+conversion specification must be %%.
+
+</dl>
+
+<h4>Locale Information</h4>
+
+The LC_MONETARY category of the program's locale affects the
+behavior of this function including the monetary radix
+character (which may be different from the numeric radix
+character affected by the LC_NUMERIC category), the grouping
+separator, the currency symbols and formats. The international
+currency symbol should be conformant with the ISO 4217:1987
+standard.
+
+
+<h2>RETURN VALUES</h2>
+On success, this function returns 0.<br>
+On failure, this function returns -1.
+
+<h2>ERRORS</h2>
+
+If an error has occurred, this function returns -1 and
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno()</a> returns,
+
+<dl>
+<dt>[IFX_GL_ENOSYS]<dd>Format specification is not supported.
+<dt>[IFX_GL_E2BIG]<dd>Operation would overflow buffer.
+</dl>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_convert_money.htm">ifx_gl_convert_money</a>(),
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.
+</body>
+</html>

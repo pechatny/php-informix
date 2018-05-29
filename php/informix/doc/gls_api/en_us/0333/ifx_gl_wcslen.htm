@@ -1,0 +1,47 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_wcslen</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_wcslen - get wide character string length
+<hr></h2>
+
+<h2>SYNOPSIS</h2>
+<pre>
+<b>
+#include &lt;ifxgls.h&gt;
+int ifx_gl_wcslen(gl_wchar_t *wcs);
+</b></pre>
+
+<h2>DESCRIPTION</h2>
+This function computes the number of wide-character
+codes in the wide character string to which <i>wcs</i> points, not
+including the <b>null-terminating</b> wide-character code.
+
+<h2>RETURN VALUE</h2>
+This function returns <i>wcs</i>; no return value is
+reserved to indicate an error.
+
+<h2>ERRORS</h2>
+<pre>
+No errors are defined.
+</pre>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_wcsbytes.htm">ifx_gl_wcsbytes</a>(),
+<a href="ifx_gl_mbsbytes.htm">ifx_gl_mbsbytes</a>(),
+<a href="ifx_gl_mbslen.htm">ifx_gl_mbslen</a>()
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.
+
+</body>
+</html>
+

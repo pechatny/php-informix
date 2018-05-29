@@ -1,0 +1,112 @@
+/****************************************************************************
+ *
+ *                               IBM INC.
+ *
+ *                           PROPRIETARY DATA
+ *
+ * Licensed Material - Property Of IBM
+ *
+ * "Restricted Materials of IBM"
+ *
+ * IBM Informix Client SDK
+ *
+ * (c)  Copyright IBM Corporation 2002. All rights reserved.
+ *
+ ****************************************************************************
+ */
+
+                ===================================
+                           DEMO PROGRAM NOTES
+                                 FOR
+                      IBM INFORMIX-LIBCPP on UNIX
+                ===================================
+
+I] FILES INCLUDED :
+===================
+	The current directory contains the LIBCPP samples which demostrate the
+	basic funcionality of all the CPP APIs. The files included here are - 
+
+i) Sample CPP programs -
+----------------------------
+cnvex.cpp
+contain.cpp
+csql.cpp
+csql2.cpp
+csql3.cpp
+curstst.cpp
+cursupd.cpp
+deldrv.cpp
+delegate.cpp
+dtex.cpp
+fsexamp1.cpp
+ifval.cpp
+loadtab.cpp
+loex1.cpp
+loex2.cpp
+queryex.cpp
+rawval.cpp
+routine.cpp
+rowref.cpp
+rowset.cpp
+seqsetex.cpp
+simpval.cpp
+sysname.cpp
+tabcnt.cpp
+testtype.cpp
+
+ii) Input files -
+---------------------
+	Some of the demos need some input files, in order to run. They are -
+csql.inp
+csql2.inp
+csql3.inp
+curstst.inp
+loadtab.inp
+rowset.inp
+testtype1.inp
+testtype2.inp
+
+iii) SQL files - 
+------------------
+cleanup.sql
+	- To drop the table and rows from the database.
+setup.sql
+	- To create the tables and load the rows into the database.
+
+iv) Other support files include - 
+-----------------------------------
+Makefile
+	- To make all the LIBCPP demos.
+
+II]. SETUP :
+============
+In order to run the LIBCPP demo, the following setup is essential -
+	a) Make sure that the INFORMIXDIR is set.
+	b) Make sure that CC compiler is in the PATH. 
+	c) Make sure that you have a database by the name of the 'user' who 
+	   will be running the demos.
+
+III]. COMPILE :
+===============
+	a) To compile all the demos simply run 'make'.
+	b) To compile a specific program run 'make' followed by filename.
+		eg. make tabcnt
+	   On Windows platform, you may have to use the 'nmake' utility.
+
+IV]. EXECUTION : 
+================
+	a) Before running any demos make sure that the database is created.
+	b) All of the demos need some tables and data loaded into the database
+	   to run successfully. This can be done by the following command -
+	   csql2 < setup.sql
+	c) In order to run any demo, pass the demo name at the command prompt -
+	   eg. tabcnt
+	   Some of the demos require an input file to run successfully. In such
+	   cases, you will need to pass the corresponding input file as the
+           argument to the executable - 
+	   eg. csql < csql.inp
+	d) Once the demos have been run, and you wish to drop the tables and 
+           rows, it can be done by using the following command -
+	   csql2 < cleanup
+	e) The demo programs can be cleaned up by using the following command -
+	   'make cleanup'.

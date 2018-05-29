@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_getmb</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_getmb
+- get a single multi-byte character
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+
+int ifx_gl_fgetmb(gl_mchar_t *mb, 
+                  int (*funcp)(void *v), void *v, 
+                  int *bytes_got);
+
+</b></pre>
+
+<h2>DESCRIPTION</h2>
+
+This function calls the user defined function <i>funcp</i> to obtain
+bytes which are used to form one multi-byte character. This multi-byte
+character is then written to <i>mb</i>. The pointer <i>v</i> will be
+passed to <i>funcp</i> each time it is called.
+
+<p>
+The function <i>funcp</i> must defined as follows:
+<pre>
+       int funcp(void *v)
+</pre>
+On success <i>funcp</i> should return a value between 0 and 255, inclusive, which is the next byte of the multi-byte character.
+On failure <i>funcp</i> should return -1.
+<p>
+This function will call
+<i>funcp</i> until one of the following occurs:
+<ol>
+<li>a complete multi-byte character has been formed
+<li><i>funcp</i> returns a byte that forms an illegal character when 
+appended to the bytes already read.
+<li><i>funcp</i> fails.
+</ol>
+
+All bytes obtained by calling <i>funcp</i> are guaranteed to be written to <i>mb</i>.
+
+<p>
+The number of bytes successfully read by <i>funcp</i> will be returned
+in <i>bytes_got</i> (even when failure is returned).
+
+<h2>RETURN VALUES</h2>
+This function will return either zero upon success or -1 upon failure.
+
+<h2>ERRORS</h2>
+If an error has occurred, this function returns -1 and sets
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>()
+to,
+<dl>
+<dt>[IFX_GL_EILSEQ]<dd>The bytes read from <i>funcp</i> do not form a 
+valid multi-byte character
+<dt>[IFX_GL_EINVAL]<dd><i>funcp</i> returned -1 in the middle of an
+otherwise valid multi-byte character
+<dt>[IFX_GL_EOF]<dd><i>funcp</i> returned -1 on the first call
+
+</dl>
+
+<h2>MEMORY MANAGEMENT</h2>
+This function assumes that <i>mb</i> contains enough space to hold the
+result. There are two ways to determine
+the number of bytes that will be written to <i>mb</i>.<tt> </tt>
+<p>
+The function 
+<a href="ifx_gl_mb_loc_max.htm">ifx_gl_mb_loc_max</a>()
+calculates the maximum number of bytes in any multi-byte character for the current locale.<tt> </tt>
+<p>
+The macro 
+<a href="macros.htm#.IFX_GL_MB_MAX">IFX_GL_MB_MAX</a>
+is the maximum number of bytes in any multi-byte character in any locale.<tt> </tt>
+This value will always be equal
+to or greater
+than the value returned by
+<a href="ifx_gl_mb_loc_max.htm">ifx_gl_mb_loc_max</a>().<tt> </tt>
+<p>
+Of the two options, the macro
+<a href="macros.htm#.IFX_GL_MB_MAX">IFX_GL_MB_MAX</a>
+is the fastest and the only one
+that can be used to initialize static buffers. The function
+<a href="ifx_gl_mb_loc_max.htm">ifx_gl_mb_loc_max</a>()<tt> </tt>
+is slower, but more precise.<tt> </tt>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_putmb.htm">ifx_gl_putmb</a>()
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.
+</body>
+</html>

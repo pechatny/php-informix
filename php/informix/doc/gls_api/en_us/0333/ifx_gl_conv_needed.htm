@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_conv_needed</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_conv_needed - determines whether code set conversion between two
+code sets is required
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>
+#include &lt;ifxgls.h&gt;
+int ifx_gl_conv_needed(char *dstcodeset, char *srccodeset)
+</b>
+</pre>
+<h2>DESCRIPTION</h2>
+This function determines whether characters encoded in <i>srccodeset</i> would
+require conversion to <i>dstcodeset</i> by using <a href="ifx_gl_cv_mconv.htm">ifx_gl_cv_mconv</a>(). It is not enough to simply compare the names of the code sets
+since for example, "8859-1", "819", and "Latin-1" refer to the same code set.
+<p>
+The codesets, <i>srccodeset</i>
+and <i>dstcodeset</i>, may be locale specifiers
+(for example, "de_de.8859-1" or "ja_jp.ujis") or code set names found in the file $INFORMIXDIR/gls/cm<i>X</i>/registry (for example, "8859-1" or "ujis").  The
+macro, <a href="macros.htm#.IFX_GL_PROC_CS">IFX_GL_PROC_CS</a>, may be passed
+as <i>srccodeset</i>
+or <i>dstcodeset</i> to specify the code set of the current processing locale.
+Depending on the context, the value of <a href="macros.htm#.IFX_GL_PROC_CS">IFX_GL_PROC_CS</a> is based on either the
+client's environment, or the database which the server is currently accessing.
+
+<h2>RETURN VALUES</h2>
+This function returns 1 if conversion is needed, 0 if it
+isn't, and -1 if an error occurred.
+
+<h2>ERRORS</h2>
+If an error has occurred, this function returns -1 and
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>() returns
+one of the following,
+<dl>
+<dt>[IFX_GL_EINVAL]
+<dd>The input string is not a valid locale specification or codeset name,
+    or the codeset name could not be mapped to a codeset number
+<dt>[IFX_GL_EBADF]
+<dd>Can not find the code set registry
+<dt>[IFX_GL_BADFILEFORM]
+<dd>Bad format found in the registry
+</dl>
+
+<h2>SEE ALSO</h2>
+<a href="macros.htm#.IFX_GL_PROC_CS">IFX_GL_PROC_CS</a>
+<a href="ifx_gl_cv_mconv.htm">ifx_gl_cv_mconv</a>()
+<a href="ifx_gl_cv_outbuflen.htm">ifx_gl_cv_outbuflen</a>()
+<a href="ifx_gl_cv_sb2sb_table.htm">ifx_gl_cv_sb2sb_table</a>()
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.<tt> </tt>
+</body>
+</html>

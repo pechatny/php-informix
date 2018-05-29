@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_mbtowc</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_mbtowc - convert one multi-byte character to its wide-character
+representation
+<hr></h2>
+
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+int ifx_gl_mbtowc(gl_wchar_t *wcp, gl_mchar_t *mb, int mb_byte_limit);
+</b></pre>
+
+<h2>DESCRIPTION</h2>
+This function converts the multi-byte character <i>mb</i> into its
+wide-character representation and stores it in
+the wide-character pointed to by <i>wcp</i>.
+<p>
+If <i>mb_byte_limit</i> is <a href="macros.htm#.IFX_GL_NO_LIMIT">IFX_GL_NO_LIMIT</a> then this function
+will read as many bytes as necessary from <i>mb</i> to form a complete
+character; otherwise, it will not read more than <i>mb_byte_limit</i> bytes
+from <i>mb</i> when trying to form a complete character.
+See <a href="memmgmt.htm#.charterm">Multi-Byte Character Termination</a> for more general information about <i>mb_byte_limit</i>.
+
+<h2>RETURN VALUES</h2>
+This function returns the number of bytes read from <i>mb</i>. 
+
+<h2>ERRORS</h2>
+If an error has occurred, this function returns -1 and
+sets <a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>() to one of the
+following,
+<dl>
+<dt>[IFX_GL_EILSEQ]<dd>
+<i>mb</i> is not a valid
+multi-byte character
+<dt>[IFX_GL_EINVAL]<dd>
+The function cannot determine whether <i>mb</i> is a valid multi-byte
+character, because it would need to read more than <i>mb_byte_limit</i> bytes from
+<i>mb</i>.<tt> </tt>
+If <i>mb_byte_limit</i> is less than or equal to zero, this function
+always gives this error.
+See <a href="memmgmt.htm#.consistent">Keeping Multi-Byte Strings Consistent</a> for more information about this error.
+</dl>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_wctomb.htm">ifx_gl_wctomb</a>()
+<a href="ifx_gl_wcstombs.htm">ifx_gl_wcstombs</a>()
+<a href="ifx_gl_mbstowcs.htm">ifx_gl_mbstowcs</a>()
+<a href="macros.htm#.IFX_GL_MB_MAX">IFX_GL_MB_MAX</a>
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_cv_mconv</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_cv_mconv - convert characters from one codeset to another
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>
+#include &lt;ifxgls.h&gt;
+int ifx_gl_cv_mconv(conv_state_t *state,
+                    gl_mchar_t **dst, int *dstbytesleft, char *dstcodeset,
+                    gl_mchar_t **src, int *srcbytesleft, char *srccodeset)
+</b></pre>
+<h2>DESCRIPTION</h2>
+This function converts the string of characters in *<i>src</i>
+into the same characters, but encoded in another codeset, and stores
+the result in the buffer pointed to by *<i>dst</i>.
+<p>
+The codesets, <i>srccodeset</i> and <i>dstcodeset</i>, may be locale
+specifiers (for example, "de_de.8859-1" or "ja_jp.ujis") or code set
+names found in the file $INFORMIXDIR/gls/cm<i>X</i>/registry (for
+example, "8859-1" or "ujis").  The macro, <a
+href="macros.htm#.IFX_GL_PROC_CS">IFX_GL_PROC_CS</a>, may be passed as
+<i>srccodeset</i> or <i>dstcodeset</i> to specify the code set of the
+current processing locale.  Depending on the context, the value of <a
+href="macros.htm#.IFX_GL_PROC_CS">IFX_GL_PROC_CS</a> is based on either
+the client's environment, or the database which the server is currently
+accessing.
+
+<h3>Source Buffer</h3>
+The <i>src</i> argument points to a pointer to the first character in
+the source buffer and <i>srcbytesleft</i> points to the number of bytes in
+*<i>src</i> to convert.
+The pointer pointed to by <i>src</i> is updated to point to the byte
+following the last source character successfully converted.
+The integer pointed to by <i>srcbytesleft</i> is updated be the number of
+bytes in *<i>src</i> that have not been converted. After a successful
+conversion, <i>srcbytesleft</i> should point to zero.
+<p>
+If <i>srcbytesleft</i> is NULL, the function converts data
+until a null character is found in the source buffer.
+
+<h3>Destination Buffer</h3>
+The <i>dst</i> argument points to a pointer
+to the first character in the destination buffer and <i>dstbytesleft</i>
+points to the maximum number of bytes to write into *<i>dst</i>.
+The pointer
+pointed to by <i>dst</i> is updated to point to the byte following
+the last destination character.  The integer pointed to by
+<i>dstbytesleft</i> is updated be the number of bytes still available
+in *<i>dst</i>.
+<p>
+If <i>dst</i> is NULL, then the function updates *<i>src</i>,
+*<i>srcbytesleft</i>, and *<i>dstbytesleft</i> but the converted
+data is not written to *<i>dst</i>.
+
+<h2>Memory Management</h2>
+Sometimes the caller of this function will need to fragment a complete
+source string into two or more non-adjacent source buffers to meet the
+memory management requirements of their component. This will result in
+the need to call this function multiple times: once for each fragment.
+Because of the nature of state-dependent codesets (and since the caller
+of this function cannot know whether either <i>srccodeset</i> or <i>dstcodeset</i> is a state-dependent codeset), state information
+must be preserved across these multiple calls. The <i>state</i>
+argument is used for this purpose.
+<p>
+Therefore, the caller must supply two
+pieces of information to each call to this function:
+<ol>
+<li>whether *<i>src</i> is the first fragment of
+the complete string (<i>state</i>-&gt;first_frag = 0/1) and
+<li>whether *<i>src</i> is the last fragment of the
+complete string (<i>state</i>-&gt;last_frag = 0/1)
+</ol>
+In the case where *<i>src</i> and *<i>srcbytesleft</i> represent
+a complete string, then both <i>state</i>-&gt;first_frag and <i>state</i>-&gt;last_frag would be set to 1.
+<p>
+The caller of this function should only set the first_frag and
+last_frag fields of <i>state</i>. This structure contains other
+fields that are used internally; however, the caller should not
+set or inspect these other fields.
+<p>
+This function must be passed the 
+fragments in the same order in which they appear in the complete
+string; and the same conv_state_t structure must be used for
+all of the fragments of the same complete string.
+<p>
+For example,
+to convert a complete character string that is not fragmented:
+<pre>
+ int
+ foo(out, outlen, outcs, in, inlen, incs)
+     gl_mchar_t *out;
+     int outlen;
+     char *outcs;
+     gl_mchar_t *in;
+     int inlen;
+     char *incs;
+ {
+     conv_state_t state;
+     int ret;
+
+     state.first_frag = 1;
+     state.last_frag = 1;
+     ret = ifx_gl_cv_mconv(&amp;state, &amp;out, &amp;outlen, outcs,
+                                   &amp;in, &amp;inlen, incs);
+     ...
+ }
+</pre>
+To convert a complete character string that is fragmented into 4 different
+buffers:
+<pre>
+ int
+ foo(out, outlen, outcs, in, inlen, incs)
+     gl_mchar_t *out;
+     int outlen;
+     char *outcs;
+     gl_mchar_t *in[];
+     int inlen;
+     char *incs;
+ {
+     conv_state_t state;
+     int ret;
+
+     state.first_frag = 1;
+     state.last_frag = 0;
+     ret = ifx_gl_cv_mconv(&amp;state, &amp;out, &amp;outlen, outcs,
+                                   &amp;in[0], &amp;inlen, incs);
+     ...
+     state.first_frag = 0;
+     state.last_frag = 0;
+     ret = ifx_gl_cv_mconv(&amp;state, &amp;out, &amp;outlen, outcs,
+                                   &amp;in[1], &amp;inlen, incs);
+     ...
+     /* no need to set the states again, since they are already 0 */
+     ret = ifx_gl_cv_mconv(&amp;state, &amp;out, &amp;outlen, outcs,
+                                   &amp;in[2], &amp;inlen, incs);
+     ...
+     state.first_frag = 0;
+     state.last_frag = 1;
+     ret = ifx_gl_cv_mconv(&amp;state, &amp;out, &amp;outlen, outcs,
+                                   &amp;in[3], &amp;inlen, incs);
+     ...
+ }
+</pre>
+For an additional issue involving processing fragmented multi-byte character strings
+see <a href="memmgmt.htm#.fragmenting">Fragmenting Long Multi-Byte Strings</a>.
+
+<h2>CALCULATING <i>dstbytesleft</i></h2>
+The number of bytes written to *<i>dst</i> might be more or less than the
+number of bytes read from *<i>src</i>. There are two ways to determine
+the number of bytes that will be written to *<i>dst</i>.
+<p>
+The function
+<a href="ifx_gl_cv_outbuflen.htm">ifx_gl_cv_outbuflen</a>(<i>srccodeset</i>, <i>dstcodeset</i>, *<i>srcbytesleft</i>)
+calculates either exactly the number of bytes that will be written to
+*<i>dst</i> or a close over-approximation of the number. The third
+argument to
+<a href="ifx_gl_cv_outbuflen.htm">ifx_gl_cv_outbuflen</a>()
+is the number of bytes in *<i>src</i>.
+<p>
+The expression 
+(*<i>srcbytesleft</i> * <a href="macros.htm#.IFX_GL_MB_MAX">IFX_GL_MB_MAX</a>)
+is the maximum number of bytes that will be written to *<i>dst</i> for any value
+of *<i>src</i> in any locale.
+This value will always be equal
+to or greater
+than the value returned by
+(*<i>srcbytesleft</i> * <a href="ifx_gl_mb_loc_max.htm">ifx_gl_mb_loc_max</a>()).
+<p>
+Of the two options, the expression
+(*<i>srcbytesleft</i> * <a href="macros.htm#.IFX_GL_MB_MAX">IFX_GL_MB_MAX</a>)
+is the faster, but the function
+<a href="ifx_gl_cv_outbuflen.htm">ifx_gl_cv_outbuflen</a>(<i>srccodeset</i>, <i>dstcodeset</i>, *<i>srcbytesleft</i>)
+is more precise.
+
+<h2>PERFORMANCE</h2>
+Any performance overheads involved with codeset conversion are a result
+of either memory management
+or multi-byte string traversal. Not every pair of codesets require
+these overheads to correctly convert. See
+<a href="ifx_gl_cv_sb2sb_table.htm">ifx_gl_cv_sb2sb_table</a>()
+to determine how to optimize your code for these situations.
+
+<h2>RETURN VALUES</h2>
+This function updates the variables pointed to by the
+arguments to reflect the extent of the conversion (as mentioned
+above) and returns zero. If the entire source buffer is converted,
+the value pointed to by <i>srcbytesleft</i> will be zero. If the source
+conversion is stopped due to an error, the value pointed to by
+<i>srcbytesleft</i> will be greater than zero.  -1 is returned
+if an error occurs.
+
+<h2>ERRORS</h2>
+If an error has occurred, this function returns -1 and sets
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>() to one of the
+following,
+<DL>
+<DT>[IFX_GL_FILEERR]
+<DD>Retrieving the conversion information for the specified
+    codesets failed.  This may be due to invalid codeset names,
+    a missing registry file, a missing codeset conversion object file or
+    one with an incorrect format, or a lack of memory for the codeset
+    conversion object.
+
+<DT>[IFX_GL_EILSEQ]
+<DD>*<i>src</i> contains an invalid character;
+conversion stops after both the last successfully converted
+source and destination character
+<DT>[IFX_GL_EINVAL]
+<DD>The function cannot determine whether the last character of *<i>src</i>
+is a valid character or the end of shift sequence, because it would need to
+read more than *<i>srcbytesleft</i> bytes from *<i>src</i>;
+conversion stops after the last
+successfully converted source and destination character. See <a
+href="memmgmt.htm#.consistent">Keeping Multi-Byte Strings
+Consistent</a> for more information about this error.
+<DT>[IFX_GL_E2BIG]
+<DD>Not enough space in the destination buffer;
+conversion stops after both the last successfully converted
+source and destination character
+</DL>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_conv_needed.htm">ifx_gl_conv_needed</a>()
+<a href="ifx_gl_cv_outbuflen.htm">ifx_gl_cv_outbuflen</a>()
+<a href="ifx_gl_cv_sb2sb_table.htm">ifx_gl_cv_sb2sb_table</a>()
+<a href="macros.htm#.IFX_GL_PROC_CS">IFX_GL_PROC_CS</a>
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.<tt> </tt>
+
+</body>
+</html>

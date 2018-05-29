@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_mbsntsbytes</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_mbsntsbytes - returns number of bytes ignoring trailing spaces
+<hr></h2>
+
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+int ifx_gl_mbsntsbytes(gl_mchar_t *mbs, int mbs_byte_length)
+</b></pre>
+
+<h2>DESCRIPTION</h2>
+This function returns the number of bytes in <i>mbs</i>, not including
+the trailing space characters. The characters that are not included in
+the count are the ASCII space character and any multi-byte characters
+that are equivalent to the ASCII space character. Note that the space
+characters embedded in the string prior to the series of spaces at the
+end of the string are included in the count.
+<p>
+If <i>mbs_byte_length</i> is the value <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> then the function will
+assume that <i>mbs</i> is a null-terminated string;
+otherwise the function assumes that <i>mbs_byte_length</i> is the
+number of bytes in <i>mbs</i>.
+See <a href="memmgmt.htm#.mbterm">Multi-Byte Character String Termination</a>
+for more general information about <i>mbs_byte_length</i>.
+<p>
+For example, the following call will return 8,
+<pre>
+    ifx_gl_mbsntsbytes("ab cd ef          ")
+</pre>
+
+<h2>RETURN VALUES</h2>
+Returns the number of bytes in <i>mbs</i>, not including
+the trailing space characters.
+
+<h2>ERRORS</h2>
+If an error has occurred, this function returns -1 and sets
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>()
+to one of the following,
+<DL>
+<DT>[IFX_GL_PARAMERR]<DD><i>mbs_byte_length</i> is not equal to <a
+href="macros.htm#.IFX_GL_NULL">IFX_GL_NULL</a> and is not greater than or equal to zero.
+<DT>[IFX_GL_EILSEQ]<DD><i>mbs</i> contains an invalid multi-byte character
+<dt>[IFX_GL_EINVAL]<dd>
+The function cannot determine whether the last character of <i>mbs</i>
+is a valid multi-byte character, because it would need to read more
+than <i>mbs_byte_length</i> bytes from <i>mbs</i>.  See <a
+href="memmgmt.htm#.consistent">Keeping Multi-Byte Strings
+Consistent</a> for more information about this error.
+</DL>
+
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_mbsntslen.htm">ifx_gl_mbsntslen</a>()
+<a href="ifx_gl_wcsntslen.htm">ifx_gl_wcsntslen</a>()
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE Specification: "System Interfaces and Headers, Issue 4"; X/Open Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company Ltd., U.K.
+
+</body>
+</html>

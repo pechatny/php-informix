@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<title>ifx_gl_putmb</title>
+</head>
+<body>
+
+<h2>
+ifx_gl_putmb
+- put a single multi-byte character
+<hr></h2>
+<h2>SYNOPSIS</h2>
+<pre>
+<b>#include &lt;ifxgls.h&gt;
+
+int ifx_gl_putmb(gl_mchar_t *mb, int mb_byte_limit, 
+             int (*funcp)(gl_mchar_t byte, void *v), void *v,
+             int *bytes_put);
+
+</b></pre>
+
+<h2>DESCRIPTION</h2>
+
+This function calls the user defined function <i>funcp</i> with each
+byte of the multi-byte character, <i>mb</i>. The pointer <i>v</i> will be
+passed to <i>funcp</i> each time it is called.
+<p>
+If <i>mb_byte_limit</i> is <a href="macros.htm#.IFX_GL_NO_LIMIT">IFX_GL_NO_LIMIT</a> then this function
+will read as many bytes as necessary from <i>mb</i> to form a complete
+character; otherwise, it will not read more than <i>mb_byte_limit</i> bytes
+from <i>mb</i> when trying to form a complete character.
+See <a href="memmgmt.htm#.charterm">Multi-Byte Character Termination</a> for more general information about <i>mb_byte_limit</i>.
+<p>
+The <i>funcp</i> function must be defined as follows:
+<pre>
+int funcp(gl_mchar_t byte, void *v)
+</pre>
+<i>funcp</i> must return zero upon success or -1 upon failure.
+
+The number of bytes successfully put with <i>funcp</i> will be returned
+in <i>bytes_put</i> (even when failure is returned).
+
+<h2>RETURN VALUES</h2>
+This function will return either zero upon success or -1 upon failure.
+
+<h2>ERRORS</h2>
+If an error has occurred, this function returns -1 and sets
+<a href="ifx_gl_lc_errno.htm">ifx_gl_lc_errno</a>()
+to,
+<dl>
+<dt>[IFX_GL_EILSEQ]<dd>
+<i>mb</i> is not a valid multi-byte character
+<dt>[IFX_GL_EINVAL]<dd>
+The function cannot determine whether <i>mb</i> is a valid multi-byte
+character, because it would need to read more than <i>mb_byte_limit</i> bytes
+from <i>mb</i>. If <i>mb_byte_limit</i> is less than or equal to zero, this function
+always gives this error. See <a href="memmgmt.htm#.consistent">Keeping Multi-Byte Strings Consistent</a> for more information about this error.
+<dt>[IFX_GL_EIO]<dd><i>funcp</i> returned -1 when called
+
+</dl>
+<h2>SEE ALSO</h2>
+<a href="ifx_gl_getmb.htm">ifx_gl_getmb</a>()
+
+<h2>ACKNOWLEDGEMENT</h2>
+Portions of this description were derived from the X/Open CAE
+Specification: "System Interfaces and Headers, Issue 4"; X/Open
+Document Number: C202; ISBN: 1-872630-47-2; Published by X/Open Company
+Ltd., U.K.
+</body>
+</html>

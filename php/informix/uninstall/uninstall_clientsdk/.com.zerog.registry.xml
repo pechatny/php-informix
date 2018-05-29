@@ -1,0 +1,832 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registry install_date="2017-10-16 15:13:23" version="1.1" last_modified="2017-10-16 15:13:39">
+	<products>
+		<product name="Informix Client-SDK" id="3713c9af-1ef8-11b2-90c4-f7d0c2d8056c" upgrade_id="3713c9af-1ef8-11b2-90c4-f7d0c2d8056c" version="4.10.70.90000" copyright="1996, $CURRENT_YEAR$" info_url="www.ibm.com/informix" support_url="" location="/opt/informix" last_modified="2017-10-16 15:13:24">
+		<![CDATA[		]]>
+			<vendor name="IBM" id="53d789c7-1ee6-11b2-acf7-d6be58dc641a" home_page="www.ibm.com" email=""/>
+			<feature short_name="SDK" name="Informix Client-SDK" last_modified="2017-10-16 15:13:24">
+			<![CDATA[Includes all components of Informix Client-SDK]]>
+				<feature short_name="SDK-CPP" name="Informix Object Interface for C++" last_modified="2017-10-16 15:13:24">
+				<![CDATA[This feature contains the files required to install Informix Object Interface for C++]]>
+					<feature short_name="SDK-CPP-DEMO" name="Informix Object Interface for C++ Demos" last_modified="2017-10-16 15:13:24">
+					<![CDATA[This feature contains the files required to install Informix Object Interface for C++ Demos]]>
+						<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+						<component ref_id="9fe2b416-1ef9-11b2-b3e5-f4490ff8eb76" version="1.0.0.0" location="/opt/informix/"/>
+						<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+						<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+					</feature>
+					<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+					<component ref_id="9fe29c46-1ef9-11b2-b3e3-f4490ff8eb76" version="1.0.0.0" location="/opt/informix/"/>
+					<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+					<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+				</feature>
+				<feature short_name="SDK-ESQL" name="Informix ESQL/C" last_modified="2017-10-16 15:13:24">
+				<![CDATA[This feature contains the files required to install Informix ESQL/C]]>
+					<feature short_name="SDK-ESQL-DEMO" name="Informix ESQL/C Demos" last_modified="2017-10-16 15:13:24">
+					<![CDATA[This feature contains demos for Informix ESQL/C]]>
+						<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+						<component ref_id="9fe2e158-1ef9-11b2-b3e7-f4490ff8eb76" version="1.0.0.0" location="/opt/informix/"/>
+						<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+						<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+					</feature>
+					<feature short_name="SDK-ESQL-ACM" name="7.2 Application Compatibility Module" last_modified="2017-10-16 15:13:24">
+					<![CDATA[Libraries to use applications with Informix SQL 7.2 and earlier versions]]>
+						<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+						<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+						<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+					</feature>
+					<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+					<component ref_id="9fe2da89-1ef9-11b2-b3e6-f4490ff8eb76" version="1.0.0.0" location="/opt/informix/"/>
+					<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+					<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+				</feature>
+				<feature short_name="SDK-LMI" name="Informix LIBDMI for Client Applications" last_modified="2017-10-16 15:13:24">
+				<![CDATA[This feature contains the files required to install Informix LIBDMI for Client Applications]]>
+					<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+					<component ref_id="9fe393bf-1ef9-11b2-b3ec-f4490ff8eb76" version="1.0.0.0" location="/opt/informix/"/>
+					<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+					<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+				</feature>
+				<feature short_name="SDK-ODBC" name="Informix ODBC Driver" last_modified="2017-10-16 15:13:24">
+				<![CDATA[This feature contains the files required to install Informix ODBC Driver]]>
+					<feature short_name="SDK-ODBC-DEMO" name="Informix ODBC Driver Demos" last_modified="2017-10-16 15:13:24">
+					<![CDATA[This feature contains demos for Informix ODBC Driver]]>
+						<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+						<component ref_id="9fe400d7-1ef9-11b2-b3f0-f4490ff8eb76" version="1.0.0.0" location="/opt/informix/"/>
+						<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+						<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+					</feature>
+					<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+					<component ref_id="9fe3dc67-1ef9-11b2-b3ee-f4490ff8eb76" version="1.0.0.0" location="/opt/informix/"/>
+					<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+					<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+				</feature>
+				<feature short_name="DBA-DBA" name="Informix Common Database Utilities" last_modified="2017-10-16 15:13:24">
+				<![CDATA[Informix common database administration utilities such as dbaccess]]>
+					<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+					<component ref_id="cf17755f-1f00-11b2-b14a-9c9943760644" version="1.0.0.0" location="/opt/informix/"/>
+					<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+					<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+				</feature>
+				<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+				<component ref_id="9fe1e38f-1ef9-11b2-b3dd-f4490ff8eb76" version="1.0.0.0" location="/opt/informix/"/>
+				<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+				<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+			</feature>
+			<feature short_name="GLS" name="Global Language Support (GLS)" last_modified="2017-10-16 15:13:24">
+			<![CDATA[The feature contains files to support languages, cultural conventions, and code sets. These files are not required if your default locale uses American English, which is the default language in Informix when no GLS feature is installed.]]>
+				<feature short_name="GLS-WEURAM" name="West European and Americas" last_modified="2017-10-16 15:13:24">
+				<![CDATA[Danish, Dutch, English, Finnish, French, German, Icelandic, Italian, Norwegian, Portuguese, Spanish, and Swedish locales]]>
+					<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+					<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+					<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+				</feature>
+				<feature short_name="GLS-EEUR" name="East European and Cyrillic" last_modified="2017-10-16 15:13:24">
+				<![CDATA[Czech, Polish, Russian, and Slovak locales]]>
+					<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+					<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+					<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+				</feature>
+				<feature short_name="GLS-CHN" name="Chinese" last_modified="2017-10-16 15:13:24">
+				<![CDATA[Traditional Chinese and simplified Chinese locales]]>
+					<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+					<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+					<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+				</feature>
+				<feature short_name="GLS-JPN" name="Japanese" last_modified="2017-10-16 15:13:24">
+				<![CDATA[Japanese locales]]>
+					<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+					<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+					<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+				</feature>
+				<feature short_name="GLS-KOR" name="Korean" last_modified="2017-10-16 15:13:24">
+				<![CDATA[Korean locales]]>
+					<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+					<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+					<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+				</feature>
+				<feature short_name="GLS-OTH" name="Thai" last_modified="2017-10-16 15:13:24">
+				<![CDATA[Thai locales]]>
+					<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+					<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+					<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+				</feature>
+				<component ref_id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk"/>
+				<component ref_id="9fe1e38f-1ef9-11b2-b3dd-f4490ff8eb76" version="1.0.0.0" location="/opt/informix/"/>
+				<component ref_id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" location="/tmp/install.dir.31811/Do Not Install/csdk.zip"/>
+				<component ref_id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" location="/opt/informix/jvm"/>
+			</feature>
+		</product>
+	</products>
+	<components>
+		<component id="af0fd1e0-1ef6-11b2-be89-d6f234898ca2" version="1.0.0.0" name="InstallAnywhere Uninstall Component" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk" vendor="IBM">
+			<resource keyfile="false" name="Informix_Client-SDK_Install_10_16_2017_15_13_23.log" location="/opt/informix/Informix_Client-SDK_Install_10_16_2017_15_13_23.log" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="informix" location="/opt/informix" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="uninstall" location="/opt/informix/uninstall" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="uninstall_clientsdk" location="/opt/informix/uninstall/uninstall_clientsdk" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="uninstaller.jar" location="/opt/informix/uninstall/uninstall_clientsdk/uninstaller.jar" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="jvm" location="/opt/informix/jvm" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="true" name="uninstallclientsdk" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk" type="executable" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="uninstallclientsdk.lax" location="/opt/informix/uninstall/uninstall_clientsdk/uninstallclientsdk.lax" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ids_unlink.xsl" location="/opt/informix/uninstall/uninstall_clientsdk/ids_unlink.xsl" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name=".com.zerog.registry.xml" location="/opt/informix/uninstall/uninstall_clientsdk/.com.zerog.registry.xml" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+		</component>
+		<component id="af0fd1df-1ef6-11b2-be87-d6f234898ca2" version="1.0.0.0" name="Common" location="/tmp/install.dir.31811/Do Not Install/csdk.zip" vendor="IBM">
+			<resource keyfile="false" name="" location="com.ibm.lex.lap.ia.LAFiles_IA " type="customcode" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="uninstall" location="/opt/informix/uninstall" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="uninstall_clientsdk" location="/opt/informix/uninstall/uninstall_clientsdk" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="tmp" location="/opt/informix/tmp" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="csdk_chgownergroup.xsl" location="/opt/informix/tmp/csdk_chgownergroup.xsl" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="Global_Language_Support.iam.zip" location="" type="mergemodule" uninstall="false" rollbackEnabledCancel="true"/>
+		</component>
+		<component id="9fe2da89-1ef9-11b2-b3e6-f4490ff8eb76" version="1.0.0.0" name="AG- SDK-ESQL" location="/opt/informix/" vendor="IBM">
+			<resource keyfile="false" name="oncmsm" location="/opt/informix/./bin/oncmsm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="onpassword" location="/opt/informix/./bin/onpassword" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cmsm.cfg.sample" location="/opt/informix/./etc/cmsm.cfg.sample" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cmsm.cfg.sample.all" location="/opt/informix/./etc/cmsm.cfg.sample.all" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cmsm.cfg.sample.er" location="/opt/informix/./etc/cmsm.cfg.sample.er" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="citoxmsg.pam" location="/opt/informix/./msg/citoxmsg.pam" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ccsm.iem" location="/opt/informix/./msg/en_us/0333/ccsm.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ccss.iem" location="/opt/informix/./msg/en_us/0333/ccss.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ceami.iem" location="/opt/informix/./msg/en_us/0333/ceami.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cisam.iem" location="/opt/informix/./msg/en_us/0333/cisam.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cli.iem" location="/opt/informix/./msg/en_us/0333/cli.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cmiapi.iem" location="/opt/informix/./msg/en_us/0333/cmiapi.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cmls2.iem" location="/opt/informix/./msg/en_us/0333/cmls2.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnals.iem" location="/opt/informix/./msg/en_us/0333/cnals.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnerm.iem" location="/opt/informix/./msg/en_us/0333/cnerm.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnet.iem" location="/opt/informix/./msg/en_us/0333/cnet.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnetsrv.iem" location="/opt/informix/./msg/en_us/0333/cnetsrv.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="crds.iem" location="/opt/informix/./msg/en_us/0333/crds.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="csecure.iem" location="/opt/informix/./msg/en_us/0333/csecure.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cshell.iem" location="/opt/informix/./msg/en_us/0333/cshell.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="csql.iem" location="/opt/informix/./msg/en_us/0333/csql.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="csqli.iem" location="/opt/informix/./msg/en_us/0333/csqli.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cutil.iem" location="/opt/informix/./msg/en_us/0333/cutil.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cxopen.iem" location="/opt/informix/./msg/en_us/0333/cxopen.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cxps.iem" location="/opt/informix/./msg/en_us/0333/cxps.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="necc.iem" location="/opt/informix/./msg/en_us/0333/necc.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="nesql.iem" location="/opt/informix/./msg/en_us/0333/nesql.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="nls.iem" location="/opt/informix/./msg/en_us/0333/nls.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="os.iem" location="/opt/informix/./msg/en_us/0333/os.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rdsterm.iem" location="/opt/informix/./msg/en_us/0333/rdsterm.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="oncmsm.iem" location="/opt/informix/./msg/en_us/0333/oncmsm.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ESQLC_4.1" location="/opt/informix/./release/en_us/0333/ESQLC_4.1" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="esql" location="/opt/informix/./bin/esql" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="esql" location="/opt/informix/./incl/esql" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="blob.h" location="/opt/informix/./incl/esql/blob.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="collct.h" location="/opt/informix/./incl/esql/collct.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="datetime.h" location="/opt/informix/./incl/esql/datetime.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="decimal.h" location="/opt/informix/./incl/esql/decimal.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="gls.h" location="/opt/informix/./incl/esql/gls.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifxgls.h" location="/opt/informix/./incl/esql/ifxgls.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifxtypes.h" location="/opt/informix/./incl/esql/ifxtypes.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="int8.h" location="/opt/informix/./incl/esql/int8.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="locator.h" location="/opt/informix/./incl/esql/locator.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlca.h" location="/opt/informix/./incl/esql/sqlca.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlda.h" location="/opt/informix/./incl/esql/sqlda.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlhdr.h" location="/opt/informix/./incl/esql/sqlhdr.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqliapi.h" location="/opt/informix/./incl/esql/sqliapi.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlstype.h" location="/opt/informix/./incl/esql/sqlstype.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqltypes.h" location="/opt/informix/./incl/esql/sqltypes.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlxtype.h" location="/opt/informix/./incl/esql/sqlxtype.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="srvinfo.h" location="/opt/informix/./incl/esql/srvinfo.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="value.h" location="/opt/informix/./incl/esql/value.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="varchar.h" location="/opt/informix/./incl/esql/varchar.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="xa.h" location="/opt/informix/./incl/esql/xa.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+		</component>
+		<component id="9fe3dc67-1ef9-11b2-b3ee-f4490ff8eb76" version="1.0.0.0" name="AG- SDK-ODBC" location="/opt/informix/" vendor="IBM">
+			<resource keyfile="false" name="citoxmsg.pam" location="/opt/informix/./msg/citoxmsg.pam" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cli3xmsg.pam" location="/opt/informix/./msg/cli3xmsg.pam" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="clixmsg.pam" location="/opt/informix/./msg/clixmsg.pam" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ccsm.iem" location="/opt/informix/./msg/en_us/0333/ccsm.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ccss.iem" location="/opt/informix/./msg/en_us/0333/ccss.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ceami.iem" location="/opt/informix/./msg/en_us/0333/ceami.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cisam.iem" location="/opt/informix/./msg/en_us/0333/cisam.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cli.iem" location="/opt/informix/./msg/en_us/0333/cli.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cmiapi.iem" location="/opt/informix/./msg/en_us/0333/cmiapi.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cmls2.iem" location="/opt/informix/./msg/en_us/0333/cmls2.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnals.iem" location="/opt/informix/./msg/en_us/0333/cnals.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnerm.iem" location="/opt/informix/./msg/en_us/0333/cnerm.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnet.iem" location="/opt/informix/./msg/en_us/0333/cnet.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnetsrv.iem" location="/opt/informix/./msg/en_us/0333/cnetsrv.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="coptical.iem" location="/opt/informix/./msg/en_us/0333/coptical.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="crds.iem" location="/opt/informix/./msg/en_us/0333/crds.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="csecure.iem" location="/opt/informix/./msg/en_us/0333/csecure.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cshell.iem" location="/opt/informix/./msg/en_us/0333/cshell.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="csql.iem" location="/opt/informix/./msg/en_us/0333/csql.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="csqli.iem" location="/opt/informix/./msg/en_us/0333/csqli.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cutil.iem" location="/opt/informix/./msg/en_us/0333/cutil.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cxopen.iem" location="/opt/informix/./msg/en_us/0333/cxopen.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cxps.iem" location="/opt/informix/./msg/en_us/0333/cxps.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="necc.iem" location="/opt/informix/./msg/en_us/0333/necc.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="nesql.iem" location="/opt/informix/./msg/en_us/0333/nesql.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="nls.iem" location="/opt/informix/./msg/en_us/0333/nls.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="os.iem" location="/opt/informix/./msg/en_us/0333/os.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rdsterm.iem" location="/opt/informix/./msg/en_us/0333/rdsterm.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="INFODBC_4.1" location="/opt/informix/./release/en_us/0333/INFODBC_4.1" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="esql" location="/opt/informix/./bin/esql" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="infxcli.h" location="/opt/informix/./incl/cli/infxcli.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+		</component>
+		<component id="9fe393bf-1ef9-11b2-b3ec-f4490ff8eb76" version="1.0.0.0" name="AG- SDK-LMI" location="/opt/informix/" vendor="IBM">
+			<resource keyfile="false" name="citoxmsg.pam" location="/opt/informix/./msg/citoxmsg.pam" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dmi" location="/opt/informix/./lib/dmi" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="idmis09a.so" location="/opt/informix/./lib/dmi/idmis09a.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="idmit09a.so" location="/opt/informix/./lib/dmi/idmit09a.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ccsm.iem" location="/opt/informix/./msg/en_us/0333/ccsm.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ccss.iem" location="/opt/informix/./msg/en_us/0333/ccss.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ceami.iem" location="/opt/informix/./msg/en_us/0333/ceami.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cisam.iem" location="/opt/informix/./msg/en_us/0333/cisam.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cli.iem" location="/opt/informix/./msg/en_us/0333/cli.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cmiapi.iem" location="/opt/informix/./msg/en_us/0333/cmiapi.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cmls2.iem" location="/opt/informix/./msg/en_us/0333/cmls2.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnals.iem" location="/opt/informix/./msg/en_us/0333/cnals.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnerm.iem" location="/opt/informix/./msg/en_us/0333/cnerm.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnet.iem" location="/opt/informix/./msg/en_us/0333/cnet.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnetsrv.iem" location="/opt/informix/./msg/en_us/0333/cnetsrv.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="crds.iem" location="/opt/informix/./msg/en_us/0333/crds.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="csecure.iem" location="/opt/informix/./msg/en_us/0333/csecure.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cshell.iem" location="/opt/informix/./msg/en_us/0333/cshell.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="csql.iem" location="/opt/informix/./msg/en_us/0333/csql.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="csqli.iem" location="/opt/informix/./msg/en_us/0333/csqli.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cutil.iem" location="/opt/informix/./msg/en_us/0333/cutil.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cxopen.iem" location="/opt/informix/./msg/en_us/0333/cxopen.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cxps.iem" location="/opt/informix/./msg/en_us/0333/cxps.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="necc.iem" location="/opt/informix/./msg/en_us/0333/necc.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="nesql.iem" location="/opt/informix/./msg/en_us/0333/nesql.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="nls.iem" location="/opt/informix/./msg/en_us/0333/nls.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="os.iem" location="/opt/informix/./msg/en_us/0333/os.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rdsterm.iem" location="/opt/informix/./msg/en_us/0333/rdsterm.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="esql" location="/opt/informix/./bin/esql" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dmi" location="/opt/informix/./incl/dmi" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="blob.h" location="/opt/informix/./incl/dmi/blob.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="collct.h" location="/opt/informix/./incl/dmi/collct.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="datetime.h" location="/opt/informix/./incl/dmi/datetime.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="decimal.h" location="/opt/informix/./incl/dmi/decimal.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="gls.h" location="/opt/informix/./incl/dmi/gls.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifxgls.h" location="/opt/informix/./incl/dmi/ifxgls.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="int8.h" location="/opt/informix/./incl/dmi/int8.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="locator.h" location="/opt/informix/./incl/dmi/locator.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="memdur.h" location="/opt/informix/./incl/dmi/memdur.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="miback.h" location="/opt/informix/./incl/dmi/miback.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="miconv.h" location="/opt/informix/./incl/dmi/miconv.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="mi.h" location="/opt/informix/./incl/dmi/mi.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="milib.h" location="/opt/informix/./incl/dmi/milib.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="miloback.h" location="/opt/informix/./incl/dmi/miloback.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="milo.h" location="/opt/informix/./incl/dmi/milo.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="mitrace.h" location="/opt/informix/./incl/dmi/mitrace.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="mitypes.h" location="/opt/informix/./incl/dmi/mitypes.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlca.h" location="/opt/informix/./incl/dmi/sqlca.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlda.h" location="/opt/informix/./incl/dmi/sqlda.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlhdr.h" location="/opt/informix/./incl/dmi/sqlhdr.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlstype.h" location="/opt/informix/./incl/dmi/sqlstype.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqltypes.h" location="/opt/informix/./incl/dmi/sqltypes.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="value.h" location="/opt/informix/./incl/dmi/value.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="varchar.h" location="/opt/informix/./incl/dmi/varchar.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libthdmi.a" location="/opt/informix/./lib/dmi/libthdmi.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libifdmi.a" location="/opt/informix/./lib/dmi/libifdmi.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifxtypes.h" location="/opt/informix/./incl/dmi/ifxtypes.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlxtype.h" location="/opt/informix/./incl/dmi/sqlxtype.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="xa.h" location="/opt/informix/./incl/dmi/xa.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+		</component>
+		<component id="9fe1e38f-1ef9-11b2-b3dd-f4490ff8eb76" version="1.0.0.0" name="AG- SDK" location="/opt/informix/" vendor="IBM">
+			<resource keyfile="false" name="etc" location="/opt/informix/./etc" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="ids_master_doc.xml" location="/opt/informix/./etc/ids_master_doc.xml" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="messagefiles" location="/opt/informix/./etc/messagefiles" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="brand" location="/opt/informix/./etc/brand" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="bin" location="/opt/informix/./bin" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="rofferr" location="/opt/informix/./bin/rofferr" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="chkenv" location="/opt/informix/./bin/chkenv" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="check_version" location="/opt/informix/./bin/check_version" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="infxmsg" location="/opt/informix/./bin/infxmsg" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="msgfile" location="/opt/informix/./bin/msgfile" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="glfiles" location="/opt/informix/./bin/glfiles" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="finderr" location="/opt/informix/./bin/finderr" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="its_ecleants" location="/opt/informix/./bin/its_ecleants" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="its_ecreatets" location="/opt/informix/./bin/its_ecreatets" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="its_eload" location="/opt/informix/./bin/its_eload" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="its_stager" location="/opt/informix/./bin/its_stager" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="lib" location="/opt/informix/./lib" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="libnetstub.so" location="/opt/informix/./lib/libnetstub.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="iasfs09b.so" location="/opt/informix/./lib/iasfs09b.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="iasft09b.so" location="/opt/informix/./lib/iasft09b.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="icsss09a.so" location="/opt/informix/./lib/icsss09a.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="esql" location="/opt/informix/./lib/esql" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="isqls09b.so" location="/opt/informix/./lib/esql/isqls09b.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifgisqls09b.so" location="/opt/informix/./lib/esql/ifgisqls09b.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="icobsqls09b.so" location="/opt/informix/./lib/esql/icobsqls09b.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="isqlt09b.so" location="/opt/informix/./lib/esql/isqlt09b.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="igens09a.so" location="/opt/informix/./lib/esql/igens09a.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="igent09a.so" location="/opt/informix/./lib/esql/igent09a.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="iosls09a.so" location="/opt/informix/./lib/esql/iosls09a.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ioslt09a.so" location="/opt/informix/./lib/esql/ioslt09a.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="igl4a304.so" location="/opt/informix/./lib/esql/igl4a304.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="iglxa304.so" location="/opt/informix/./lib/esql/iglxa304.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="isxas09a.so" location="/opt/informix/./lib/esql/isxas09a.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="isxat09a.so" location="/opt/informix/./lib/esql/isxat09a.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cli" location="/opt/informix/./lib/cli" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="iclis09b.so" location="/opt/informix/./lib/cli/iclis09b.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="idmrs09a.so" location="/opt/informix/./lib/cli/idmrs09a.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="igo4a304.so" location="/opt/informix/./lib/esql/igo4a304.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="iclit09b.so" location="/opt/informix/./lib/cli/iclit09b.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="installc" location="/opt/informix/./etc/installc" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlhosts.std" location="/opt/informix/./etc/sqlhosts.std" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlhosts.demo" location="/opt/informix/./etc/sqlhosts.demo" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="odbc.ini" location="/opt/informix/./etc/odbc.ini" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="odbcinst.ini" location="/opt/informix/./etc/odbcinst.ini" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlhosts.cmsm.sample" location="/opt/informix/./etc/sqlhosts.cmsm.sample" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlhosts.cmsm.sample.all" location="/opt/informix/./etc/sqlhosts.cmsm.sample.all" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlhosts.cmsm.sample.client" location="/opt/informix/./etc/sqlhosts.cmsm.sample.client" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlhosts.cmsm.sample.er" location="/opt/informix/./etc/sqlhosts.cmsm.sample.er" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cmalarmprogram.sh" location="/opt/informix/./etc/cmalarmprogram.sh" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="glsfiles" location="/opt/informix/./etc/glsfiles" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="client" location="/opt/informix/./lib/client" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="csm" location="/opt/informix/./lib/client/csm" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="iencs11a.so" location="/opt/informix/./lib/client/csm/iencs11a.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="igsss11a.so" location="/opt/informix/./lib/client/csm/igsss11a.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ispws11a.so" location="/opt/informix/./lib/client/csm/ispws11a.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="msg" location="/opt/informix/./msg" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="en_us" location="/opt/informix/./msg/en_us" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="0333" location="/opt/informix/./msg/en_us/0333" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="ccals.iem" location="/opt/informix/./msg/en_us/0333/ccals.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="password.iem" location="/opt/informix/./msg/en_us/0333/password.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cerrmsg.txt" location="/opt/informix/./msg/en_us/0333/cerrmsg.txt" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cmls.iem" location="/opt/informix/./msg/en_us/0333/cmls.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="release" location="/opt/informix/./release" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="en_us" location="/opt/informix/./release/en_us" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="0333" location="/opt/informix/./release/en_us/0333" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="csdk_lux_relnotes.html" location="/opt/informix/./release/en_us/0333/csdk_lux_relnotes.html" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="INFODBC_4.1" location="/opt/informix/./release/en_us/0333/INFODBC_4.1" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="clinst.pdf" location="/opt/informix/./release/en_us/0333/clinst.pdf" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="CPP_4.1" location="/opt/informix/./release/en_us/0333/CPP_4.1" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="GLSAPIREL.HTML" location="/opt/informix/./release/en_us/0333/GLSAPIREL.HTML" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="GLSAPI_6.0" location="/opt/informix/./release/en_us/0333/GLSAPI_6.0" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="gskit" location="/opt/informix/./gskit" type="directory" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="README" location="/opt/informix/./gskit/README" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="gskcrypt64-8.0.50.75.linux.x86_64.tar" location="/opt/informix/./gskit/gskcrypt64-8.0.50.75.linux.x86_64.tar" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="gskssl64-8.0.50.75.linux.x86_64.tar" location="/opt/informix/./gskit/gskssl64-8.0.50.75.linux.x86_64.tar" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="installgskit" location="/opt/informix/./gskit/installgskit" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="properties" location="/opt/informix/./properties" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="version" location="/opt/informix/./properties/version" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="IBM_Informix_Client_SDK-4.10.0.swtag" location="/opt/informix/./properties/version/IBM_Informix_Client_SDK-4.10.0.swtag" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="esqldemo" location="/opt/informix/./bin/esqldemo" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="crtcmap" location="/opt/informix/./bin/crtcmap" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_getversion" location="/opt/informix/./bin/ifx_getversion" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqliprint" location="/opt/informix/./bin/sqliprint" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="its_ecleants" location="/opt/informix/./bin/its_ecleants" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="its_ecreatets" location="/opt/informix/./bin/its_ecreatets" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="its_eload" location="/opt/informix/./bin/its_eload" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="its_stager" location="/opt/informix/./bin/its_stager" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="netstub.a" location="/opt/informix/./lib/netstub.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libifasf.a" location="/opt/informix/./lib/libifasf.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libthasf.a" location="/opt/informix/./lib/libthasf.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libifcss.a" location="/opt/informix/./lib/libifcss.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libdrda.a" location="/opt/informix/./lib/libdrda.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="esqlc" location="/opt/informix/./lib/esql/esqlc" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="esqlmf" location="/opt/informix/./lib/esql/esqlmf" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="eprotect" location="/opt/informix/./lib/esql/eprotect" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libifsql.a" location="/opt/informix/./lib/esql/libifsql.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libiffgisql.a" location="/opt/informix/./lib/esql/libiffgisql.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libifcobsql.a" location="/opt/informix/./lib/esql/libifcobsql.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libthsql.a" location="/opt/informix/./lib/esql/libthsql.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libifgen.a" location="/opt/informix/./lib/esql/libifgen.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libthgen.a" location="/opt/informix/./lib/esql/libthgen.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libifos.a" location="/opt/informix/./lib/esql/libifos.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libthos.a" location="/opt/informix/./lib/esql/libthos.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="checkapi.o" location="/opt/informix/./lib/esql/checkapi.o" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libifgls.a" location="/opt/informix/./lib/esql/libifgls.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libifglx.a" location="/opt/informix/./lib/esql/libifglx.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libifxa.a" location="/opt/informix/./lib/esql/libifxa.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ixacursor.o" location="/opt/informix/./lib/esql/ixacursor.o" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libthxa.a" location="/opt/informix/./lib/esql/libthxa.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libifcli.a" location="/opt/informix/./lib/cli/libifcli.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libifdmr.a" location="/opt/informix/./lib/cli/libifdmr.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libthcli.a" location="/opt/informix/./lib/cli/libthcli.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ClientSDK-cr" location="/opt/informix/./etc/ClientSDK-cr" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="clientsdkfiles" location="/opt/informix/./etc/clientsdkfiles" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ASF-cr" location="/opt/informix/./etc/ASF-cr" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="GENLIB-cr" location="/opt/informix/./etc/GENLIB-cr" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="OSLIB-cr" location="/opt/informix/./etc/OSLIB-cr" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="SQLI-cr" location="/opt/informix/./etc/SQLI-cr" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="GLS-cr" location="/opt/informix/./etc/GLS-cr" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="CLI-cr" location="/opt/informix/./etc/CLI-cr" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="DMI-cr" location="/opt/informix/./etc/DMI-cr" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ESQL-cr" location="/opt/informix/./etc/ESQL-cr" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="setup.odbc" location="/opt/informix/./etc/setup.odbc" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="incl" location="/opt/informix/./incl" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="cli" location="/opt/informix/./incl/cli" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="infxsql.h" location="/opt/informix/./incl/cli/infxsql.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqlext.h" location="/opt/informix/./incl/cli/sqlext.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="doc" location="/opt/informix/./doc" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="gls_api" location="/opt/informix/./doc/gls_api" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="en_us" location="/opt/informix/./doc/gls_api/en_us" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="0333" location="/opt/informix/./doc/gls_api/en_us/0333" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="ifx_gl_case_conv_outbuflen.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_case_conv_outbuflen.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_conv_needed.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_conv_needed.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_convert_date.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_convert_date.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_convert_datetime.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_convert_datetime.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_convert_money.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_convert_money.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_convert_number.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_convert_number.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_cv_mconv.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_cv_mconv.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_cv_outbuflen.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_cv_outbuflen.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_cv_sb2sb_table.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_cv_sb2sb_table.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_format_date.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_format_date.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_format_datetime.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_format_datetime.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_format_money.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_format_money.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_format_number.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_format_number.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_getmb.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_getmb.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_init.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_init.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_ismalnum.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismalnum.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_ismalpha.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismalpha.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_ismblank.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismblank.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_ismcntrl.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismcntrl.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_ismdigit.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismdigit.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_ismgraph.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismgraph.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_ismlower.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismlower.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_ismprint.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismprint.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_ismpunct.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismpunct.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_ismspace.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismspace.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_ismupper.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismupper.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_ismxdigit.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_ismxdigit.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_iswalnum.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswalnum.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_iswalpha.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswalpha.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_iswblank.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswblank.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_iswcntrl.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswcntrl.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_iswdigit.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswdigit.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_iswgraph.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswgraph.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_iswlower.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswlower.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_iswprint.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswprint.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_iswpunct.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswpunct.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_iswspace.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswspace.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_iswupper.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswupper.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_iswxdigit.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_iswxdigit.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_lc_errno.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_lc_errno.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mb_loc_max.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mb_loc_max.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mblen.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mblen.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbscat.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbscat.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbschr.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbschr.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbscoll.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbscoll.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbscpy.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbscpy.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbscspn.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbscspn.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbslen.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbslen.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbsmbs.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsmbs.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbsncat.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsncat.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbsncpy.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsncpy.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbsnext.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsnext.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbsntsbytes.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsntsbytes.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbsntslen.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsntslen.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbspbrk.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbspbrk.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbsprev.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsprev.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbsrchr.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsrchr.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbsspn.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbsspn.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbstowcs.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbstowcs.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_mbtowc.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_mbtowc.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_putmb.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_putmb.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_tomlower.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_tomlower.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_tomupper.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_tomupper.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_towlower.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_towlower.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_towupper.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_towupper.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_wcscat.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcscat.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_wcschr.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcschr.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_wcscoll.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcscoll.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_wcscpy.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcscpy.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_wcscspn.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcscspn.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_wcslen.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcslen.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_wcsncat.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcsncat.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_wcsncpy.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcsncpy.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_wcsntslen.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcsntslen.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_wcspbrk.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcspbrk.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_wcsrchr.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcsrchr.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_wcsspn.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcsspn.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_wcstombs.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcstombs.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_wcswcs.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wcswcs.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ifx_gl_wctomb.htm" location="/opt/informix/./doc/gls_api/en_us/0333/ifx_gl_wctomb.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="index.htm" location="/opt/informix/./doc/gls_api/en_us/0333/index.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="is.htm" location="/opt/informix/./doc/gls_api/en_us/0333/is.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="macros.htm" location="/opt/informix/./doc/gls_api/en_us/0333/macros.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="memmgmt.htm" location="/opt/informix/./doc/gls_api/en_us/0333/memmgmt.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="to.htm" location="/opt/informix/./doc/gls_api/en_us/0333/to.htm" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+		</component>
+		<component id="9fe400d7-1ef9-11b2-b3f0-f4490ff8eb76" version="1.0.0.0" name="AG- SDK-ODBC-DEMO" location="/opt/informix/" vendor="IBM">
+			<resource keyfile="false" name="cli" location="/opt/informix/./demo/cli" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="advert.txt" location="/opt/informix/./demo/cli/advert.txt" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="insert.txt" location="/opt/informix/./demo/cli/insert.txt" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="blkinsrt.c" location="/opt/informix/./demo/cli/blkinsrt.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="blkinsrtW.c" location="/opt/informix/./demo/cli/blkinsrtW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="catalog.c" location="/opt/informix/./demo/cli/catalog.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="catalogW.c" location="/opt/informix/./demo/cli/catalogW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dbcreate.c" location="/opt/informix/./demo/cli/dbcreate.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dbcreate.h" location="/opt/informix/./demo/cli/dbcreate.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dbcreateW.c" location="/opt/informix/./demo/cli/dbcreateW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dbcreateW.h" location="/opt/informix/./demo/cli/dbcreateW.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dbdrop.c" location="/opt/informix/./demo/cli/dbdrop.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dbdropW.c" location="/opt/informix/./demo/cli/dbdropW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="desc.c" location="/opt/informix/./demo/cli/desc.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="descW.c" location="/opt/informix/./demo/cli/descW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="distsel.c" location="/opt/informix/./demo/cli/distsel.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="distselW.c" location="/opt/informix/./demo/cli/distselW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="item_1.txt" location="/opt/informix/./demo/cli/item_1.txt" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="item_2.txt" location="/opt/informix/./demo/cli/item_2.txt" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="item_3.txt" location="/opt/informix/./demo/cli/item_3.txt" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="item_4.txt" location="/opt/informix/./demo/cli/item_4.txt" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="locreate.c" location="/opt/informix/./demo/cli/locreate.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="locreateW.c" location="/opt/informix/./demo/cli/locreateW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="loinfo.c" location="/opt/informix/./demo/cli/loinfo.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="loinfoW.c" location="/opt/informix/./demo/cli/loinfoW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="loselect.c" location="/opt/informix/./demo/cli/loselect.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="loselectW.c" location="/opt/informix/./demo/cli/loselectW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="makefile" location="/opt/informix/./demo/cli/makefile" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="OnePhaseCommitRollback.c" location="/opt/informix/./demo/cli/OnePhaseCommitRollback.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="posupdt.c" location="/opt/informix/./demo/cli/posupdt.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="posupdtW.c" location="/opt/informix/./demo/cli/posupdtW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="proc.c" location="/opt/informix/./demo/cli/proc.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="procW.c" location="/opt/informix/./demo/cli/procW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rccreate.c" location="/opt/informix/./demo/cli/rccreate.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rccreateW.c" location="/opt/informix/./demo/cli/rccreateW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rcselect.c" location="/opt/informix/./demo/cli/rcselect.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rcselectW.c" location="/opt/informix/./demo/cli/rcselectW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rcupdate.c" location="/opt/informix/./demo/cli/rcupdate.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rcupdateW.c" location="/opt/informix/./demo/cli/rcupdateW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="readme.txt" location="/opt/informix/./demo/cli/readme.txt" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rsetinfo.c" location="/opt/informix/./demo/cli/rsetinfo.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rsetinfoW.c" location="/opt/informix/./demo/cli/rsetinfoW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="transact.c" location="/opt/informix/./demo/cli/transact.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="transactW.c" location="/opt/informix/./demo/cli/transactW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="OutInOutParamBlob.c" location="/opt/informix/./demo/cli/OutInOutParamBlob.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="OutInOutParamBlobW.c" location="/opt/informix/./demo/cli/OutInOutParamBlobW.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+		</component>
+		<component id="9fe2b416-1ef9-11b2-b3e5-f4490ff8eb76" version="1.0.0.0" name="AG- SDK-CPP-DEMO" location="/opt/informix/" vendor="IBM">
+			<resource keyfile="false" name="demo" location="/opt/informix/./demo" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="c++" location="/opt/informix/./demo/c++" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="Makefile" location="/opt/informix/./demo/c++/Makefile" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="queryex.cpp" location="/opt/informix/./demo/c++/queryex.cpp" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="README" location="/opt/informix/./demo/c++/README" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+		</component>
+		<component id="9fe29c46-1ef9-11b2-b3e3-f4490ff8eb76" version="1.0.0.0" name="AG- SDK-CPP" location="/opt/informix/" vendor="IBM">
+			<resource keyfile="false" name="c++" location="/opt/informix/./lib/c++" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="ic++s02a.so" location="/opt/informix/./lib/c++/ic++s02a.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ic++t02a.so" location="/opt/informix/./lib/c++/ic++t02a.so" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="citoxmsg.pam" location="/opt/informix/./msg/citoxmsg.pam" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ccsm.iem" location="/opt/informix/./msg/en_us/0333/ccsm.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ccss.iem" location="/opt/informix/./msg/en_us/0333/ccss.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ceami.iem" location="/opt/informix/./msg/en_us/0333/ceami.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="c++.iem" location="/opt/informix/./msg/en_us/0333/c++.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cisam.iem" location="/opt/informix/./msg/en_us/0333/cisam.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cli.iem" location="/opt/informix/./msg/en_us/0333/cli.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cmiapi.iem" location="/opt/informix/./msg/en_us/0333/cmiapi.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cmls2.iem" location="/opt/informix/./msg/en_us/0333/cmls2.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnals.iem" location="/opt/informix/./msg/en_us/0333/cnals.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnerm.iem" location="/opt/informix/./msg/en_us/0333/cnerm.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnet.iem" location="/opt/informix/./msg/en_us/0333/cnet.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cnetsrv.iem" location="/opt/informix/./msg/en_us/0333/cnetsrv.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="crds.iem" location="/opt/informix/./msg/en_us/0333/crds.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="csecure.iem" location="/opt/informix/./msg/en_us/0333/csecure.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cshell.iem" location="/opt/informix/./msg/en_us/0333/cshell.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="csql.iem" location="/opt/informix/./msg/en_us/0333/csql.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="csqli.iem" location="/opt/informix/./msg/en_us/0333/csqli.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cutil.iem" location="/opt/informix/./msg/en_us/0333/cutil.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cxopen.iem" location="/opt/informix/./msg/en_us/0333/cxopen.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cxps.iem" location="/opt/informix/./msg/en_us/0333/cxps.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="necc.iem" location="/opt/informix/./msg/en_us/0333/necc.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="nesql.iem" location="/opt/informix/./msg/en_us/0333/nesql.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="nls.iem" location="/opt/informix/./msg/en_us/0333/nls.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="os.iem" location="/opt/informix/./msg/en_us/0333/os.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rdsterm.iem" location="/opt/informix/./msg/en_us/0333/rdsterm.iem" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="CPLUS-cr" location="/opt/informix/./etc/CPLUS-cr" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libifc++.a" location="/opt/informix/./lib/c++/libifc++.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="libthc++.a" location="/opt/informix/./lib/c++/libthc++.a" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="esql" location="/opt/informix/./bin/esql" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="c++" location="/opt/informix/./incl/c++" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="itcppop.h" location="/opt/informix/./incl/c++/itcppop.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="itcppval.h" location="/opt/informix/./incl/c++/itcppval.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="it.h" location="/opt/informix/./incl/c++/it.h" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+		</component>
+		<component id="9fe2e158-1ef9-11b2-b3e7-f4490ff8eb76" version="1.0.0.0" name="AG- SDK-ESQL-DEMO" location="/opt/informix/" vendor="IBM">
+			<resource keyfile="false" name="esqlc" location="/opt/informix/./demo/esqlc" type="directory" uninstall="false" rollbackEnabledCancel="true">
+			<![CDATA[false]]>
+			</resource>
+			<resource keyfile="false" name="blobload.ec" location="/opt/informix/./demo/esqlc/blobload.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="bycmpr.ec" location="/opt/informix/./demo/esqlc/bycmpr.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="bycopy.ec" location="/opt/informix/./demo/esqlc/bycopy.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="byfill.ec" location="/opt/informix/./demo/esqlc/byfill.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="byleng.ec" location="/opt/informix/./demo/esqlc/byleng.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="collect.ec" location="/opt/informix/./demo/esqlc/collect.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="create_clob.ec" location="/opt/informix/./demo/esqlc/create_clob.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="decadd.ec" location="/opt/informix/./demo/esqlc/decadd.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="deccmp.ec" location="/opt/informix/./demo/esqlc/deccmp.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="deccopy.ec" location="/opt/informix/./demo/esqlc/deccopy.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="deccvasc.ec" location="/opt/informix/./demo/esqlc/deccvasc.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="deccvdbl.ec" location="/opt/informix/./demo/esqlc/deccvdbl.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="deccvint.ec" location="/opt/informix/./demo/esqlc/deccvint.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="deccvlong.ec" location="/opt/informix/./demo/esqlc/deccvlong.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="decdiv.ec" location="/opt/informix/./demo/esqlc/decdiv.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dececvt.ec" location="/opt/informix/./demo/esqlc/dececvt.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="decfcvt.ec" location="/opt/informix/./demo/esqlc/decfcvt.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="decmul.ec" location="/opt/informix/./demo/esqlc/decmul.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="decround.ec" location="/opt/informix/./demo/esqlc/decround.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="decsub.ec" location="/opt/informix/./demo/esqlc/decsub.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dectoasc.ec" location="/opt/informix/./demo/esqlc/dectoasc.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dectodbl.ec" location="/opt/informix/./demo/esqlc/dectodbl.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dectoint.ec" location="/opt/informix/./demo/esqlc/dectoint.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dectolong.ec" location="/opt/informix/./demo/esqlc/dectolong.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dectrunc.ec" location="/opt/informix/./demo/esqlc/dectrunc.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="demo1.ec" location="/opt/informix/./demo/esqlc/demo1.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="demo2.ec" location="/opt/informix/./demo/esqlc/demo2.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="demo3.ec" location="/opt/informix/./demo/esqlc/demo3.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="demo4.ec" location="/opt/informix/./demo/esqlc/demo4.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dispcat_pic.ec" location="/opt/informix/./demo/esqlc/dispcat_pic.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dtaddinv.ec" location="/opt/informix/./demo/esqlc/dtaddinv.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dtcurrent.ec" location="/opt/informix/./demo/esqlc/dtcurrent.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dtcvasc.ec" location="/opt/informix/./demo/esqlc/dtcvasc.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dtcvfmtasc.ec" location="/opt/informix/./demo/esqlc/dtcvfmtasc.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dtextend.ec" location="/opt/informix/./demo/esqlc/dtextend.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dtsub.ec" location="/opt/informix/./demo/esqlc/dtsub.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dtsubinv.ec" location="/opt/informix/./demo/esqlc/dtsubinv.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dttoasc.ec" location="/opt/informix/./demo/esqlc/dttoasc.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dttofmtasc.ec" location="/opt/informix/./demo/esqlc/dttofmtasc.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dyn_sql.ec" location="/opt/informix/./demo/esqlc/dyn_sql.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="exp_chk.ec" location="/opt/informix/./demo/esqlc/exp_chk.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="getcd_me.ec" location="/opt/informix/./demo/esqlc/getcd_me.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="getcd_nf.ec" location="/opt/informix/./demo/esqlc/getcd_nf.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="getcd_of.ec" location="/opt/informix/./demo/esqlc/getcd_of.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="getdiag.ec" location="/opt/informix/./demo/esqlc/getdiag.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="get_lo_info.ec" location="/opt/informix/./demo/esqlc/get_lo_info.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="incvasc.ec" location="/opt/informix/./demo/esqlc/incvasc.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="incvfmtasc.ec" location="/opt/informix/./demo/esqlc/incvfmtasc.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="inpfuncs.c" location="/opt/informix/./demo/esqlc/inpfuncs.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="int8add.ec" location="/opt/informix/./demo/esqlc/int8add.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="int8cvasc.ec" location="/opt/informix/./demo/esqlc/int8cvasc.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="int8cvdec.ec" location="/opt/informix/./demo/esqlc/int8cvdec.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="int8div.ec" location="/opt/informix/./demo/esqlc/int8div.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="int8sub.ec" location="/opt/informix/./demo/esqlc/int8sub.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="int8toasc.ec" location="/opt/informix/./demo/esqlc/int8toasc.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="int8todec.ec" location="/opt/informix/./demo/esqlc/int8todec.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="intoasc.ec" location="/opt/informix/./demo/esqlc/intoasc.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="intofmtasc.ec" location="/opt/informix/./demo/esqlc/intofmtasc.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="invdivdbl.ec" location="/opt/informix/./demo/esqlc/invdivdbl.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="invdivinv.ec" location="/opt/informix/./demo/esqlc/invdivinv.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="invextend.ec" location="/opt/informix/./demo/esqlc/invextend.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="invmuldbl.ec" location="/opt/informix/./demo/esqlc/invmuldbl.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="ldchar.ec" location="/opt/informix/./demo/esqlc/ldchar.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="lvarptr.ec" location="/opt/informix/./demo/esqlc/lvarptr.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="makefile" location="/opt/informix/./demo/esqlc/makefile" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="pamdemo.ec" location="/opt/informix/./demo/esqlc/pamdemo.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="prdesc.c" location="/opt/informix/./demo/esqlc/prdesc.c" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rdayofweek.ec" location="/opt/informix/./demo/esqlc/rdayofweek.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rdefmtdate.ec" location="/opt/informix/./demo/esqlc/rdefmtdate.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rdownshift.ec" location="/opt/informix/./demo/esqlc/rdownshift.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rfmtdate.ec" location="/opt/informix/./demo/esqlc/rfmtdate.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rfmtdec.ec" location="/opt/informix/./demo/esqlc/rfmtdec.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rfmtdouble.ec" location="/opt/informix/./demo/esqlc/rfmtdouble.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rfmtlong.ec" location="/opt/informix/./demo/esqlc/rfmtlong.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rgetlmsg.ec" location="/opt/informix/./demo/esqlc/rgetlmsg.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rgetmsg.ec" location="/opt/informix/./demo/esqlc/rgetmsg.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="risnull.ec" location="/opt/informix/./demo/esqlc/risnull.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rjulmdy.ec" location="/opt/informix/./demo/esqlc/rjulmdy.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rleapyear.ec" location="/opt/informix/./demo/esqlc/rleapyear.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rmdyjul.ec" location="/opt/informix/./demo/esqlc/rmdyjul.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rsetnull.ec" location="/opt/informix/./demo/esqlc/rsetnull.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rstod.ec" location="/opt/informix/./demo/esqlc/rstod.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rstoi.ec" location="/opt/informix/./demo/esqlc/rstoi.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rstol.ec" location="/opt/informix/./demo/esqlc/rstol.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rstrdate.ec" location="/opt/informix/./demo/esqlc/rstrdate.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rtoday.ec" location="/opt/informix/./demo/esqlc/rtoday.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rtypalign.ec" location="/opt/informix/./demo/esqlc/rtypalign.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rtypmsize.ec" location="/opt/informix/./demo/esqlc/rtypmsize.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rtypname.ec" location="/opt/informix/./demo/esqlc/rtypname.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rtypwidth.ec" location="/opt/informix/./demo/esqlc/rtypwidth.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rupshift.ec" location="/opt/informix/./demo/esqlc/rupshift.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqgetdbs.ec" location="/opt/informix/./demo/esqlc/sqgetdbs.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="stcat.ec" location="/opt/informix/./demo/esqlc/stcat.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="stchar.ec" location="/opt/informix/./demo/esqlc/stchar.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="stcmpr.ec" location="/opt/informix/./demo/esqlc/stcmpr.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="stcopy.ec" location="/opt/informix/./demo/esqlc/stcopy.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="stleng.ec" location="/opt/informix/./demo/esqlc/stleng.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="timeout.ec" location="/opt/informix/./demo/esqlc/timeout.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="unload.ec" location="/opt/informix/./demo/esqlc/unload.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="updcd_me.ec" location="/opt/informix/./demo/esqlc/updcd_me.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="updcd_nf.ec" location="/opt/informix/./demo/esqlc/updcd_nf.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="updcd_of.ec" location="/opt/informix/./demo/esqlc/updcd_of.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="upd_lo_descr.ec" location="/opt/informix/./demo/esqlc/upd_lo_descr.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="varchar.ec" location="/opt/informix/./demo/esqlc/varchar.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="mkstores" location="/opt/informix/./demo/esqlc/mkstores" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dbload1.cmd" location="/opt/informix/./demo/esqlc/dbload1.cmd" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dbload2.cmd" location="/opt/informix/./demo/esqlc/dbload2.cmd" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sqldetachdemo.ec" location="/opt/informix/./demo/esqlc/sqldetachdemo.ec" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="call_type.unl" location="/opt/informix/./demo/esqlc/call_type.unl" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="catalog.unl" location="/opt/informix/./demo/esqlc/catalog.unl" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cust_calls.unl" location="/opt/informix/./demo/esqlc/cust_calls.unl" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="customer.unl" location="/opt/informix/./demo/esqlc/customer.unl" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="items.unl" location="/opt/informix/./demo/esqlc/items.unl" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="manufact.unl" location="/opt/informix/./demo/esqlc/manufact.unl" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="orders.unl" location="/opt/informix/./demo/esqlc/orders.unl" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="state.unl" location="/opt/informix/./demo/esqlc/state.unl" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="stock.unl" location="/opt/informix/./demo/esqlc/stock.unl" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cn_10001.gif" location="/opt/informix/./demo/esqlc/cn_10001.gif" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cn_10027.gif" location="/opt/informix/./demo/esqlc/cn_10027.gif" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cn_10031.gif" location="/opt/informix/./demo/esqlc/cn_10031.gif" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cn_10046.gif" location="/opt/informix/./demo/esqlc/cn_10046.gif" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cn_10049.gif" location="/opt/informix/./demo/esqlc/cn_10049.gif" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cn_10001.rs" location="/opt/informix/./demo/esqlc/cn_10001.rs" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cn_10027.rs" location="/opt/informix/./demo/esqlc/cn_10027.rs" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cn_10031.rs" location="/opt/informix/./demo/esqlc/cn_10031.rs" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cn_10046.rs" location="/opt/informix/./demo/esqlc/cn_10046.rs" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="cn_10049.rs" location="/opt/informix/./demo/esqlc/cn_10049.rs" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="README" location="/opt/informix/./demo/esqlc/README" type="file" uninstall="false" rollbackEnabledCancel="true"/>
+		</component>
+		<component id="cf17755f-1f00-11b2-b14a-9c9943760644" version="1.0.0.0" name="AG- DBA-DBA" location="/opt/informix/" vendor="IBM">
+			<resource keyfile="false" name="dbaccess" location="/opt/informix/./bin/dbaccess" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="itoxmsg.pam" location="/opt/informix/./msg/itoxmsg.pam" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="errmsg.txt" location="/opt/informix/./msg/en_us/0333/errmsg.txt" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="menukey.iem" location="/opt/informix/./msg/en_us/0333/menukey.iem" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dbacc.iem" location="/opt/informix/./msg/en_us/0333/dbacc.iem" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dbacc.lmk" location="/opt/informix/./msg/en_us/0333/dbacc.lmk" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="sql.iem" location="/opt/informix/./msg/en_us/0333/sql.iem" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="isam.iem" location="/opt/informix/./msg/en_us/0333/isam.iem" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dbised.iem" location="/opt/informix/./msg/en_us/0333/dbised.iem" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="dbised.lmk" location="/opt/informix/./msg/en_us/0333/dbised.lmk" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="os.iem" location="/opt/informix/./msg/en_us/0333/os.iem" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="rds.iem" location="/opt/informix/./msg/en_us/0333/rds.iem" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+			<resource keyfile="false" name="netsrv.iem" location="/opt/informix/./msg/en_us/0333/netsrv.iem" type="file" uninstall="true" rollbackEnabledCancel="true"/>
+		</component>
+		<component id="04a18a1a-1efc-11b2-8e4a-fe4aa905b49a" version="1.0.0.0" name="InstallAnywhere VM Component" location="/opt/informix/jvm" vendor="IBM">
+			<resource keyfile="true" name="jvm" location="/opt/informix/jvm" type="post_processed_dir" uninstall="true" rollbackEnabledCancel="true">
+			<![CDATA[true]]>
+			</resource>
+		</component>
+	</components>
+</registry>

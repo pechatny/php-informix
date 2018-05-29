@@ -1,0 +1,664 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+  <TITLE>GLS API for DataBlade and ESQL/C Developers</TITLE>
+  <META NAME="GENERATOR" CONTENT="Mozilla/3.0Gold (X11; I; SunOS 5.5.1 sun4m) [Netscape]">
+</HEAD>
+<BODY>
+
+<H1>GLS API for DataBlade and ESQL/C Developers</H1>
+
+<HR><BR>
+</P>
+<TABLE>
+<TR><TD>
+INFORMIX-Universal Server provides a Global Language Support
+Application Programmer's Interface (GLS API) enabling you to develop
+internationalized applications with a C-based interface. The GLS API relies
+on GLS locales which determine how an internationalized application
+behaves.
+</P>
+<B><FONT SIZE=+1>The GLS API provides the following ...</FONT></B>
+</P> 
+<LI> <A HREF = "#datatypes"><B>Data Types</B></A></LI>
+</P> 
+<LI> <A HREF = "#macros"><B>Macros</B></A></LI>
+</P> 
+<LI> <A HREF = "#io"><B>Input/Output Functions</B></A></LI>
+</P> 
+<LI> <A HREF = "#classify"><B>Character Classification</B></A></LI>
+</P> 
+<LI> <A HREF = "#case"><B>Character Case Conversion</B></A></LI>
+</P> 
+<LI> <A HREF = "#compare"><B>Character/String Comparison</B></A></LI>
+</P> 
+<LI> <A HREF = "#csc"><B>Code Set Conversion</B></A></LI>
+</P> 
+<LI> <A HREF = "#type_conv"><B>Built-in Data Type Conversion</B></A></LI>
+</P> 
+<LI> <A HREF = "#string_proc"><B>String Processing</B></A></LI>
+</P> 
+<LI> <A HREF = "#mbwc_conv"><B>Multi-byte/Wide-character Conversion</B></A></LI>
+</P> 
+<LI> <A HREF = "#mbmal"><B>Multi-byte Memory Allocation</B></A></LI>
+</P>
+<LI> <A HREF = "#mbtrav"><B>Multi-byte String Traversal and Indexing</B></A>
+</LI>
+</P>
+<LI> <A HREF = "#misc"><B>Initialization and Error Handling</B></A></LI>
+</P>
+<B><FONT SIZE=+1>How to use the GLS API</FONT></B>
+</P> 
+You can use the GLS API either on the client or the server. All functions
+access the current processing locale. The current processing locale, based
+on the GLS environment variables and data stored in the database, must be
+established on both the server and client before any locale sensitive
+processing occurs. The server establishes the locale when a database is
+opened (or when a session corresponding to a client connection is
+established). A client-side application needs to explicitly set the
+processing locale with a function call.
+</P>
+<B><FONT SIZE=+1>Compiling and linking the GLS API </FONT></B>
+</P> 
+To use the GLS API, you must include the following code in your GLS API
+based programs:
+</P> 
+#<tt>include  &lt;ifxgls.h&gt;</tt>
+</P>
+ESQL/C users need to ensure that the correct processing locale is established
+by calling <A HREF="./ifx_gl_init.htm">ifx_gl_init()</A> prior to calling
+ifx_gl_*() functions. To compile and link ESQL/C programs that use the GLS
+API, issue the following ESQL command:
+</P> 
+% <tt>esql &lt;source_file&gt;</tt>
+</P> 
+Client-side users of DataBlade module API also need to ensure that the
+correct processing locale is established by calling
+<A HREF="./ifx_gl_init.htm">ifx_gl_init()</A> prior to calling ifx_gl_*()
+functions. To compile and link DataBlade module programs:
+</P> 
+% <tt> cc -I$INFORMIXDIR/incl/esql -L$INFORMIXDIR/lib/esql ... -lixgls ...
+&lt;source_file&gt; </tt>
+</P> 
+Additionally, DataBlade module programmers need to distinguish whether
+a DataBlade module runs on the server or on a client when they compile user-
+defined routines. To make this distinction, use the compiler flag
+-DMI_SERVBUILD when compiling user-defined routines.
+</P> 
+Tip: When you use the Database Developer's Kit (DBDK) to compile user-
+defined routines you do not have to explicitly specify the location of the
+header files.
+</P> 
+To build a shared object that contains the C code for a user-defined routine,
+use the following example:
+</P>
+
+% <tt> cc -I$INFORMIXDIR/incl/esql -KPIC -DMI_SERVBUILD -c  &lt;source_file&gt;
+</tt>
+</P> 
+% <tt> ld -G -o  &lt;shared object name&gt;.so  &lt;source_file&gt;.o </tt>
+</TD>
+</TR>
+</TABLE>
+
+<HR><BR>
+</P>
+<TABLE BORDER>
+<CAPTION>
+<FONT SIZE=+1><A NAME="datatypes"><B>Data Types</B></A></FONT>
+<BR>
+</CAPTION>
+
+<TR>
+<TH>type</TH>
+<TH>description </TH>
+</TR>
+
+<TR>
+<TD>gl_wchar_t </TD>
+<TD>The type that holds a single 4-byte wide-character. </TD>
+</TR>
+
+<TR>
+<TD>gl_mchar_t </TD>
+<TD>An integral type that holds a single byte which is part of a multibyte
+character; given that a multi-byte character is composed of one or more
+gl_mchar_t's, it makes no sense to define or refer to a variable as an
+gl_mchar_t. Instead always use the type (gl_mchar_t *) when,(1) defining
+or referring to a single multi- byte character, and (2) when defining or
+referring to a string of multi-byte characters. </TD>
+</TR>
+</TABLE>
+
+<BR>
+<TABLE BORDER>
+<CAPTION>
+<FONT SIZE=+1><A NAME="macros"><B>Macros</B></A></FONT>
+<BR>
+</CAPTION>
+
+<TR>
+<TH>name </TH>
+<TH>description </TH>
+</TR>
+
+<TR>
+<TD><A HREF="./macros.htm">IFX_GL_IS_CODESET_ORDER </A></TD>
+<TD>Determines whether the current locale's collation order is simply the
+code set order. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./macros.htm">IFX_GL_IS_SINGLE_BYTE </A></TD>
+<TD>Determines whether cs is a single-byte code set. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./macros.htm">IFX_GL_MB_MAX </A></TD>
+<TD>Returns the maximum number of bytes needed to store a multi-byte character.
+</TD>
+</TR>
+
+<TR>
+<TD><A HREF="./macros.htm">IFX_GL_NO_LIMIT </A></TD>
+<TD>Used to determine character termination. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./macros.htm">IFX_GL_NULL </A></TD>
+<TD>Used to signify that a string is null-terminated.
+</TD>
+</TR>
+
+<TR>
+<TD><A HREF="./macros.htm">IFX_GL_PROC_CS </A></TD>
+<TD>Returns the current locale's code set. </TD>
+</TR>
+</TABLE>
+
+</P>
+<TABLE BORDER>
+<CAPTION>
+<FONT SIZE=+1><A NAME="io"><B>Input/Output</B></A></FONT>
+<BR>
+</CAPTION>
+
+<TR>
+<TH>function </TH>
+<TH>description </TH>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_getmb.htm">ifx_gl_getmb </A></TD>
+<TD>Composes a multi-byte character from a stream. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_putmb.htm">ifx_gl_putmb </A></TD>
+<TD>Decomposes a multi-byte character to a stream. </TD>
+</TR>
+</TABLE>
+
+<BR>
+</P>
+<TABLE BORDER>
+<CAPTION>
+<FONT SIZE=+1><A NAME="classify"><B>Character Classification</B></A></FONT>
+<BR>
+</CAPTION>
+
+<TR>
+<TH>function </TH>
+<TH>description </TH>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_ismalnum.htm">ifx_gl_ismalnum <BR>
+ifx_gl_ismalpha <BR>
+ifx_gl_ismblank <BR>
+ifx_gl_ismcntrl <BR>
+ifx_gl_ismdigit <BR>
+ifx_gl_ismgraph <BR>
+ifx_gl_ismlower <BR>
+ifx_gl_ismprint <BR>
+ifx_gl_ismpunct <BR>
+ifx_gl_ismspace <BR>
+ifx_gl_ismupper <BR>
+ifx_gl_ismxdigit </A></TD>
+<TD>Test the multi-byte character for the respective character classification.
+</TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_iswalnum.htm">ifx_gl_iswalnum <BR>
+ifx_gl_iswalpha <BR>
+ifx_gl_iswblank <BR>
+ifx_gl_iswcntrl <BR>
+ifx_gl_iswdigit <BR>
+ifx_gl_iswgraph <BR>
+ifx_gl_iswlower <BR>
+ifx_gl_iswprint <BR>
+ifx_gl_iswpunct <BR>
+ifx_gl_iswspace <BR>
+ifx_gl_iswupper <BR>
+ifx_gl_iswxdigit </A></TD>
+<TD>Test the wide-character for the respective character classification. </TD>
+</TR>
+</TABLE>
+
+<BR>
+</P>
+<TABLE BORDER>
+<CAPTION>
+<FONT SIZE=+1><A NAME="case"><B>Character Case Conversion </B></A></FONT>
+<BR>
+</CAPTION>
+
+<TR>
+<TH>function </TH>
+<TH>description </TH>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_case_conv_outbuflen.htm">ifx_gl_case_conv_outbuflen
+</A></TD>
+<TD>Calculates an approximation of the number of bytes for multi-byte
+case conversion. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_tomlower.htm">ifx_gl_tomlower </A></TD>
+<TD>Convert character to lower case. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_tomupper.htm">ifx_gl_tomupper </A></TD>
+<TD>Convert character to upper case. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_towlower.htm">ifx_gl_towlower </A></TD>
+<TD>Transliterate upper-case wide-character code. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_towupper.htm">ifx_gl_towupper </A></TD>
+<TD>Transliterate lower-case wide-character code. </TD>
+</TR>
+</TABLE>
+
+<BR>
+</P>
+<TABLE BORDER>
+<CAPTION>
+<FONT SIZE=+1><A NAME="compare"><B>Character/String Comparison </B></A></FONT>
+<BR>
+</CAPTION>
+
+<TR>
+<TH>function </TH>
+<TH>description </TH>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbscoll.htm">ifx_gl_mbscoll </A></TD>
+<TD>String comparison using collating information. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_wcscoll.htm">ifx_gl_wcscoll </A></TD>
+<TD>Wide-character string comparison using collating information. </TD>
+</TR>
+</TABLE>
+
+<BR>
+</P>
+<TABLE BORDER>
+<CAPTION>
+<FONT SIZE=+1><A NAME="csc"><B>Code Set Conversion </B></A></FONT>
+<BR>
+</CAPTION>
+
+<TR>
+<TH>function </TH>
+<TH>description </TH>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_conv_needed.htm">ifx_gl_conv_needed </A></TD>
+<TD>Is code set conversion needed between the two code sets ?</TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_cv_mconv.htm">ifx_gl_cv_mconv </A></TD>
+<TD>Convert the string in the srccs code set to the dstcs code set.</TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_cv_outbuflen.htm">ifx_gl_cv_outbuflen </A></TD>
+<TD>Calculates an approximation of the number of bytes for codeset
+conversion. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_cv_sb2sb_table.htm">ifx_gl_cv_sb2sb_table </A></TD>
+<TD>Returns the single-byte conversion table from the srccs code set to
+the dstcs code set. </TD>
+</TR>
+</TABLE>
+
+<BR>
+</P>
+<TABLE BORDER>
+<CAPTION>
+<FONT SIZE=+1><A NAME="type_conv"><B>Built-in Data Type Conversion</B></A>
+</FONT>
+<BR>
+</CAPTION>
+
+<TR>
+<TH>function </TH>
+<TH>description </TH>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_convert_date.htm">ifx_gl_convert_date </A></TD>
+<TD>Converts a date string into an internal representation. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_format_date.htm">ifx_gl_format_date </A></TD>
+<TD>Converts a date value into a string with a given maximum length. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_convert_datetime.htm">ifx_gl_convert_datetime </A></TD>
+<TD>Converts a datetime string into an internal representation. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_format_datetime.htm">ifx_gl_format_datetime </A></TD>
+<TD>Converts an internal datetime to a string with a given maximum length.</TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_convert_money.htm">ifx_gl_convert_money </A></TD>
+<TD>Converts a money string into an internal representation.</TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_format_money.htm">ifx_gl_format_money </A></TD>
+<TD>Converts an internal representation of money to a string with a given
+maximum length.</TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_convert_number.htm">ifx_gl_convert_number </A></TD>
+<TD>Converts a numeric string into an internal representation.</TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_format_number.htm">ifx_gl_format_number </A></TD>
+<TD>Converts an internal representation of a number to a string with a
+given maximum length.</TD>
+</TR>
+</TABLE>
+
+<BR>
+</P>
+<TABLE BORDER>
+<CAPTION>
+<FONT SIZE=+1><A NAME="string_proc"><B>String Processing</B></A></FONT>
+<BR>
+</CAPTION>
+
+<TR>
+<TH>function </TH>
+<TH>description </TH>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbscat.htm">ifx_gl_mbscat </A></TD>
+<TD>Concatenate two multibyte strings. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbschr.htm">ifx_gl_mbschr </A></TD>
+<TD>Multibyte string scanning operation.  </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbscpy.htm">ifx_gl_mbscpy </A></TD>
+<TD>Copy a multibyte string. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbscspn.htm">ifx_gl_mbscspn </A></TD>
+<TD>Get length of complementary multibyte substring.</TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbslen.htm">ifx_gl_mbslen </A></TD>
+<TD>Returns number of logical characters in a string. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbsmbs.htm">ifx_gl_mbsmbs </A></TD>
+<TD>Scan multibyte string for multibyte code.  </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbsncat.htm">ifx_gl_mbsncat </A></TD>
+<TD>Concatenate part of two multibyte strings.  </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbsncpy.htm">ifx_gl_mbsncpy </A></TD>
+<TD>Copy part of a multibyte strings. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbsntsbytes.htm">ifx_gl_mbsntsbytes </A></TD>
+<TD>Returns number of bytes ignoring trailing spaces. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbsntslen.htm">ifx_gl_mbsntslen </A></TD>
+<TD>Returns logical characters ignoring trailing spaces. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbspbrk.htm">ifx_gl_mbspbrk </A></TD>
+<TD>Scan multibyte string for multibyte code.  </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbsrchr.htm">ifx_gl_mbsrchr </A></TD>
+<TD>Multibyte string scanning operation in reverse direction. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbsspn.htm">ifx_gl_mbsspn </A></TD>
+<TD>Get length of multibyte substring. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_wcscat.htm">ifx_gl_wcscat </A></TD>
+<TD>Concatenate two wide character strings. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_wcschr.htm">ifx_gl_wcschr </A></TD>
+<TD>Wide character string scanning operation. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_wcscpy.htm">ifx_gl_wcscpy </A></TD>
+<TD>Copy a wide character string. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_wcscspn.htm">ifx_gl_wcscspn </A></TD>
+<TD>Get length of complementary wide character substring. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_wcslen.htm">ifx_gl_wcslen </A></TD>
+<TD>Get wide character string length. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_wcsncat.htm">ifx_gl_wcsncat </A></TD>
+<TD>Concatenate part of two wide character strings.</TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_wcsncpy.htm">ifx_gl_wcsncpy </A></TD>
+<TD>Copy part of a wide character string. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_wcsntslen.htm">ifx_gl_wcsntslen </A></TD>
+<TD>Returns logical characters ignoring trailing spaces. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_wcspbrk.htm">ifx_gl_wcspbrk </A></TD>
+<TD>Scan wide character string for wide character. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_wcsrchr.htm">ifx_gl_wcsrchr </A></TD>
+<TD>Wide character string scanning operation in reverse direction.</TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_wcsspn.htm">ifx_gl_wcsspn </A></TD>
+<TD>Get length of wide character substring.  </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_wcswcs.htm">ifx_gl_wcswcs </A></TD>
+<TD>Find wide character substring. </TD>
+</TR>
+</TABLE>
+
+<BR>
+</P>
+<TABLE BORDER>
+<CAPTION>
+<FONT SIZE=+1>
+<A NAME="mbwc_conv"><B>Multi-byte/Wide-character Conversion</B></A>
+</FONT>
+<BR>
+</CAPTION>
+
+<TR>
+<TH>function </TH>
+<TH>description </TH>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbstowcs.htm">ifx_gl_mbstowcs </A></TD>
+<TD>Convert a multi-byte character string to its wide-character.</TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbtowc.htm">ifx_gl_mbtowc </A></TD>
+<TD>Convert one multi-byte character to its wide-character.</TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_wcstombs.htm">ifx_gl_wcstombs </A></TD>
+<TD>Convert a wide-character string to its multi-byte character.</TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_wctomb.htm">ifx_gl_wctomb </A></TD>
+<TD>Convert one wide-character to its multi-byte character.</TD>
+</TR>
+</TABLE>
+
+<BR>
+</P>
+<TABLE BORDER>
+<CAPTION>
+<FONT SIZE=+1>
+<A NAME="mbmal" HREF="./memmgmt.htm#.memalloc"><B>Multibyte Memory Allocation
+</B></A>
+</FONT>
+<BR>
+</CAPTION>
+
+<TR>
+<TH>function </TH>
+<TH>description </TH>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mb_loc_max.htm">ifx_gl_mb_loc_max </A></TD>
+<TD>Returns size of the largest character in the locale. </TD>
+</TR>
+</TABLE>
+
+<BR>
+</P>
+<TABLE BORDER>
+<CAPTION>
+<FONT SIZE=+1>
+<A NAME="mbtrav"><B>Multi-byte String Traversal and Indexing</B></A>
+</FONT>
+<BR>
+</CAPTION>
+
+<TR>
+<TH>function </TH>
+<TH>description </TH>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mblen.htm">ifx_gl_mblen </A></TD>
+<TD>Returns the number of bytes in a character. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbsnext.htm">ifx_gl_mbsnext </A></TD>
+<TD>Returns the next multibyte character. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_mbsprev.htm">ifx_gl_mbsprev </A></TD>
+<TD>Returns the previous multibyte character. </TD>
+</TR>
+</TABLE>
+
+<BR>
+</P>
+<TABLE BORDER>
+<CAPTION>
+<FONT SIZE=+1>
+<A NAME="misc"><B>Initialization and Error Handling</B></A>
+</FONT>
+<BR>
+</CAPTION>
+
+<TR>
+<TH>function </TH>
+<TH>description </TH>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_init.htm">ifx_gl_init </A></TD>
+<TD>Ensures locale initialization. </TD>
+</TR>
+
+<TR>
+<TD><A HREF="./ifx_gl_lc_errno.htm">ifx_gl_lc_errno </A></TD>
+<TD>error value </TD>
+</TR>
+</TABLE>
+
+</BODY>
+</HTML>
+

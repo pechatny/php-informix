@@ -1,0 +1,288 @@
+#!/bin/sh
+# ****************************************************************************
+#
+#   Licensed Materials - Property Of IBM
+#
+#   "Restricted Materials of IBM"
+#
+#   IBM Informix Dynamic Server
+#   Copyright IBM Corporation 2008, 2015
+#
+#   Description: Installation script for IBM GSKit  
+#   Usage:       installgskit 
+#
+# ****************************************************************************
+#
+
+aix()
+{
+
+toc="${gskitdir}/.toc"
+
+[ -f "$toc" ] && rm -f "$toc" 
+
+/usr/sbin/installp -acgqw -d $gskitdir $gskitxdir 1>$basedir/tmp/gskit.log 2>&1
+INSTALL_RESULT=$?
+
+if [ $INSTALL_RESULT -ne 0 ]; then
+  echo "Either GSKit package is already installed or an error occurred during package installation." >>$basedir/tmp/gskit.log
+fi
+
+for gskitinstallfile in $gskitxdir
+do
+    rm -f ${gskitinstallfile} >/dev/null
+done
+
+[ -f "$toc" ] && rm -f "$toc" 
+
+}
+
+hpux_pa()
+{
+/usr/sbin/swinstall -x enforce_scripts=false -s $gskitdir/$gskitxdir $gskitxdir 1>$basedir/tmp/gskit.log 2>&1
+INSTALL_RESULT=$?
+
+rm -fr ${gskitxdir} >/dev/null
+}
+
+hpux_ia()
+{
+for gskitinstallfile in $gskitxdir
+do
+/usr/sbin/swinstall -x enforce_scripts=false -s $gskitdir/$gskitinstallfile  $gskitinstallfile 1>$basedir/tmp/gskit.log 2>&1
+INSTALL_RESULT=$?
+
+if [ $INSTALL_RESULT -ne 0 ]; then
+  echo "Either GSKit package is already installed or an error occurred during package installation." >>$basedir/tmp/gskit.log
+fi
+
+rm -fr ${gskitinstallfile} >/dev/null
+done
+}
+
+linux_32_64_ia_ps_zs()
+{
+# Current dir is in  $informixdir/tmp/gskit
+cryptrpmfile=`ls gskcrypt*.rpm`
+sslrpmfile=`ls gskssl*.rpm`
+
+cryptdebfile=`ls gskcrypt*.deb 2>/dev/null` 
+ssldebfile=`ls gskssl*.deb 2>/dev/null`
+dpkg --version > /dev/null 2>&1
+is_dpkg=$?
+
+if [ "x${cryptdebfile}" != "x" -a ${is_dpkg} -eq 0 ]
+then
+   dpkg -i $cryptdebfile 1>$basedir/tmp/gskit.log 2>&1
+   INSTALL_RESULT=$?
+
+   if [ $INSTALL_RESULT -ne 0 ]
+   then
+       echo "Either GSKit package is already installed or an error occurred during Debian package installation." >>$basedir/tmp/gskit.log
+   fi
+elif [ "x${cryptrpmfile}" != "x" ]
+then
+   rpm -Uv --nodeps --ignoresize $cryptrpmfile 1>$basedir/tmp/gskit.log 2>&1
+   INSTALL_RESULT=$?
+
+   if [ $INSTALL_RESULT -ne 0 ]
+   then
+	version=`uname -v | awk -F- '{ print $2 }' | awk '{ print $1 }'`
+	if [ "x$version" = "xUbuntu" ]
+	then
+	    rpm -Uv --nodeps --ignoresize --force-debian $cryptrpmfile 1>$basedir/tmp/gskit.log 2>&1
+	    INSTALL_RESULT=$?
+   	    if [ $INSTALL_RESULT -ne 0 ]; then
+      	    	echo "Either GSKit package is already installed or an error occurred during RPM package installation." >>$basedir/tmp/gskit.log
+	    fi
+	else
+            echo "Either GSKit package is already installed or an error occurred during RPM package installation." >>$basedir/tmp/gskit.log
+	fi
+    fi
+else
+   echo "Package could not be found. Aborting..." >>$basedir/tmp/gskit.log
+   return 1
+fi
+
+if [ "x${ssldebfile}" != "x" -a ${is_dpkg} -eq 0 ]
+then
+   dpkg -i $ssldebfile 1>>$basedir/tmp/gskit.log 2>&1
+   INSTALL_RESULT=$?
+
+   if [ $INSTALL_RESULT -ne 0 ]
+   then
+       echo "Either GSKit package is already installed or an error occurred during Debian package installation." >>$basedir/tmp/gskit.log
+   fi
+elif [ "x${sslrpmfile}" != "x" ]
+then
+   rpm -Uv --nodeps --ignoresize $sslrpmfile 1>>$basedir/tmp/gskit.log 2>&1
+   INSTALL_RESULT=$?
+
+   if [ $INSTALL_RESULT -ne 0 ]
+   then
+	version=`uname -v | awk -F- '{ print $2 }' | awk '{ print $1 }'`
+	if [ "x$version" = "xUbuntu" ]
+	then
+            rpm -Uv --nodeps --ignoresize --force-debian $sslrpmfile 1>$basedir/tmp/gskit.log 2>&1
+	    INSTALL_RESULT=$?
+   	    if [ $INSTALL_RESULT -ne 0 ]; then
+          	echo "Either GSKit package is already installed or an error occurred during RPM package installation." >>$basedir/tmp/gskit.log
+	    fi
+	else
+            echo "Either GSKit package is already installed or an error occurred during RPM package installation." >>$basedir/tmp/gskit.log
+
+        fi
+    fi
+else
+   echo "Package could not be found. Aborting..." >>$basedir/tmp/gskit.log
+   return 1
+fi
+
+rm -f ${sslrpmfile} > /dev/null
+rm -f ${cryptrpmfile} > /dev/null
+rm -f ${ssldebfile} > /dev/null
+rm -f ${cryptdebfile} > /dev/null
+
+}
+
+sol_opt()
+{
+for gskitinstallfile in $gskitxdir
+do
+
+# create the admin file in $gskitdir
+adminfile="$gskitinstallfile/admin"
+cat > $adminfile <<EOF
+instance=overwrite
+conflict=nocheck
+partial=nocheck
+runlevel=nocheck
+idepend=nocheck
+rdepend=nocheck
+space=nocheck
+setuid=nocheck
+action=nocheck
+basedir=default
+EOF
+
+/usr/sbin/pkgadd -a $gskitinstallfile/admin -n -d $gskitdir $gskitinstallfile 1>$basedir/tmp/gskit.log 2>&1
+
+INSTALL_RESULT=$?
+
+if [ $INSTALL_RESULT -ne 0 ] 
+then
+  echo "Either GSKit package is already installed or an error occurred during package installation." >>$basedir/tmp/gskit.log
+fi
+
+rm -fr ${gskitinstallfile} 
+done
+
+rm -fr ${adminfile}
+}
+
+macosx()
+{
+rm -f $basedir/tmp/gskit.log
+touch $basedir/tmp/gskit.log
+
+for gskitinstallfile in $gskitxdir
+do
+/usr/sbin/installer -pkg $gskitdir/$gskitinstallfile -target / 1>>$basedir/tmp/gskit.log 2>&1
+INSTALL_RESULT=$?
+
+if [ $INSTALL_RESULT -ne 0 ]; then
+  echo "An error occurred during GSKit package installation." >>$basedir/tmp/gskit.log
+fi
+
+rm -fr ${gskitinstallfile} >/dev/null
+done
+}
+
+extractfile()
+{
+if [ -f $gskitfile ]; then
+   $extractcmd $gskitfile >/dev/null 2>&1
+else
+   echo "GSKit resource file could not be found. Aborting..."
+   return
+fi
+}
+
+
+# Main
+PATH="/bin:/usr/bin:/sbin:/usr/sbin:$PATH"
+export PATH
+
+basedir=`dirname $0`
+cd "$basedir"
+cd ..
+basedir=`pwd`
+gskitdir=$basedir/gskit
+
+INSTALL_RESULT=0
+
+GSKLIB_DIR=lib
+GSK_ICCLIB_DIR=icc/icclib
+GSK_OSSLIB_DIR=icc/osslib
+
+id | grep 'uid=0(' 1> /dev/null 2> /dev/null
+if [ $? -ne 0 ]; then
+    echo "You must be running as root user to install GSKit" 1>&2
+    exit 1
+fi
+
+osname=`uname`
+
+echo "Performing GSKit installation for $osname ..."
+
+# installgskit and the package file resides in .../gskit. 
+
+if [ ! -d $basedir/tmp ]; then
+    mkdir $basedir/tmp
+fi
+
+cd $gskitdir
+
+for gskitfile in `ls gsk*.*`
+do
+gskitext=`echo $gskitfile | sed 's/^.*\.//'`
+
+if [ "x$gskitext" = "xtar" ]; then
+   extractcmd="tar -xf"
+fi
+
+extractfile
+done
+
+gskitxdir=`ls $gskitdir | grep -v .tar | grep -v README | grep -v installgskit | grep -v .toc`
+case ${osname} in
+    AIX)
+        aix
+    ;;
+    HP-UX)
+       osmodel=`uname -m`
+       case ${osmodel} in
+	ia64) 
+        	hpux_ia
+	;;
+	*)
+		hpux_pa
+	;;
+	esac
+    ;;
+    Linux)
+        linux_32_64_ia_ps_zs 
+    ;;
+    SunOS)
+        sol_opt
+    ;;
+    Darwin)
+        macosx
+    ;;
+    *)
+    echo "ERROR: Unable to determine platform from $osname"  1>&2
+    exit 1
+    ;;
+esac
+
+exit 0
